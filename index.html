@@ -1,48 +1,43 @@
-
-html
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>ClearPath Labs – Evidence-Based Wellness</title>
+  <title>ClearPath Labs – AM / PM / Recovery Wellness System</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="ClearPath Labs creates evidence-based AM/PM and Recovery formulas designed to support energy, focus, sleep, and long-term health."
+    content="ClearPath Labs is developing a simple AM, PM, and Recovery system to support clean energy, deep sleep, and resilient recovery."
   />
   <style>
     :root {
-      --bg: #050816;
-      --bg-alt: #0b1020;
-      --accent: #32d3a8;
-      --accent-soft: rgba(50, 211, 168, 0.15);
-      --text-main: #f5f7ff;
-      --text-muted: #a3aed0;
-      --border-subtle: rgba(255, 255, 255, 0.08);
-      --danger: #ff6b6b;
+      --bg: #020617;
+      --bg-alt: #020617;
+      --bg-card: #020617;
+      --bg-soft: rgba(15, 23, 42, 0.96);
+      --accent: #22c55e;
+      --accent2: #38bdf8;
+      --accent-soft: rgba(34, 197, 94, 0.15);
+      --border-subtle: rgba(148, 163, 184, 0.3);
+      --text-main: #f9fafb;
+      --text-muted: #a1a1aa;
+      --text-soft: #71717a;
       --radius-lg: 18px;
-      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.5);
+      --radius-xl: 24px;
+      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.55);
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-        "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top left, #111827 0, #020617 45%, #000 100%);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, #111827 0, #020617 45%, #000 100%);
       color: var(--text-main);
       -webkit-font-smoothing: antialiased;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { color: inherit; text-decoration: none; }
 
     .page {
       min-height: 100vh;
@@ -53,7 +48,1167 @@ html
     .max-w {
       max-width: 1120px;
       margin: 0 auto;
-      padding: 24px 20px 60px;
+      padding: 0 20px 60px;
+    }
+
+    /* NAVBAR */
+
+    .nav-shell {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      backdrop-filter: blur(14px);
+      background: linear-gradient(to bottom, rgba(2, 6, 23, 0.92), rgba(2, 6, 23, 0.72), transparent);
+      border-bottom: 1px solid rgba(15, 23, 42, 0.9);
+    }
+
+    .nav {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 14px 20px 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-logo {
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      background: conic-gradient(from 210deg, #0ea5e9, #22c55e, #a855f7, #0ea5e9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 22px rgba(56, 189, 248, 0.6);
+    }
+
+    .brand-logo span {
+      font-weight: 700;
+      font-size: 19px;
+      color: #020617;
+    }
+
+    .brand-text-title {
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      font-size: 14px;
+      text-transform: uppercase;
+    }
+
+    .brand-text-sub {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 13px;
+      color: var(--text-soft);
+    }
+
+    .nav-link {
+      cursor: pointer;
+      padding: 4px 0;
+      border-bottom: 1px solid transparent;
+    }
+
+    .nav-link:hover {
+      color: #e5e7eb;
+      border-bottom-color: rgba(148, 163, 184, 0.6);
+    }
+
+    .nav-pill {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(34, 197, 94, 0.4);
+      background: rgba(22, 163, 74, 0.1);
+      color: #bbf7d0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-pill-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 12px rgba(34, 197, 94, 0.9);
+    }
+
+    @media (max-width: 780px) {
+      .nav {
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .nav-links {
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        row-gap: 6px;
+      }
+      .nav-pill {
+        margin-left: auto;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .nav-links {
+        font-size: 12px;
+        gap: 14px;
+      }
+      .nav-pill {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    /* HERO */
+
+    main {
+      padding-top: 22px;
+    }
+
+    .hero {
+      padding-top: 26px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.95fr);
+      gap: 30px;
+      align-items: center;
+    }
+
+    @media (max-width: 880px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+        padding-top: 22px;
+      }
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.8);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-muted);
+    }
+
+    .hero-pill-emoji {
+      font-size: 13px;
+    }
+
+    .hero-heading {
+      font-size: clamp(32px, 5vw, 44px);
+      line-height: 1.05;
+      font-weight: 800;
+      letter-spacing: -0.035em;
+      margin: 16px 0 12px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(120deg, #22c55e, #2dd4bf, #38bdf8);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-sub {
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--text-muted);
+      max-width: 540px;
+    }
+
+    .hero-sub b {
+      color: #e5e7eb;
+      font-weight: 600;
+    }
+
+    .hero-actions {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .btn-primary {
+      border-radius: 999px;
+      padding: 11px 22px;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+      background: linear-gradient(135deg, #22c55e, #14b8a6, #0ea5e9);
+      color: #020617;
+      box-shadow: 0 14px 30px rgba(34, 197, 94, 0.4);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+    }
+
+    .btn-primary span {
+      font-size: 16px;
+    }
+
+    .btn-ghost {
+      border-radius: 999px;
+      padding: 10px 18px;
+      font-size: 13px;
+      font-weight: 500;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: rgba(15, 23, 42, 0.85);
+      color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-ghost-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 10px rgba(34, 197, 94, 0.9);
+    }
+
+    .hero-meta {
+      margin-top: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      font-size: 12px;
+      color: var(--text-soft);
+    }
+
+    .hero-meta span b {
+      color: #e5e7eb;
+      font-weight: 600;
+    }
+
+    /* HERO RIGHT CARD */
+
+    .hero-card {
+      border-radius: var(--radius-xl);
+      padding: 18px 18px 16px;
+      border: 1px solid rgba(39, 39, 42, 0.9);
+      background:
+        radial-gradient(circle at top right, rgba(56, 189, 248, 0.14), transparent 55%),
+        radial-gradient(circle at bottom left, rgba(34, 197, 94, 0.18), transparent 55%),
+        rgba(9, 9, 11, 0.96);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .hero-card-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.95fr);
+      gap: 14px;
+      align-items: stretch;
+    }
+
+    @media (max-width: 540px) {
+      .hero-card-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .mini-pill {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-soft);
+      margin-bottom: 6px;
+    }
+
+    .stack-title {
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .stack-sub {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .stack-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 6px;
+      font-size: 12px;
+      color: #e5e7eb;
+    }
+
+    .stack-list li {
+      margin-bottom: 5px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .stack-bullet {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: rgba(148, 163, 184, 0.85);
+    }
+
+    .stack-tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .stack-tag {
+      font-size: 10px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      color: var(--text-soft);
+    }
+
+    .bottle-card {
+      border-radius: 18px;
+      padding: 14px 14px 12px;
+      border: 1px solid rgba(63, 63, 70, 0.9);
+      background: radial-gradient(circle at top, rgba(15, 23, 42, 0.9), #020617);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .bottle-glow {
+      position: absolute;
+      width: 160px;
+      height: 160px;
+      border-radius: 999px;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.32), transparent 65%);
+      top: -40px;
+      right: -60px;
+      opacity: 0.8;
+      pointer-events: none;
+    }
+
+    .bottle-header {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-soft);
+      margin-bottom: 3px;
+    }
+
+    .bottle-name {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .bottle-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+
+    .bottle-badge {
+      font-size: 10px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.75);
+      color: var(--text-soft);
+    }
+
+    .bottle-metrics {
+      font-size: 11px;
+      color: var(--text-soft);
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .bottle-metric-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #6b7280;
+    }
+
+    .bottle-metric-value {
+      font-size: 12px;
+      font-weight: 600;
+      color: #e5e7eb;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .small-badge {
+      font-size: 10px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      color: var(--text-soft);
+    }
+
+    /* GENERIC SECTIONS */
+
+    .section {
+      margin-top: 40px;
+    }
+
+    .section-header {
+      margin-bottom: 16px;
+    }
+
+    .section-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-soft);
+      margin-bottom: 4px;
+    }
+
+    .section-title {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .section-sub {
+      font-size: 14px;
+      color: var(--text-muted);
+      max-width: 640px;
+      line-height: 1.6;
+    }
+
+    .grid-3 {
+      margin-top: 16px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    @media (max-width: 960px) {
+      .grid-3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 700px) {
+      .grid-3 {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .card {
+      border-radius: var(--radius-lg);
+      padding: 16px 15px 14px;
+      border: 1px solid var(--border-subtle);
+      background: var(--bg-soft);
+    }
+
+    .card-pill {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-soft);
+      margin-bottom: 4px;
+    }
+
+    .card-title {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .card-body {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .card-list {
+      margin: 8px 0 0;
+      padding-left: 18px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* PRODUCT GRID */
+
+    .product-grid {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    @media (max-width: 960px) {
+      .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 720px) {
+      .product-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .product-card {
+      border-radius: var(--radius-lg);
+      padding: 16px 15px 14px;
+      border: 1px solid rgba(39, 39, 42, 0.9);
+      background:
+        radial-gradient(circle at top left, rgba(34, 197, 94, 0.18), transparent 55%),
+        rgba(9, 9, 11, 0.96);
+    }
+
+    .product-tag {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-soft);
+      margin-bottom: 4px;
+    }
+
+    .product-name {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .product-body {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .pill-chip {
+      font-size: 10px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.65);
+      color: var(--text-soft);
+    }
+
+    /* TWO COL AREA */
+
+    .two-col {
+      margin-top: 22px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.95fr);
+      gap: 18px;
+    }
+
+    @media (max-width: 880px) {
+      .two-col {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .founder-card {
+      border-radius: var(--radius-lg);
+      padding: 16px 16px 14px;
+      border: 1px solid var(--border-subtle);
+      background: var(--bg-soft);
+    }
+
+    .founder-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-soft);
+      margin-bottom: 4px;
+    }
+
+    .founder-name {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .founder-body {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .email-card {
+      border-radius: var(--radius-lg);
+      padding: 16px 16px 14px;
+      border: 1px solid rgba(34, 197, 94, 0.7);
+      background:
+        radial-gradient(circle at top right, rgba(34, 197, 94, 0.24), transparent 60%),
+        rgba(9, 9, 11, 0.96);
+    }
+
+    .email-title {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .email-sub {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .form-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+
+    .input {
+      min-width: 0;
+      flex: 1 1 170px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--text-main);
+      padding: 9px 14px;
+      font-size: 13px;
+      outline: none;
+    }
+
+    .input::placeholder {
+      color: #6b7280;
+    }
+
+    .form-hint {
+      font-size: 11px;
+      color: #9ca3af;
+    }
+
+    /* FAQ */
+
+    .faq-grid {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    @media (max-width: 780px) {
+      .faq-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .faq-item {
+      border-radius: var(--radius-lg);
+      padding: 14px 14px 12px;
+      border: 1px solid var(--border-subtle);
+      background: var(--bg-soft);
+    }
+
+    .faq-q {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .faq-a {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid rgba(15, 23, 42, 1);
+      margin-top: 40px;
+      padding-top: 16px;
+      font-size: 11px;
+      color: #6b7280;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .disclaimer {
+      margin-top: 6px;
+      font-size: 10px;
+      color: #6b7280;
+      max-width: 640px;
+      line-height: 1.45;
+    }
+
+    @media (max-width: 640px) {
+      footer {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- NAVBAR -->
+    <div class="nav-shell">
+      <nav class="nav">
+        <div class="brand">
+          <div class="brand-logo"><span>C</span></div>
+          <div>
+            <div class="brand-text-title">ClearPath Labs</div>
+            <div class="brand-text-sub">Evidence-Based Wellness</div>
+          </div>
+        </div>
+        <div class="nav-links">
+          <div class="nav-link" onclick="scrollToId('products')">System</div>
+          <div class="nav-link" onclick="scrollToId('approach')">Approach</div>
+          <div class="nav-link" onclick="scrollToId('how-it-works')">How it works</div>
+          <div class="nav-link" onclick="scrollToId('waitlist')">Early access</div>
+        </div>
+        <div class="nav-pill">
+          <span class="nav-pill-dot"></span>
+          <span>Formulas in development</span>
+        </div>
+      </nav>
+    </div>
+
+    <main class="max-w">
+      <!-- HERO -->
+      <section class="hero" id="top">
+        <div>
+          <div class="hero-pill">
+            <span class="hero-pill-emoji">✨</span>
+            <span>AM · PM · Recovery · Simple system</span>
+          </div>
+
+          <h1 class="hero-heading">
+            A <span class="gradient-text">clear path</span> to better
+            energy, sleep, and recovery.
+          </h1>
+
+          <p class="hero-sub">
+            ClearPath Labs is building a three-part daily protocol—
+            <b>AM, PM, and Recovery formulas</b>—designed to support clean energy,
+            deep sleep, and resiliency over the long haul. No kitchen-sink hype.
+          </p>
+
+          <div class="hero-actions">
+            <button class="btn-primary" type="button" onclick="scrollToId('waitlist')">
+              Join the early access list
+              <span>→</span>
+            </button>
+            <button class="btn-ghost" type="button" onclick="scrollToId('approach')">
+              <span class="btn-ghost-dot"></span>
+              See how we think about formulas
+            </button>
+          </div>
+
+          <div class="hero-meta">
+            <span><b>Focus:</b> Energy · Sleep · Recovery · Longevity</span>
+            <span><b>Phase:</b> Formulas &amp; manufacturing in progress</span>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Preview of ClearPath system">
+          <div class="hero-card-grid">
+            <div>
+              <div class="mini-pill">3-part daily protocol</div>
+              <div class="stack-title">One system, not twelve bottles.</div>
+              <div class="stack-sub">
+                The goal: stack a small set of evidence-based formulas that
+                actually work together—morning, night, and in between.
+              </div>
+              <ul class="stack-list">
+                <li>
+                  <span class="stack-bullet"></span>
+                  <span><b>AM:</b> Smooth focus and clean energy while respecting sleep.</span>
+                </li>
+                <li>
+                  <span class="stack-bullet"></span>
+                  <span><b>PM:</b> Help your body downshift into real recovery.</span>
+                </li>
+                <li>
+                  <span class="stack-bullet"></span>
+                  <span><b>Recovery:</b> Support for stress, training, and daily wear and tear.</span>
+                </li>
+              </ul>
+              <div class="stack-tag-row">
+                <div class="stack-tag">No proprietary blends</div>
+                <div class="stack-tag">Clinically-aligned dosages</div>
+                <div class="stack-tag">Transparent labels</div>
+              </div>
+            </div>
+
+            <div class="bottle-card">
+              <div class="bottle-glow"></div>
+              <div class="bottle-header">Preview</div>
+              <div class="bottle-name">ClearPath AM</div>
+              <div class="bottle-badges">
+                <div class="bottle-badge">Energy &amp; focus</div>
+                <div class="bottle-badge">Non-habit forming</div>
+              </div>
+              <div class="bottle-metrics">
+                <div>
+                  <div class="bottle-metric-label">Focus</div>
+                  <div class="bottle-metric-value">Clean &amp; steady</div>
+                </div>
+                <div>
+                  <div class="bottle-metric-label">Stimulants</div>
+                  <div class="bottle-metric-value">Thoughtful, minimal</div>
+                </div>
+                <div>
+                  <div class="bottle-metric-label">Transparency</div>
+                  <div class="bottle-metric-value">Full label</div>
+                </div>
+                <div>
+                  <div class="bottle-metric-label">Launch target</div>
+                  <div class="bottle-metric-value">2025</div>
+                </div>
+              </div>
+              <div class="badge-row">
+                <span class="small-badge">No artificial colors</span>
+                <span class="small-badge">Formulas in development</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <!-- PRODUCT SYSTEM -->
+      <section class="section" id="products">
+        <div class="section-header">
+          <div class="section-label">The ClearPath System</div>
+          <div class="section-title">Three formulas that cover your day.</div>
+          <p class="section-sub">
+            ClearPath Labs will launch with a focused trio: AM, PM, and Recovery.
+            Names and exact ingredient lists are in development, but the design
+            philosophy is already clear: do a few things well, every single day.
+          </p>
+        </div>
+
+        <div class="product-grid">
+          <article class="product-card">
+            <div class="product-tag">1 · Morning</div>
+            <h3 class="product-name">AM Formula</h3>
+            <p class="product-body">
+              A morning formula designed to support mental clarity, motivation,
+              and resilience—without leaving you wired at night.
+            </p>
+            <ul class="card-list">
+              <li>Supports focus and task follow-through.</li>
+              <li>Built to coexist with coffee, not fight it.</li>
+              <li>Aim: clean energy, not chaos.</li>
+            </ul>
+            <div class="pill-row">
+              <span class="pill-chip">Caffeine-conscious design</span>
+              <span class="pill-chip">Research-informed stacking</span>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-tag">2 · Night</div>
+            <h3 class="product-name">PM Formula</h3>
+            <p class="product-body">
+              A pre-sleep formula focused on helping your body drop into deeper,
+              more restorative sleep—without relying on heavy sedatives.
+            </p>
+            <ul class="card-list">
+              <li>Non-habit-forming approach to sleep support.</li>
+              <li>Prioritizes sleep quality over “knockout.”</li>
+              <li>Pairs with good nighttime habits.</li>
+            </ul>
+            <div class="pill-row">
+              <span class="pill-chip">Calming support</span>
+              <span class="pill-chip">Wake-without-hangover goal</span>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-tag">3 · Recovery</div>
+            <h3 class="product-name">Recovery Support</h3>
+            <p class="product-body">
+              A targeted formula aimed at helping you absorb stress, training,
+              and modern-life strain so you can show up again tomorrow.
+            </p>
+            <ul class="card-list">
+              <li>Built to stack with AM and PM, not compete.</li>
+              <li>Think: resilience and repair support.</li>
+              <li>For people who actually use their body and brain.</li>
+            </ul>
+            <div class="pill-row">
+              <span class="pill-chip">Stress &amp; recovery focused</span>
+              <span class="pill-chip">Daily-driver friendly</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- APPROACH / PHILOSOPHY -->
+      <section class="section" id="approach">
+        <div class="section-header">
+          <div class="section-label">Why ClearPath Labs</div>
+          <div class="section-title">Built for people who care what’s on the label.</div>
+          <p class="section-sub">
+            The supplement space doesn’t need more noise. It needs fewer,
+            better-thought-out formulas that respect your time, your sleep,
+            and your long-term health. That’s the lane ClearPath Labs is in.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <div class="card-pill">Principle #1</div>
+            <h3 class="card-title">Evidence and synergy first.</h3>
+            <p class="card-body">
+              We start with peer-reviewed research and then look at how ingredients
+              behave together—not just in isolation. The goal is synergy, not just
+              a long list on the back of a bottle.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-pill">Principle #2</div>
+            <h3 class="card-title">Transparent, grown-up labels.</h3>
+            <p class="card-body">
+              No proprietary blends that hide underdosed ingredients. Clear
+              amounts, plain language, and real reasons for why each compound
+              is there—and what it’s not trying to do.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-pill">Principle #3</div>
+            <h3 class="card-title">Designed for every day.</h3>
+            <p class="card-body">
+              You shouldn’t need twelve products on your counter. The ClearPath
+              system is meant to be sustainable: morning, night, and targeted
+              recovery. Enough to make a difference; not enough to rule your life.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- HOW IT WORKS -->
+      <section class="section" id="how-it-works">
+        <div class="section-header">
+          <div class="section-label">How It Works</div>
+          <div class="section-title">From idea to bottles on your counter.</div>
+          <p class="section-sub">
+            ClearPath Labs is early—but moving deliberately. If you care about
+            how products are built, you’re in the right place.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <div class="card-pill">Step 1</div>
+            <h3 class="card-title">Research &amp; formulation</h3>
+            <p class="card-body">
+              We’re working through ingredient shortlists, dosing ranges, and
+              compatibility—keeping an eye on AM/PM interactions so your day
+              and night formulas don’t fight each other.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-pill">Step 2</div>
+            <h3 class="card-title">Manufacturing partner</h3>
+            <p class="card-body">
+              The next major step is locking in a manufacturing partner who
+              can honor testing, sourcing, and batch consistency at a high level.
+              No shortcuts, even if that slows us down.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-pill">Step 3</div>
+            <h3 class="card-title">Testing &amp; launch</h3>
+            <p class="card-body">
+              Before broader release, early customers and friends of the brand
+              will get first access and feedback cycles. If you’re on the list,
+              you’ll hear about that before anyone else.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- FOUNDER + WAITLIST -->
+      <section class="section" id="waitlist">
+        <div class="two-col">
+          <article class="founder-card">
+            <div class="founder-label">A note from the founder</div>
+            <h3 class="founder-name">“I wanted something I could actually use every day.”</h3>
+            <p class="founder-body">
+              I started ClearPath Labs after getting tired of choosing between
+              underdosed, “feel nothing” products and overstimulated kitchen-sink
+              blends that wreck your sleep and your wallet.
+              <br /><br />
+              The mission is simple: build a small, honest line that respects
+              your long-term health, your energy, and your attention. No fake
+              urgency, no magic bullet claims—just thoughtful formulas for
+              people who actually care what they’re putting in their body.
+              <br /><br />
+              If that sounds like your lane, I’d be honored if you joined early.
+              <br /><br />
+              — Vince, Founder, ClearPath Labs
+            </p>
+          </article>
+
+          <article class="email-card">
+            <h3 class="email-title">Get early access and real updates.</h3>
+            <p class="email-sub">
+              Join the interest list to hear when ingredient panels, samples,
+              and pre-orders roll out. No spam. No weekly “content.” Just
+              meaningful updates.
+            </p>
+
+            <!-- Replace action with your email provider later -->
+            <form class="form" action="#" method="post">
+              <div class="form-row">
+                <input
+                  class="input"
+                  type="email"
+                  name="email"
+                  placeholder="Your best email"
+                  required
+                />
+                <button class="btn-primary" type="submit">
+                  Join the list
+                </button>
+              </div>
+              <div class="form-hint">
+                You can unsubscribe anytime. Your email won’t be shared or sold.
+              </div>
+            </form>
+
+            <div class="badge-row" style="margin-top:10px;">
+              <span class="small-badge">Formulas in development</span>
+              <span class="small-badge">Looking for the right manufacturer</span>
+              <span class="small-badge">Transparent from day one</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="section" id="faq">
+        <div class="section-header">
+          <div class="section-label">Questions</div>
+          <div class="section-title">A few answers up front.</div>
+          <p class="section-sub">
+            Still early. Still building. Here’s what we can say clearly now.
+          </p>
+        </div>
+
+        <div class="faq-grid">
+          <div class="faq-item">
+            <div class="faq-q">Are any products available to buy yet?</div>
+            <div class="faq-a">
+              Not yet. Formulas are in development and we’re in the process of
+              evaluating manufacturing partners. If you’re on the email list,
+              you’ll hear about samples and launch timelines first.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q">Will you publish full ingredient labels?</div>
+            <div class="faq-a">
+              Yes. The plan is full-label transparency: no proprietary blends
+              and no hidden dosages. If something is in a formula, you’ll know
+              exactly how much and why it’s there.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q">Who is ClearPath Labs for?</div>
+            <div class="faq-a">
+              People who care about performance, sleep, and long-term health—
+              and who want a simple system instead of chasing the latest hot
+              product every month.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q">Is this medical advice?</div>
+            <div class="faq-a">
+              No. ClearPath Labs products are not intended to diagnose, treat,
+              cure, or prevent any disease. Always talk to your healthcare
+              provider before starting any supplement protocol.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer>
+        <div>
+          © <span id="year"></span> ClearPath Labs. All rights reserved.
+          <div class="disclaimer">
+            ClearPath Labs products are currently in development and are not
+            available for purchase. Any future products will not be intended to
+            diagnose, treat, cure, or prevent any disease. Statements will not
+            be evaluated by the Food and Drug Administration.
+          </div>
+        </div>
+        <div>
+          <div class="footer-links">
+            <span>info@clearpathlabs.co</span>
+            <span>·</span>
+            <span>clearpathlabs.co</span>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    function scrollToId(id) {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
     }
 
     header {
@@ -890,4 +2045,5 @@ html
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
+
 </html>
