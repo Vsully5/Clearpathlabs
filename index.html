@@ -2,28 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>ClearPath Labs – Post-Viral & ANS Recovery Support Stack</title>
+  <title>ClearPath Labs – ClearFlow Post-Viral Recovery Support System</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="ClearPath Labs creates an AM, PM, and Recovery stack designed to support post-viral resilience, autonomic nervous system balance, energy, and deep sleep."
+    content="ClearPath Labs creates the ClearFlow AM, Rebuild Day, and ClearFlow PM supplements – a simple post-viral recovery support system focused on circulation, inflammation, mitochondria, nervous system balance, energy, and sleep."
   />
   <style>
     :root {
-      --bg: #020617;
-      --bg-soft: rgba(15, 23, 42, 0.98);
-      --bg-card: rgba(9, 9, 11, 0.98);
-      --accent: #22c55e;
-      --accent2: #38bdf8;
-      --accent-soft: rgba(34, 197, 94, 0.12);
-      --border-subtle: rgba(39, 39, 42, 0.9);
-      --border-soft: rgba(55, 65, 81, 0.9);
-      --text-main: #f9fafb;
-      --text-muted: #a1a1aa;
-      --text-soft: #71717a;
+      --bg-page: #f3f4f6;
+      --bg-surface: #ffffff;
+      --bg-soft: #f9fafb;
+      --accent: #0ea5e9;
+      --accent-dark: #0369a1;
+      --accent-green: #16a34a;
+      --border-subtle: #e5e7eb;
+      --border-strong: #d1d5db;
+      --text-main: #020617;
+      --text-muted: #4b5563;
+      --text-soft: #6b7280;
       --radius-lg: 18px;
       --radius-xl: 24px;
-      --shadow-soft: 0 22px 50px rgba(0, 0, 0, 0.65);
+      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.12);
     }
 
     * { box-sizing: border-box; }
@@ -31,8 +31,7 @@
     body {
       margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at top left, #111827 0, #020617 45%, #000 100%);
+      background: radial-gradient(circle at top, #e5f0ff 0, #f3f4f6 45%, #e5e7eb 100%);
       color: var(--text-main);
       -webkit-font-smoothing: antialiased;
     }
@@ -46,7 +45,7 @@
     }
 
     .max-w {
-      max-width: 1180px;
+      max-width: 1160px;
       margin: 0 auto;
       padding: 0 20px 60px;
     }
@@ -57,15 +56,15 @@
       position: sticky;
       top: 0;
       z-index: 40;
-      backdrop-filter: blur(18px);
-      background: linear-gradient(to bottom, rgba(2,6,23,0.96), rgba(2,6,23,0.8), transparent);
-      border-bottom: 1px solid rgba(15,23,42,1);
+      backdrop-filter: blur(16px);
+      background: rgba(255, 255, 255, 0.92);
+      border-bottom: 1px solid rgba(226, 232, 240, 0.9);
     }
 
     .nav {
-      max-width: 1180px;
+      max-width: 1160px;
       margin: 0 auto;
-      padding: 12px 20px 10px;
+      padding: 10px 20px 8px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -82,29 +81,30 @@
       width: 34px;
       height: 34px;
       border-radius: 12px;
-      background: conic-gradient(from 210deg, #0ea5e9, #22c55e, #a855f7, #0ea5e9);
+      background: conic-gradient(from 190deg, #0ea5e9, #22c55e, #0ea5e9);
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 0 24px rgba(56,189,248,0.7);
+      box-shadow: 0 0 20px rgba(37, 99, 235, 0.5);
     }
 
     .brand-logo span {
-      font-weight: 700;
+      font-weight: 800;
       font-size: 18px;
-      color: #020617;
+      color: #eff6ff;
     }
 
     .brand-text-title {
       font-weight: 700;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.1em;
       font-size: 14px;
       text-transform: uppercase;
+      color: #111827;
     }
 
     .brand-text-sub {
       font-size: 11px;
-      color: var(--text-muted);
+      color: var(--text-soft);
     }
 
     .nav-links {
@@ -122,8 +122,8 @@
     }
 
     .nav-link:hover {
-      color: #e5e7eb;
-      border-bottom-color: rgba(148,163,184,0.7);
+      color: #111827;
+      border-bottom-color: #cbd5e1;
     }
 
     .nav-cta {
@@ -133,18 +133,16 @@
       font-weight: 600;
       border: none;
       cursor: pointer;
-      background: linear-gradient(135deg, #22c55e, #14b8a6, #0ea5e9);
-      color: #020617;
-      box-shadow: 0 12px 30px rgba(34,197,94,0.4);
+      background: linear-gradient(135deg, #0ea5e9, #22c55e);
+      color: #f9fafb;
+      box-shadow: 0 12px 30px rgba(59, 130, 246, 0.35);
       display: inline-flex;
       align-items: center;
       gap: 8px;
       white-space: nowrap;
     }
 
-    .nav-cta span {
-      font-size: 16px;
-    }
+    .nav-cta span { font-size: 16px; }
 
     @media (max-width: 860px) {
       .nav {
@@ -161,7 +159,7 @@
 
     @media (max-width: 560px) {
       .nav {
-        padding: 10px 14px 8px;
+        padding: 8px 14px 6px;
       }
       .nav-links {
         font-size: 12px;
@@ -175,22 +173,20 @@
 
     /* HERO */
 
-    main {
-      padding-top: 20px;
-    }
+    main { padding-top: 20px; }
 
     .hero {
-      padding-top: 24px;
+      padding-top: 26px;
       display: grid;
-      grid-template-columns: minmax(0, 1.25fr) minmax(0, 1.05fr);
-      gap: 30px;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 1.05fr);
+      gap: 32px;
       align-items: center;
     }
 
     @media (max-width: 900px) {
       .hero {
         grid-template-columns: minmax(0, 1fr);
-        padding-top: 20px;
+        padding-top: 22px;
       }
     }
 
@@ -198,48 +194,48 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 7px 14px;
+      padding: 6px 12px;
       border-radius: 999px;
-      border: 1px solid rgba(148,163,184,0.5);
-      background: rgba(15,23,42,0.9);
+      border: 1px solid #dbeafe;
+      background: #eff6ff;
       font-size: 11px;
       text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--text-soft);
+      letter-spacing: 0.14em;
+      color: #1d4ed8;
     }
 
     .hero-pill-dot {
-      width: 7px;
-      height: 7px;
+      width: 8px;
+      height: 8px;
       border-radius: 999px;
-      background: var(--accent);
-      box-shadow: 0 0 10px rgba(34,197,94,0.8);
+      background: #22c55e;
+      box-shadow: 0 0 10px rgba(34, 197, 94, 0.9);
     }
 
     .hero-heading {
       font-size: clamp(32px, 5vw, 44px);
-      line-height: 1.05;
+      line-height: 1.04;
       font-weight: 800;
-      letter-spacing: -0.04em;
+      letter-spacing: -0.05em;
       margin: 16px 0 10px;
+      color: #020617;
     }
 
     .gradient-text {
-      background: linear-gradient(120deg, #22c55e, #2dd4bf, #38bdf8);
+      background: linear-gradient(125deg, #0ea5e9, #22c55e);
       -webkit-background-clip: text;
       color: transparent;
     }
 
     .hero-sub {
       font-size: 15px;
-      line-height: 1.65;
+      line-height: 1.7;
       color: var(--text-muted);
       max-width: 540px;
     }
 
     .hero-sub b {
-      color: #e5e7eb;
-      font-weight: 600;
+      color: #111827;
     }
 
     .hero-actions {
@@ -257,30 +253,29 @@
       cursor: pointer;
       font-size: 14px;
       font-weight: 600;
-      background: linear-gradient(135deg, #22c55e, #14b8a6, #0ea5e9);
-      color: #020617;
-      box-shadow: 0 14px 34px rgba(22,163,74,0.5);
+      background: linear-gradient(135deg, #0ea5e9, #22c55e);
+      color: #f9fafb;
+      box-shadow: 0 14px 32px rgba(37, 99, 235, 0.4);
       display: inline-flex;
       align-items: center;
       gap: 8px;
       white-space: nowrap;
     }
 
-    .btn-primary span {
-      font-size: 16px;
-    }
+    .btn-primary span { font-size: 16px; }
 
     .btn-ghost {
       border-radius: 999px;
       padding: 10px 18px;
       font-size: 13px;
       font-weight: 500;
-      border: 1px solid rgba(148,163,184,0.7);
-      background: rgba(15,23,42,0.9);
-      color: var(--text-muted);
+      border: 1px solid #cbd5e1;
+      background: #ffffff;
+      color: var(--text-soft);
       display: inline-flex;
       align-items: center;
       gap: 8px;
+      cursor: pointer;
     }
 
     .hero-meta {
@@ -293,120 +288,68 @@
     }
 
     .hero-meta span b {
-      color: #e5e7eb;
-      font-weight: 600;
+      color: #111827;
     }
 
-    /* HERO PRODUCT CLUSTER */
+    /* HERO IMAGE CARD */
 
-    .hero-product-card {
+    .hero-img-card {
       border-radius: var(--radius-xl);
-      padding: 18px 18px 16px;
-      border: 1px solid var(--border-soft);
-      background:
-        radial-gradient(circle at top right, rgba(56,189,248,0.18), transparent 60%),
-        radial-gradient(circle at bottom left, rgba(34,197,94,0.22), transparent 55%),
-        rgba(9,9,11,0.98);
+      padding: 18px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
       box-shadow: var(--shadow-soft);
-      position: relative;
+    }
+
+    .hero-img-inner {
+      border-radius: 16px;
+      background: radial-gradient(circle at top, #eff6ff 0, #ffffff 60%);
+      padding: 18px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .hero-img-headline {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #111827;
+    }
+
+    .hero-img-sub {
+      font-size: 12px;
+      color: var(--text-soft);
+      margin-bottom: 12px;
+    }
+
+    .hero-stack-img {
+      width: 100%;
+      border-radius: 14px;
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
       overflow: hidden;
     }
 
-    .hero-product-header {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      align-items: center;
-      margin-bottom: 10px;
-    }
-
-    .hero-product-title {
-      font-size: 15px;
-      font-weight: 600;
-    }
-
-    .hero-product-tag {
-      font-size: 11px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(34,197,94,0.5);
-      background: var(--accent-soft);
-      color: #bbf7d0;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-    }
-
-    .hero-bottle-row {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 10px;
-      margin-bottom: 10px;
-    }
-
-    @media (max-width: 520px) {
-      .hero-bottle-row {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-    }
-
-    .hero-bottle {
-      border-radius: 14px;
-      padding: 10px 9px 9px;
-      border: 1px solid rgba(63,63,70,0.9);
-      background: radial-gradient(circle at top, rgba(15,23,42,0.95), #020617);
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-      align-items: flex-start;
-    }
-
-    .hero-bottle-img {
+    .hero-stack-img img {
       width: 100%;
-      aspect-ratio: 3/4;
-      border-radius: 10px;
-      border: 1px solid rgba(75,85,99,0.8);
-      background: radial-gradient(circle at 30% 0%, rgba(34,197,94,0.18), transparent 60%), #020617;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 11px;
-      color: var(--text-soft);
-      text-align: center;
-      padding: 6px;
+      display: block;
     }
 
-    .hero-bottle-name {
-      font-size: 12px;
-      font-weight: 600;
-    }
-
-    .hero-bottle-sub {
-      font-size: 11px;
-      color: var(--text-soft);
-    }
-
-    .hero-product-foot {
+    .hero-img-foot {
       display: flex;
       justify-content: space-between;
-      align-items: center;
       gap: 10px;
       font-size: 11px;
       color: var(--text-soft);
+      margin-top: 10px;
     }
 
-    .hero-product-foot strong {
-      color: #e5e7eb;
-    }
+    .hero-img-foot strong { color: #111827; }
 
     /* SECTIONS */
 
-    .section {
-      margin-top: 40px;
-    }
+    .section { margin-top: 40px; }
 
-    .section-header {
-      margin-bottom: 16px;
-    }
+    .section-header { margin-bottom: 18px; }
 
     .section-label {
       font-size: 11px;
@@ -420,6 +363,7 @@
       font-size: 22px;
       font-weight: 700;
       margin-bottom: 4px;
+      color: #020617;
     }
 
     .section-sub {
@@ -429,14 +373,16 @@
       line-height: 1.7;
     }
 
+    /* PRODUCT GRID */
+
     .product-grid {
-      margin-top: 18px;
+      margin-top: 20px;
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 16px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
     }
 
-    @media (max-width: 1040px) {
+    @media (max-width: 980px) {
       .product-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
@@ -450,14 +396,13 @@
 
     .product-card {
       border-radius: var(--radius-lg);
-      padding: 14px 14px 14px;
+      padding: 16px 16px 14px;
+      background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
-      background:
-        radial-gradient(circle at top left, rgba(34,197,94,0.18), transparent 55%),
-        var(--bg-card);
+      box-shadow: var(--shadow-soft);
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 10px;
     }
 
     .product-tag {
@@ -468,8 +413,33 @@
     }
 
     .product-name {
-      font-size: 16px;
-      font-weight: 600;
+      font-size: 18px;
+      font-weight: 700;
+      color: #020617;
+    }
+
+    .product-subtitle {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #0f766e;
+    }
+
+    .product-img-wrap {
+      width: 100%;
+      border-radius: 14px;
+      border: 1px solid var(--border-subtle);
+      background: linear-gradient(180deg, #f9fafb, #ffffff);
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .product-img-wrap img {
+      width: 100%;
+      max-width: 260px;
+      display: block;
     }
 
     .product-body {
@@ -482,46 +452,48 @@
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
+      margin-top: 4px;
     }
 
     .pill-chip {
       font-size: 10px;
       padding: 3px 8px;
       border-radius: 999px;
-      border: 1px solid rgba(148,163,184,0.7);
+      border: 1px solid #cbd5e1;
+      background: #f9fafb;
       color: var(--text-soft);
     }
 
-    .product-price-row {
-      margin-top: 4px;
+    .product-cta-row {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 10px;
       font-size: 12px;
       color: var(--text-soft);
+      margin-top: 4px;
     }
 
-    .product-price-row strong {
-      color: #e5e7eb;
-    }
+    .product-cta-row strong { color: #111827; }
 
     .btn-mini {
       border-radius: 999px;
-      padding: 6px 10px;
+      padding: 6px 11px;
       font-size: 11px;
-      border: 1px solid rgba(148,163,184,0.7);
-      background: rgba(15,23,42,0.9);
-      color: var(--text-muted);
+      border: 1px solid #bfdbfe;
+      background: #eff6ff;
+      color: #1d4ed8;
       cursor: pointer;
+      font-weight: 500;
     }
 
-    /* POST-VIRAL & ANS SECTION */
+    /* POST-VIRAL / ANS */
 
     .grid-3 {
-      margin-top: 18px;
+      margin-top: 20px;
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
+      gap: 18px;
     }
 
     @media (max-width: 980px) {
@@ -538,9 +510,10 @@
 
     .card {
       border-radius: var(--radius-lg);
-      padding: 16px 15px 14px;
+      padding: 16px 16px 14px;
+      background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
-      background: var(--bg-soft);
+      box-shadow: var(--shadow-soft);
     }
 
     .card-pill {
@@ -555,6 +528,7 @@
       font-size: 15px;
       font-weight: 600;
       margin-bottom: 6px;
+      color: #020617;
     }
 
     .card-body {
@@ -570,64 +544,13 @@
       color: var(--text-muted);
     }
 
-    /* INGREDIENT HIGHLIGHTS */
-
-    .grid-4 {
-      margin-top: 18px;
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 14px;
-    }
-
-    @media (max-width: 1040px) {
-      .grid-4 {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    @media (max-width: 720px) {
-      .grid-4 {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
-    .ingredient-card {
-      border-radius: var(--radius-lg);
-      padding: 14px 12px 12px;
-      border: 1px solid rgba(55,65,81,0.9);
-      background: rgba(9,9,11,0.98);
-      font-size: 13px;
-      color: var(--text-muted);
-    }
-
-    .ingredient-title {
-      font-size: 14px;
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-
-    .ingredient-chip-row {
-      margin-top: 6px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-
-    .ingredient-chip {
-      font-size: 10px;
-      padding: 3px 7px;
-      border-radius: 999px;
-      border: 1px solid rgba(148,163,184,0.7);
-      color: var(--text-soft);
-    }
-
-    /* FOUNDER + EMAIL */
+    /* TWO-COL SECTION */
 
     .two-col {
-      margin-top: 20px;
+      margin-top: 22px;
       display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.95fr);
-      gap: 18px;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 20px;
     }
 
     @media (max-width: 880px) {
@@ -639,11 +562,12 @@
     .founder-card {
       border-radius: var(--radius-lg);
       padding: 16px 16px 14px;
+      background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
-      background: var(--bg-soft);
+      box-shadow: var(--shadow-soft);
       font-size: 13px;
       color: var(--text-muted);
-      line-height: 1.75;
+      line-height: 1.8;
     }
 
     .founder-label {
@@ -655,25 +579,25 @@
     }
 
     .founder-name {
-      font-size: 15px;
+      font-size: 16px;
       font-weight: 600;
-      margin-bottom: 4px;
-      color: #e5e7eb;
+      margin-bottom: 6px;
+      color: #020617;
     }
 
     .email-card {
       border-radius: var(--radius-lg);
       padding: 16px 16px 14px;
-      border: 1px solid rgba(34,197,94,0.7);
-      background:
-        radial-gradient(circle at top right, rgba(34,197,94,0.24), transparent 60%),
-        rgba(9,9,11,0.98);
+      background: var(--bg-soft);
+      border: 1px solid #bfdbfe;
+      box-shadow: var(--shadow-soft);
     }
 
     .email-title {
       font-size: 16px;
       font-weight: 600;
       margin-bottom: 4px;
+      color: #020617;
     }
 
     .email-sub {
@@ -693,8 +617,8 @@
       min-width: 0;
       flex: 1 1 190px;
       border-radius: 999px;
-      border: 1px solid rgba(148,163,184,0.8);
-      background: rgba(15,23,42,0.96);
+      border: 1px solid #cbd5e1;
+      background: #ffffff;
       color: var(--text-main);
       padding: 9px 14px;
       font-size: 13px;
@@ -702,12 +626,12 @@
     }
 
     .input::placeholder {
-      color: #6b7280;
+      color: #9ca3af;
     }
 
     .form-hint {
       font-size: 11px;
-      color: #9ca3af;
+      color: var(--text-soft);
     }
 
     .badge-row {
@@ -721,17 +645,18 @@
       font-size: 10px;
       padding: 4px 8px;
       border-radius: 999px;
-      border: 1px solid rgba(148,163,184,0.7);
+      border: 1px solid #e5e7eb;
+      background: #ffffff;
       color: var(--text-soft);
     }
 
     /* FAQ */
 
     .faq-grid {
-      margin-top: 18px;
+      margin-top: 20px;
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
+      gap: 18px;
     }
 
     @media (max-width: 780px) {
@@ -743,18 +668,19 @@
     .faq-item {
       border-radius: var(--radius-lg);
       padding: 14px 14px 12px;
+      background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
-      background: var(--bg-soft);
+      box-shadow: var(--shadow-soft);
       font-size: 13px;
       color: var(--text-muted);
-      line-height: 1.65;
+      line-height: 1.7;
     }
 
     .faq-q {
       font-size: 14px;
       font-weight: 600;
       margin-bottom: 4px;
-      color: #e5e7eb;
+      color: #020617;
     }
 
     .faq-a small {
@@ -765,7 +691,7 @@
     /* FOOTER */
 
     footer {
-      border-top: 1px solid rgba(15,23,42,1);
+      border-top: 1px solid #e5e7eb;
       margin-top: 40px;
       padding-top: 16px;
       font-size: 11px;
@@ -788,13 +714,11 @@
       font-size: 10px;
       color: #6b7280;
       max-width: 680px;
-      line-height: 1.45;
+      line-height: 1.5;
     }
 
     @media (max-width: 640px) {
-      footer {
-        flex-direction: column;
-      }
+      footer { flex-direction: column; }
     }
   </style>
 </head>
@@ -806,18 +730,18 @@
         <div class="brand">
           <div class="brand-logo"><span>C</span></div>
           <div>
-            <div class="brand-text-title">ClearPath Labs</div>
-            <div class="brand-text-sub">Post-Viral &amp; ANS Support</div>
+            <div class="brand-text-title">CLEARPATH LABS</div>
+            <div class="brand-text-sub">Post-Viral Recovery Support System</div>
           </div>
         </div>
         <div class="nav-links">
           <div class="nav-link" onclick="scrollToId('products')">Products</div>
           <div class="nav-link" onclick="scrollToId('postviral')">Post-viral</div>
-          <div class="nav-link" onclick="scrollToId('ingredients')">Ingredients</div>
+          <div class="nav-link" onclick="scrollToId('waitlist')">Early access</div>
           <div class="nav-link" onclick="scrollToId('faq')">FAQ</div>
         </div>
         <button class="nav-cta" type="button" onclick="scrollToId('products')">
-          Shop the stack
+          View ClearFlow System
           <span>→</span>
         </button>
       </nav>
@@ -829,368 +753,277 @@
         <div>
           <div class="hero-pill">
             <span class="hero-pill-dot"></span>
-            <span>Designed for recovery, not quick fixes</span>
+            <span>ClearFlow post-viral recovery support system</span>
           </div>
 
           <h1 class="hero-heading">
-            Recovery, <span class="gradient-text">rewired</span>.
+            A simple, clinical-feeling stack for
+            <span class="gradient-text">post-viral recovery support</span>.
           </h1>
 
           <p class="hero-sub">
-            ClearPath Labs is developing a three-part stack—<b>AM, PM, and Recovery</b>—
-            built to support post-viral resilience, autonomic nervous system balance,
-            better sleep, and cleaner energy. Thoughtful ingredients, no chaos.
+            ClearPath Labs is developing the <b>ClearFlow Recovery System</b> –
+            three coordinated supplements designed to support circulation,
+            inflammation balance, mitochondrial energy, and nervous system
+            recovery after viral and stress hits.
           </p>
 
           <div class="hero-actions">
             <button class="btn-primary" type="button" onclick="scrollToId('products')">
-              View products &amp; benefits
+              See ClearFlow AM · Day · PM
               <span>→</span>
             </button>
             <button class="btn-ghost" type="button" onclick="scrollToId('postviral')">
-              How this helps after viral stress
+              How this fits into post-viral recovery
             </button>
           </div>
 
           <div class="hero-meta">
-            <span><b>Focus:</b> Energy · Sleep · ANS balance · Recovery</span>
-            <span><b>Status:</b> Formulas in development · manufacturer selection next</span>
+            <span><b>System:</b> ClearFlow AM · Rebuild Day · ClearFlow PM</span>
+            <span><b>Focus:</b> Circulation · Inflammation &amp; mitochondria · ANS &amp; sleep</span>
           </div>
         </div>
 
-        <aside class="hero-product-card" aria-label="ClearPath Recovery Stack preview">
-          <div class="hero-product-header">
-            <div>
-              <div class="hero-product-title">The ClearPath Recovery Stack</div>
-              <div style="font-size:12px;color:var(--text-soft);">
-                One protocol. Three bottles. Morning, night, and recovery in between.
+        <aside class="hero-img-card" aria-label="ClearFlow Recovery System bottle preview">
+          <div class="hero-img-inner">
+            <div class="hero-img-headline">ClearFlow Recovery System</div>
+            <div class="hero-img-sub">
+              Three coordinated formulas, one daily protocol – designed to feel at home
+              in a clinician’s office or on your kitchen counter.
+            </div>
+            <div class="hero-stack-img">
+              <!-- HERO STACK IMAGE -->
+              <!-- Upload images/clearpath-stack.png in your repo -->
+              <img src="images/clearpath-stack.png" alt="ClearPath Labs ClearFlow Recovery System bottles" />
+            </div>
+            <div class="hero-img-foot">
+              <div>
+                <strong>Visual shown:</strong><br />
+                ClearFlow AM, Rebuild Day, ClearFlow PM stack render.
               </div>
-            </div>
-            <div class="hero-product-tag">Stack preview</div>
-          </div>
-
-          <div class="hero-bottle-row">
-            <div class="hero-bottle">
-              <div class="hero-bottle-img">
-                <!-- Replace with real image later -->
-                AM bottle preview<br />/images/clearpath-am.png
+              <div>
+                <strong>Status:</strong><br />
+                Formulas &amp; label text in development.
               </div>
-              <div class="hero-bottle-name">ClearPath AM</div>
-              <div class="hero-bottle-sub">Energy &amp; focus support</div>
-            </div>
-            <div class="hero-bottle">
-              <div class="hero-bottle-img">
-                PM bottle preview<br />/images/clearpath-pm.png
-              </div>
-              <div class="hero-bottle-name">ClearPath PM</div>
-              <div class="hero-bottle-sub">Sleep &amp; downshift support</div>
-            </div>
-            <div class="hero-bottle">
-              <div class="hero-bottle-img">
-                Recovery bottle preview<br />/images/clearpath-recovery.png
-              </div>
-              <div class="hero-bottle-name">ClearPath Recovery</div>
-              <div class="hero-bottle-sub">Stress &amp; repair support</div>
-            </div>
-          </div>
-
-          <div class="hero-product-foot">
-            <div>
-              <strong>Built for the long game.</strong><br />
-              Stackable, label-transparent formulas designed to work together.
-            </div>
-            <div>
-              <strong>Launch target:</strong><br />
-              2025 (early access first)
             </div>
           </div>
         </aside>
       </section>
 
-      <!-- PRODUCTS / SHOP STYLE SECTION -->
+      <!-- PRODUCTS -->
       <section class="section" id="products">
         <div class="section-header">
           <div class="section-label">Products</div>
-          <div class="section-title">Three formulas. One recovery system.</div>
+          <div class="section-title">The ClearFlow Recovery System.</div>
           <p class="section-sub">
-            Instead of chasing a new supplement every month, ClearPath Labs is building
-            a small, focused system you can actually live with: AM for daytime clarity,
-            PM for deep recovery, and a Recovery formula to support your nervous system
-            and stress response along the way.
+            Instead of chasing a new supplement every month, ClearFlow is built as one
+            integrated system: <b>ClearFlow AM</b> for circulation and enzyme support,
+            <b>Rebuild Day</b> for inflammation &amp; mitochondria, and
+            <b>ClearFlow PM</b> for nervous system &amp; sleep support.
           </p>
         </div>
 
         <div class="product-grid">
+          <!-- CLEARFLOW AM -->
           <article class="product-card">
-            <div class="product-tag">1 · Morning</div>
-            <h3 class="product-name">ClearPath AM</h3>
-            <p class="product-body">
-              A daytime formula created to support focus, motivation, and the ability
-              to get through real life post-viral—without relying on harsh stimulants
-              that wreck your sleep later.
-            </p>
-            <div class="pill-row">
-              <span class="pill-chip">Clean energy support</span>
-              <span class="pill-chip">Productivity &amp; focus</span>
-              <span class="pill-chip">Caffeine-conscious design</span>
+            <div class="product-tag">Step 1 · Morning</div>
+            <div class="product-name">ClearFlow AM</div>
+            <div class="product-subtitle">Circulation &amp; Enzyme Support</div>
+
+            <div class="product-img-wrap">
+              <!-- Upload images/clearflow-am.png -->
+              <img src="images/clearflow-am.png" alt="ClearFlow AM bottle" />
             </div>
-            <div class="product-price-row">
+
+            <p class="product-body">
+              Formulated to support healthy circulation, enzymatic activity, and
+              oxygen delivery – so your day starts with a stronger foundation.
+              ClearFlow AM is designed as the “open the system” part of the protocol.
+            </p>
+
+            <div class="pill-row">
+              <span class="pill-chip">Supports healthy circulation</span>
+              <span class="pill-chip">Helps promote balanced enzymes</span>
+              <span class="pill-chip">Pairs with morning hydration &amp; movement</span>
+            </div>
+
+            <div class="product-cta-row">
               <div>
-                <strong>Coming soon</strong><br />
-                30 servings · capsule formula
+                <strong>Use:</strong> Morning, with or without food<br />
+                90-capsule bottle · Daily use
               </div>
               <button class="btn-mini" type="button" onclick="scrollToId('waitlist')">
-                Get notified
+                Get AM updates
               </button>
             </div>
           </article>
 
+          <!-- REBUILD DAY -->
           <article class="product-card">
-            <div class="product-tag">2 · Night</div>
-            <h3 class="product-name">ClearPath PM</h3>
-            <p class="product-body">
-              A PM formula designed to help your body downshift and stay asleep longer,
-              supporting deeper, more restorative rest so your system can actually
-              recover from the day.
-            </p>
-            <div class="pill-row">
-              <span class="pill-chip">Sleep quality focus</span>
-              <span class="pill-chip">Non-habit forming</span>
-              <span class="pill-chip">Wake-without-fog goal</span>
+            <div class="product-tag">Step 2 · Midday</div>
+            <div class="product-name">Rebuild Day</div>
+            <div class="product-subtitle">Inflammation &amp; Mitochondria Support</div>
+
+            <div class="product-img-wrap">
+              <!-- Upload images/rebuild-day.png -->
+              <img src="images/rebuild-day.png" alt="Rebuild Day bottle" />
             </div>
-            <div class="product-price-row">
+
+            <p class="product-body">
+              Built to support immune and inflammatory balance alongside mitochondrial
+              energy production. Rebuild Day is the “repair and refuel” piece of
+              the ClearFlow system, aimed at people working through post-viral load.
+            </p>
+
+            <div class="pill-row">
+              <span class="pill-chip">Supports immune &amp; inflammatory balance</span>
+              <span class="pill-chip">Mitochondrial energy support</span>
+              <span class="pill-chip">Pairs with lunch or early afternoon</span>
+            </div>
+
+            <div class="product-cta-row">
               <div>
-                <strong>In development</strong><br />
-                Calming, supportive blend
+                <strong>Use:</strong> Midday, with food<br />
+                90-capsule bottle · Daily use
               </div>
               <button class="btn-mini" type="button" onclick="scrollToId('waitlist')">
-                Join early list
+                Get Rebuild Day updates
               </button>
             </div>
           </article>
 
+          <!-- CLEARFLOW PM -->
           <article class="product-card">
-            <div class="product-tag">3 · Recovery</div>
-            <h3 class="product-name">ClearPath Recovery</h3>
-            <p class="product-body">
-              A targeted formula built to support healthy autonomic nervous system
-              balance, stress resilience, and post-viral recovery—so “bouncing back”
-              feels more possible.
-            </p>
-            <div class="pill-row">
-              <span class="pill-chip">ANS support</span>
-              <span class="pill-chip">Stress &amp; resilience</span>
-              <span class="pill-chip">Post-viral focus</span>
-            </div>
-            <div class="product-price-row">
-              <div>
-                <strong>Concept stage</strong><br />
-                Designed to stack with AM &amp; PM
-              </div>
-              <button class="btn-mini" type="button" onclick="scrollToId('postviral')">
-                See how it helps
-              </button>
-            </div>
-          </article>
+            <div class="product-tag">Step 3 · Night</div>
+            <div class="product-name">ClearFlow PM</div>
+            <div class="product-subtitle">Nervous System &amp; Sleep Support</div>
 
-          <article class="product-card">
-            <div class="product-tag">Stack</div>
-            <h3 class="product-name">The ClearPath Recovery Stack</h3>
-            <p class="product-body">
-              All three formulas working together. One stack aimed at supporting
-              the way you wake, perform, rest, and repair—especially after viral
-              hits and chronic stress.
-            </p>
-            <div class="pill-row">
-              <span class="pill-chip">AM + PM + Recovery</span>
-              <span class="pill-chip">System, not a random pile</span>
-              <span class="pill-chip">Built for consistency</span>
+            <div class="product-img-wrap">
+              <!-- Upload images/clearflow-pm.png -->
+              <img src="images/clearflow-pm.png" alt="ClearFlow PM bottle" />
             </div>
-            <div class="product-price-row">
+
+            <p class="product-body">
+              Designed to support restful sleep, a calmer stress response, and
+              overnight nervous system recovery. ClearFlow PM is about helping
+              your system downshift so daytime repair can actually stick.
+            </p>
+
+            <div class="pill-row">
+              <span class="pill-chip">Supports restful sleep</span>
+              <span class="pill-chip">Promotes calm stress response</span>
+              <span class="pill-chip">Supports overnight ANS recovery</span>
+            </div>
+
+            <div class="product-cta-row">
               <div>
-                <strong>Founding customer pricing</strong><br />
-                Details announced to email list first.
+                <strong>Use:</strong> 30–60 minutes before bed<br />
+                90-capsule bottle · Non-habit forming design
               </div>
               <button class="btn-mini" type="button" onclick="scrollToId('waitlist')">
-                Reserve early access
+                Get PM updates
               </button>
             </div>
           </article>
         </div>
       </section>
 
-      <!-- POST-VIRAL & ANS SECTION -->
+      <!-- POST-VIRAL & ANS -->
       <section class="section" id="postviral">
         <div class="section-header">
-          <div class="section-label">Post-viral &amp; Autonomic Nervous System</div>
-          <div class="section-title">Support for a system that’s been through it.</div>
+          <div class="section-label">Post-viral &amp; autonomic nervous system</div>
+          <div class="section-title">Supporting the systems that feel “off” after viral stress.</div>
           <p class="section-sub">
-            Many people feel “off” long after a viral hit—energy swings, wired-but-tired
-            nights, and a nervous system that feels stuck. ClearPath Labs is building
-            formulas that aim to support the systems behind that experience, not just
-            mask it. None of this is medical treatment—but it is designed with recovery
-            in mind.
+            Many people describe a mix of fatigue, poor sleep, and feeling “stuck on”
+            long after a viral hit. The ClearFlow system is being designed to support
+            healthy circulation, inflammation balance, mitochondrial function, and
+            nervous system tone – the background pieces that can shape how recovery
+            feels day to day.
           </p>
         </div>
 
         <div class="grid-3">
           <article class="card">
-            <div class="card-pill">Post-viral reality</div>
-            <h3 class="card-title">Energy that doesn’t bounce back.</h3>
+            <div class="card-pill">Circulation &amp; oxygen delivery</div>
+            <h3 class="card-title">Starting with the basics: flow.</h3>
             <p class="card-body">
-              After viral stress, it’s common to feel like your battery never fully
-              charges. The AM and Recovery formulas are being shaped around supporting
-              healthy mitochondrial function, stress response, and focus—so getting
-              through the day feels a little more manageable.
+              ClearFlow AM focuses on supporting healthy circulation and enzymatic
+              activity. The idea: if blood flow and oxygen delivery are more
+              supported, everything else you’re doing for recovery has a better
+              chance to land.
             </p>
             <ul class="card-list">
-              <li>Support for sustained daytime energy.</li>
-              <li>Designed to avoid “crash” patterns.</li>
-              <li>Built with long-term use in mind.</li>
+              <li>Morning-anchored circulation support.</li>
+              <li>Pairs with hydration, light movement, breathwork.</li>
+              <li>Built to be a daily foundation, not a spike.</li>
             </ul>
           </article>
 
           <article class="card">
-            <div class="card-pill">ANS balance</div>
-            <h3 class="card-title">Sympathetic vs. parasympathetic.</h3>
+            <div class="card-pill">Inflammation &amp; mitochondria</div>
+            <h3 class="card-title">Helping your system rebuild during the day.</h3>
             <p class="card-body">
-              Your autonomic nervous system (ANS) has two main modes: “go” (sympathetic)
-              and “rest” (parasympathetic). ClearPath PM and Recovery are being designed
-              with ingredients that may support calm, relaxation, and healthy stress
-              signaling—so your system can better find neutral again.
+              Rebuild Day is aimed at the “why am I still wiped?” part of recovery –
+              supporting balanced inflammatory signals and mitochondrial energy
+              output so your baseline can slowly move in the right direction.
             </p>
             <ul class="card-list">
-              <li>Support for downshifting at night.</li>
-              <li>Help for feeling less “stuck on.”</li>
-              <li>Focused on balance, not sedation.</li>
+              <li>Focus on steady, sustainable support.</li>
+              <li>Targets daytime repair, not hype energy.</li>
+              <li>Designed to stack cleanly with AM &amp; PM.</li>
             </ul>
           </article>
 
           <article class="card">
-            <div class="card-pill">Whole-day support</div>
-            <h3 class="card-title">Morning, night, and the space between.</h3>
+            <div class="card-pill">Nervous system &amp; sleep</div>
+            <h3 class="card-title">Letting the autonomic nervous system exhale.</h3>
             <p class="card-body">
-              The stack is meant to follow your actual day: how you wake, how you
-              perform, and how you come down. Instead of relying on one do-it-all
-              product, ClearPath splits support into focused formulas that can be
-              tuned and refined over time.
+              ClearFlow PM is about supporting a calmer, more parasympathetic-leaning
+              night so your body can do the work it was designed to do during sleep.
+              Less “tired and wired,” more “finally off.”
             </p>
             <ul class="card-list">
-              <li>AM: support for clarity and drive.</li>
-              <li>PM: support for deeper rest.</li>
-              <li>Recovery: support for resilience.</li>
+              <li>Supports transition into sleep.</li>
+              <li>Aims at quality, not just sedation.</li>
+              <li>Built to respect next-day clarity.</li>
             </ul>
           </article>
         </div>
-      </section>
-
-      <!-- INGREDIENT HIGHLIGHTS -->
-      <section class="section" id="ingredients">
-        <div class="section-header">
-          <div class="section-label">Formula Direction</div>
-          <div class="section-title">Ingredient categories we care about.</div>
-          <p class="section-sub">
-            Exact formulas are still in motion, but the direction is clear: ingredients
-            chosen for a reason, in amounts that respect the research where it exists,
-            and in combinations that make sense for post-viral and ANS support.
-            Placeholder examples below will be refined as formulas lock in.
-          </p>
-        </div>
-
-        <div class="grid-4">
-          <article class="ingredient-card">
-            <div class="ingredient-title">Nervous system &amp; calm</div>
-            <div>
-              Think along the lines of:<br />
-              <em>Magnesium glycinate, L-theanine, glycine, mild adaptogens*</em>—
-              ingredients often explored for calming support, stress resilience,
-              and sleep quality.
-            </div>
-            <div class="ingredient-chip-row">
-              <span class="ingredient-chip">Calming support</span>
-              <span class="ingredient-chip">Sleep depth focus</span>
-            </div>
-          </article>
-
-          <article class="ingredient-card">
-            <div class="ingredient-title">Energy &amp; mitochondrial support</div>
-            <div>
-              Ingredients often discussed for mitochondrial and energy support
-              (for example: B-vitamins, CoQ10, certain antioxidants*) may inform
-              the AM and Recovery formulas—always with an eye on not overdoing it.
-            </div>
-            <div class="ingredient-chip-row">
-              <span class="ingredient-chip">Daytime function</span>
-              <span class="ingredient-chip">Post-viral fatigue focus</span>
-            </div>
-          </article>
-
-          <article class="ingredient-card">
-            <div class="ingredient-title">Stress &amp; HPA axis</div>
-            <div>
-              Adaptogens and other compounds that may help the body respond to
-              everyday stress are being considered carefully—especially how they
-              interact with both the nervous system and sleep.
-            </div>
-            <div class="ingredient-chip-row">
-              <span class="ingredient-chip">Stress response</span>
-              <span class="ingredient-chip">Resilience mindset</span>
-            </div>
-          </article>
-
-          <article class="ingredient-card">
-            <div class="ingredient-title">Foundational support</div>
-            <div>
-              Beyond “hero” ingredients, the basics matter: reasonable dosing,
-              form choice (like chelated minerals), and avoiding unnecessary
-              colors, flavors, and fillers wherever possible.
-            </div>
-            <div class="ingredient-chip-row">
-              <span class="ingredient-chip">Label transparency</span>
-              <span class="ingredient-chip">Daily-use friendly</span>
-            </div>
-          </article>
-        </div>
-
-        <p style="font-size:11px;color:var(--text-soft);margin-top:10px;">
-          *These are directional examples only. Final ingredient panels, dosages, and
-          claims will be published clearly before any product ships. Nothing here
-          is medical advice or a promise of effect.
-        </p>
       </section>
 
       <!-- FOUNDER + EMAIL -->
       <section class="section" id="waitlist">
         <div class="two-col">
           <article class="founder-card">
-            <div class="founder-label">Founder perspective</div>
-            <h3 class="founder-name">“I wanted something I’d actually feel good taking every day.”</h3>
+            <div class="founder-label">From the founder</div>
+            <h3 class="founder-name">“I wanted something I’d feel good recommending to family.”</h3>
             <p>
-              ClearPath Labs started from frustration: underdosed blends that don’t
-              move the needle, or aggressive stacks that leave your nervous system
-              more scrambled than before.
+              ClearPath Labs started from the same place a lot of people are in:
+              frustrated with “kitchen sink” formulas on one side and underdosed,
+              do-nothing blends on the other – especially around post-viral recovery.
             </p>
             <p>
-              The goal here isn’t to promise miracles. It’s to build a small, honest
-              set of tools that people can lean on as they work on recovery: better
-              sleep, calmer days, more stable energy, and a nervous system that feels
-              less “stuck.”
+              The ClearFlow system is being built to feel clean, intentional, and
+              understandable. Labels you can read. Ingredients you can look up.
+              A protocol that makes sense with what you’re already doing for sleep,
+              pacing, and rehab.
             </p>
             <p>
-              If that’s the journey you’re on—post-viral or just post-burnout—you’re
-              who this is being built for.
+              If you’re working through post-viral or long-stress recovery and want a
+              supplement approach that respects that, you’re who this is for.
             </p>
             <p>— Vince, Founder, ClearPath Labs</p>
           </article>
 
           <article class="email-card">
-            <h3 class="email-title">Get on the early access list.</h3>
+            <h3 class="email-title">Get early access &amp; formulation updates.</h3>
             <p class="email-sub">
-              Join the list to hear when formulas are locked, labels go live, and
-              founding customer spots open. No weekly spam, just real updates.
+              Join the list to see ingredient panels as they finalize, hear about
+              sample runs, and get founding-customer pricing when we’re ready.
+              No spammy newsletters – just meaningful updates.
             </p>
 
-            <!-- Replace this with your email platform (ConvertKit, Klaviyo, etc.) -->
+            <!-- Replace with your actual email platform later -->
             <form class="form" action="#" method="post">
               <div class="form-row">
                 <input
@@ -1201,7 +1034,7 @@
                   required
                 />
                 <button class="btn-primary" type="submit">
-                  Join the list
+                  Join early access list
                 </button>
               </div>
               <div class="form-hint">
@@ -1210,9 +1043,9 @@
             </form>
 
             <div class="badge-row">
-              <span class="small-badge">Formulas in development</span>
-              <span class="small-badge">Manufacturer selection in progress</span>
-              <span class="small-badge">Transparent from day one</span>
+              <span class="small-badge">Formulas in active development</span>
+              <span class="small-badge">Manufacturer vetting in progress</span>
+              <span class="small-badge">Full label transparency planned</span>
             </div>
           </article>
         </div>
@@ -1221,51 +1054,52 @@
       <!-- FAQ -->
       <section class="section" id="faq">
         <div class="section-header">
-          <div class="section-label">Questions</div>
+          <div class="section-label">FAQ</div>
           <div class="section-title">What we can say clearly right now.</div>
           <p class="section-sub">
-            ClearPath Labs is early—but serious. Here are a few straight answers
-            based on where things are today.
+            ClearPath Labs and the ClearFlow Recovery System are still in development.
+            Here’s where things stand today.
           </p>
         </div>
 
         <div class="faq-grid">
           <div class="faq-item">
-            <div class="faq-q">Are any products available for purchase yet?</div>
+            <div class="faq-q">Are these products available for purchase yet?</div>
             <div class="faq-a">
-              Not yet. Formulas, label copy, and manufacturing partnerships are
-              being developed now. The early access list will hear about samples,
-              timelines, and pricing before anything goes public.
+              Not yet. Formulas, labels, and manufacturing partnerships are being
+              finalized now. The early access list will hear about sample batches,
+              timelines, and pricing before anything goes live publicly.
             </div>
           </div>
 
           <div class="faq-item">
-            <div class="faq-q">Is this meant to treat post-viral syndromes?</div>
+            <div class="faq-q">Is the ClearFlow system meant to treat post-viral syndromes?</div>
             <div class="faq-a">
-              No. ClearPath Labs products are dietary supplements, not drugs.
-              They are not intended to diagnose, treat, cure, or prevent any
-              disease or condition. The focus is on supporting systems involved
-              in energy, sleep, and stress response in a general wellness context.
+              No. ClearPath Labs products are dietary supplements, not drugs. They are
+              <strong>not</strong> intended to diagnose, treat, cure, or prevent any
+              disease or condition. The focus is on supporting general wellness areas
+              such as circulation, inflammatory balance, energy, and sleep.
               <br /><br />
-              <small>Always talk to your healthcare provider before starting any supplement, especially if you have ongoing symptoms.</small>
+              <small>Always talk with your healthcare provider before starting any supplement, especially if you have ongoing symptoms or take medications.</small>
             </div>
           </div>
 
           <div class="faq-item">
             <div class="faq-q">Will you publish full ingredient labels?</div>
             <div class="faq-a">
-              Yes. The plan is full-label transparency—no proprietary blends
-              hiding dosages. If something is in a formula, you’ll know how much
-              and why it’s there before you ever decide to take it.
+              Yes – that’s the plan. No proprietary blends hiding dosages. If an ingredient
+              is used, you’ll know exactly how much is in a serving and why it’s there
+              before you ever decide to try it.
             </div>
           </div>
 
           <div class="faq-item">
-            <div class="faq-q">Who is this stack really for?</div>
+            <div class="faq-q">Who is the ClearFlow Recovery System for?</div>
             <div class="faq-a">
-              People who want a calmer, clearer, more resilient baseline—especially
-              if they’ve been through viral stress or long stretches of overload
-              and want to be thoughtful about what they put in their body.
+              People who want a thoughtful, simple supplement approach to support their
+              own work on recovery – from post-viral or chronic stress states – and who
+              care a lot about label quality, transparency, and how things actually fit
+              into daily life.
             </div>
           </div>
         </div>
@@ -1276,12 +1110,11 @@
         <div>
           © <span id="year"></span> ClearPath Labs. All rights reserved.
           <div class="disclaimer">
-            ClearPath Labs products are currently in development and are not
-            available for purchase. Any future supplements will not be intended
-            to diagnose, treat, cure, or prevent any disease. Statements will
-            not be evaluated by the Food and Drug Administration. Information
-            on this site is for general wellness and educational purposes only
-            and is not a substitute for medical advice.
+            ClearPath Labs products are currently in development and are not available
+            for purchase. Any future supplements will not be intended to diagnose,
+            treat, cure, or prevent any disease. Statements will not have been evaluated
+            by the Food and Drug Administration. Information on this site is for general
+            wellness and educational purposes only and is not a substitute for medical care.
           </div>
         </div>
         <div>
