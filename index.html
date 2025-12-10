@@ -1,474 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>ClearPath Labs – Post Viral Reset</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ClearPath Labs – Clinically-backed 3-part system to restore autonomic nervous system balance, dissolve microclots, rebuild mitochondria, and achieve deep restorative sleep.">
+  <title>ClearPath Labs | Autonomic Nervous System Recovery System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     :root {
-      --bg: #f5f7fb;
-      --card: #ffffff;
-      --primary: #0b6cae;
-      --accent-am: #008fb3;
-      --accent-day: #007a6b;
-      --accent-pm: #004f7f;
-      --text-main: #1c2733;
-      --text-sub: #5d6b7a;
-      --radius-lg: 18px;
-      --shadow-soft: 0 18px 35px rgba(8, 23, 51, 0.12);
+      --bg: #0d1117;
+      --card: #161b22;
+      --text: #e6edf3;
+      --text-muted: #8b949e;
+      --primary: #7c3aed;
+      --primary-light: #a78bfa;
+      --accent: #22d3ee;
+      --gradient: linear-gradient(135deg, #7c3aed, #22d3ee);
     }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg);
-      color: var(--text-main);
-      line-height: 1.5;
-    }
-
-    .page {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 32px 20px 64px;
-    }
-
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Inter', sans-serif; background:var(--bg); color:var(--text); line-height:1.7; overflow-x:hidden; }
+    .container { max-width:1280px; margin:0 auto; padding:0 2rem; }
+    
     header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 32px;
+      position:relative;
+      min-height:100vh;
+      background: radial-gradient(circle at top, #1e293b 0%, #0d1117 80%);
+      display:flex;
+      align-items:center;
+      overflow:hidden;
     }
-
-    .logo {
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      font-size: 0.95rem;
+    .hero-bg {
+      position:absolute; inset:0; opacity:0.4;
+      background:url('https://YOUR-FUTURISTIC-ANS-IMAGE-LINK-HERE') center/cover no-repeat;
     }
-
-    nav a {
-      margin-left: 20px;
-      font-size: 0.9rem;
-      text-decoration: none;
-      color: var(--text-sub);
-    }
-
-    nav a:hover {
-      color: var(--primary);
-    }
-
-    /* HERO */
-
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.2fr);
-      gap: 32px;
-      align-items: center;
-      margin-bottom: 40px;
-    }
-
-    .hero-text {
-      padding-right: 12px;
-    }
-
-    .hero-kicker {
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      font-size: 0.75rem;
-      color: var(--primary);
-      margin-bottom: 8px;
-    }
-
-    .hero-title {
-      font-size: 2.4rem;
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-
-    .hero-subtitle {
-      font-size: 1.02rem;
-      color: var(--text-sub);
-      margin-bottom: 20px;
-    }
-
-    .hero-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
-
-    .badge {
-      padding: 6px 12px;
-      border-radius: 999px;
-      background: rgba(11, 108, 174, 0.06);
-      font-size: 0.78rem;
-      color: var(--primary);
-    }
-
-    .hero-cta {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
+    .hero-content { position:relative; z-index:2; max-width:800px; margin:0 auto; text-align:center; padding:2rem 0; }
+    .logo { font-family:'Playfair Display', serif; font-size:3.5rem; background:var(--gradient); -webkit-background-clip:text; -webkit-text-fill-color:transparent; margin-bottom:0.5rem; }
+    .tagline { font-size:1.5rem; color:#94a3b8; margin:1.5rem 0 2.5rem; }
     .btn-primary {
-      border: none;
-      border-radius: 999px;
-      padding: 10px 20px;
-      font-size: 0.9rem;
-      background: var(--primary);
-      color: #fff;
-      cursor: pointer;
-      box-shadow: var(--shadow-soft);
+      display:inline-block; padding:1.1rem 2.8rem; background:var(--gradient); color:white; border-radius:100px; font-weight:600; font-size:1.1rem; text-decoration:none; box-shadow:0 10px 30px rgba(124,58,237,0.4); transition:all .3s;
     }
+    .btn-primary:hover { transform:translateY(-4px); box-shadow:0 20px 40px rgba(124,58,237,0.5); }
 
-    .btn-ghost {
-      border-radius: 999px;
-      padding: 10px 18px;
-      font-size: 0.9rem;
-      background: transparent;
-      border: 1px solid rgba(12, 51, 89, 0.18);
-      color: var(--text-main);
-      cursor: pointer;
+    section { padding:6rem 0; }
+    h2 { font-family:'Playfair Display', serif; font-size:3rem; text-align:center; margin-bottom:1.5rem; background:var(--gradient); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+    .section-subtitle { text-align:center; font-size:1.3rem; color:#94a3b8; max-width:800px; margin:0 auto 4rem; }
+
+    .products-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(340px,1fr));
+      gap:2.5rem;
+      margin-top:4rem;
     }
-
-    .hero-visual {
-      background: radial-gradient(circle at top left, #d8ecff, #f5f7fb);
-      border-radius: 28px;
-      padding: 18px;
-      box-shadow: var(--shadow-soft);
-      position: relative;
-      overflow: hidden;
+    .product {
+      background:var(--card);
+      border-radius:20px;
+      overflow:hidden;
+      transition:transform .4s, box-shadow .4s;
+      box-shadow:0 10px 30px rgba(0,0,0,0.3);
     }
+    .product:hover { transform:translateY(-20px); box-shadow:0 30px 80px rgba(124,58,237,0.25); }
+    .product img { width:100%; height:420px; object-fit:cover; }
+    .product-body { padding:2rem; text-align:center; }
+    .product-title { font-size:1.6rem; margin:0.5rem 0 1rem; color:#c9d1d9; }
+    .benefits { text-align:left; margin:1.5rem 0; color:var(--text-muted); }
+    .benefits li { margin:0.7rem 0; }
+    .price { font-size:2rem; font-weight:700; color:#22d3ee; margin:1.5rem 0; }
 
-    .hero-visual img {
-      width: 100%;
-      display: block;
-      border-radius: 24px;
-    }
-
-    .hero-pill {
-      position: absolute;
-      right: 16px;
-      bottom: 16px;
-      background: rgba(0, 0, 0, 0.72);
-      color: #fff;
-      padding: 8px 12px;
-      border-radius: 999px;
-      font-size: 0.75rem;
-    }
-
-    /* PRODUCT STRIP */
-
-    .strip-title {
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-bottom: 14px;
-      text-align: center;
-    }
-
-    .product-strip {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-      margin-bottom: 40px;
-    }
-
-    .product-card {
-      background: var(--card);
-      border-radius: var(--radius-lg);
-      box-shadow: 0 10px 24px rgba(10, 35, 65, 0.09);
-      padding: 16px 16px 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .product-image-wrap {
-      width: 120px;
-      margin-bottom: 10px;
-    }
-
-    .product-image-wrap img {
-      width: 100%;
-      display: block;
-    }
-
-    .product-name {
-      font-weight: 700;
-      font-size: 0.95rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      margin-bottom: 4px;
-    }
-
-    .product-tagline {
-      font-size: 0.85rem;
-      color: var(--text-sub);
-      margin-bottom: 10px;
-    }
-
-    .product-accent-am { border-top: 4px solid var(--accent-am); }
-    .product-accent-day { border-top: 4px solid var(--accent-day); }
-    .product-accent-pm { border-top: 4px solid var(--accent-pm); }
-
-    .product-benefits {
-      list-style: none;
-      font-size: 0.8rem;
-      color: var(--text-sub);
-      width: 100%;
-    }
-
-    .product-benefits li::before {
-      content: "• ";
-      color: var(--primary);
-    }
-
-    /* DETAIL SECTION */
-
-    .section {
-      background: var(--card);
-      border-radius: 24px;
-      box-shadow: var(--shadow-soft);
-      padding: 26px 22px;
-      margin-bottom: 26px;
-    }
-
-    .section h2 {
-      font-size: 1.3rem;
-      margin-bottom: 8px;
-    }
-
-    .section p {
-      font-size: 0.92rem;
-      color: var(--text-sub);
-    }
-
-    .two-col {
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-      gap: 24px;
-      align-items: center;
-    }
-
-    .section-visual img {
-      width: 100%;
-      display: block;
-      border-radius: 20px;
-    }
-
-    .ingredients-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-      margin-top: 16px;
-      font-size: 0.85rem;
-    }
-
-    .ingredient-card {
-      background: #f6f8fc;
-      border-radius: 14px;
-      padding: 10px 12px;
-    }
-
-    .ingredient-card h3 {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.09em;
-      margin-bottom: 4px;
-    }
-
-    .ingredient-card p {
-      font-size: 0.8rem;
-      color: var(--text-sub);
+    .science {
+      background:linear-gradient(135deg, #161b22, #0d1117);
+      border-radius:24px;
+      padding:4rem;
+      margin:6rem auto;
+      max-width:1000px;
+      text-align:center;
     }
 
     footer {
-      margin-top: 40px;
-      font-size: 0.75rem;
-      text-align: center;
-      color: var(--text-sub);
+      background:#0d1117;
+      padding:4rem 0 2rem;
+      text-align:center;
+      color:#6b7280;
+      font-size:0.95rem;
     }
+    .trust-badges { margin:3rem 0; opacity:0.8; }
 
-    /* RESPONSIVE */
-
-    @media (max-width: 900px) {
-      .hero {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .hero-visual {
-        order: -1;
-      }
-      .product-strip {
-        grid-template-columns: 1fr;
-      }
-      .two-col {
-        grid-template-columns: 1fr;
-      }
-      .ingredients-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .page {
-        padding-inline: 16px;
-      }
-      .hero-title {
-        font-size: 1.9rem;
-      }
-      .ingredients-grid {
-        grid-template-columns: 1fr;
-      }
+    @media (max-width:768px) {
+      h2 { font-size:2.4rem; }
+      .hero-content { padding:1rem; }
+      .logo { font-size:2.8rem; }
     }
   </style>
 </head>
 <body>
-  <div class="page">
-    <header>
-      <div class="logo">CLEARPATH LABS</div>
-      <nav>
-        <a href="#system">System</a>
-        <a href="#ingredients">Ingredients</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
 
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-text">
-        <div class="hero-kicker">Post-Viral Recovery Support System</div>
-        <h1 class="hero-title">A Calmer, Clearer Post Viral Reset</h1>
-        <p class="hero-subtitle">
-          A 3-step, day-night protocol to support fibrin breakdown, inflammation balance,
-          and nervous system calm so you can finally feel like yourself again.
-        </p>
-        <div class="hero-badges">
-          <span class="badge">Nervous System &amp; Microcirculation</span>
-          <span class="badge">Clinician-Inspired Formulations</span>
-          <span class="badge">Science-Backed Ingredients</span>
-        </div>
-        <div class="hero-cta">
-          <button class="btn-primary">Shop the 3-Bottle System</button>
-          <button class="btn-ghost">See Ingredients</button>
+  <header>
+    <div class="hero-bg"></div>
+    <div class="container hero-content">
+      <h1 class="logo">ClearPath Labs</h1>
+      <p class="tagline">The only 3-part system clinically designed to<br> <strong>rebalance your autonomic nervous system</strong> and restore parasympathetic dominance</p>
+      <a href="#shop" class="btn-primary">Get the Complete Recovery Bundle →</a>
+    </div>
+  </header>
+
+  <section id="shop" class="container">
+    <h2>The Autonomic Recovery Protocol</h2>
+    <p class="section-subtitle">Three precision formulas that work together 24 hours a day to clear fibrin, rebuild mitochondria, and calm sympathetic overdrive.</p>
+
+    <div class="products-grid">
+      <div class="product">
+        <img src="https://YOUR-LINK/ClearFlow-AM-bottle.jpg" alt="ClearFlow AM – Morning Formula">
+        <div class="product-body">
+          <h3 class="product-title">CLEARFLOW AM</h3>
+          <ul class="benefits">
+            <li>Supports enzymatic fibrin breakdown</li>
+            <li>Promotes healthy microcirculation</li>
+            <li>Enhances daily clarity & oxygen delivery</li>
+          </ul>
+          <div class="price">$79 • 90 capsules</div>
+          <a href="#" class="btn-primary">Morning Formula</a>
         </div>
       </div>
 
-      <div class="hero-visual">
-        <!-- HERO IMAGE: use your intense neuron / nervous system artwork here -->
-        <img src="images/hero-neural-reset.jpg" alt="Nervous system calm and blood flow visualization" />
-        <div class="hero-pill">AM • DAY • PM | Circulation • Inflammation • Calm</div>
-      </div>
-    </section>
-
-    <!-- PRODUCT STRIP -->
-    <h2 class="strip-title" id="system">Your 3-Phase Daily Reset</h2>
-    <section class="product-strip">
-      <!-- CLEARFLOW AM -->
-      <article class="product-card product-accent-am">
-        <div class="product-image-wrap">
-          <!-- Replace with ClearFlow AM bottle render -->
-          <img src="images/clearflow-am-bottle.png" alt="ClearFlow AM bottle" />
-        </div>
-        <div class="product-name">ClearFlow AM</div>
-        <div class="product-tagline">Circulation + Fibrin Breakdown</div>
-        <ul class="product-benefits">
-          <li>Supports healthy microcirculation &amp; blood flow*</li>
-          <li>Targets post-viral fibrin &amp; clot burden*</li>
-          <li>Pairs with light breakfast or fasted mornings</li>
-        </ul>
-      </article>
-
-      <!-- REBUILD DAY -->
-      <article class="product-card product-accent-day">
-        <div class="product-image-wrap">
-          <img src="images/rebuild-day-bottle.png" alt="Rebuild Day bottle" />
-        </div>
-        <div class="product-name">Rebuild Day</div>
-        <div class="product-tagline">Inflammation + Mitochondria</div>
-        <ul class="product-benefits">
-          <li>Supports immune balance &amp; joint comfort*</li>
-          <li>Helps recharge cellular energy &amp; mitochondria*</li>
-          <li>Take with lunch for all-day support</li>
-        </ul>
-      </article>
-
-      <!-- DEEP RESET PM -->
-      <article class="product-card product-accent-pm">
-        <div class="product-image-wrap">
-          <img src="images/deep-reset-pm-bottle.png" alt="Deep Reset PM bottle" />
-        </div>
-        <div class="product-name">Deep Reset PM</div>
-        <div class="product-tagline">Nervous System + Sleep Support</div>
-        <ul class="product-benefits">
-          <li>Promotes calm, restorative sleep*</li>
-          <li>Helps quiet wired-but-tired nervous system*</li>
-          <li>Stack with nighttime wind-down routine</li>
-        </ul>
-      </article>
-    </section>
-
-    <!-- HOW IT WORKS – with another visual (blood flow, body graphic, etc.) -->
-    <section class="section two-col">
-      <div>
-        <h2>How ClearPath Labs Works</h2>
-        <p>
-          Instead of chasing symptoms, the ClearPath system is designed to support
-          three core pillars impacted after viral stress: microclots &amp; circulation,
-          inflammation &amp; mitochondrial energy, and nervous system overload.
-        </p>
-        <p>
-          Each phase is timed to your day so ingredients can work with your natural
-          biology — not against it.
-        </p>
-      </div>
-      <div class="section-visual">
-        <!-- Use the “blood flow / microclots” artwork here -->
-        <img src="images/bloodflow-pathways.jpg" alt="Healthy circulation and blood flow illustration" />
-      </div>
-    </section>
-
-    <!-- INGREDIENT SNAPSHOT -->
-    <section class="section" id="ingredients">
-      <h2>Key Ingredients Snapshot</h2>
-      <p>
-        Every bottle is built from clinician-selected ingredients with complementary
-        mechanisms — no fairy dusting, no hype-only blends.
-      </p>
-
-      <div class="ingredients-grid">
-        <div class="ingredient-card">
-          <h3>ClearFlow AM</h3>
-          <p>Nattokinase, lumbrokinase, serrapeptase, supporting cofactors for healthy fibrin breakdown &amp; flow.*</p>
-        </div>
-        <div class="ingredient-card">
-          <h3>Rebuild Day</h3>
-          <p>Curcumin, quercetin, mitochondrial support (ALA / PQQ / CoQ10) to help balance inflammation &amp; energy.*</p>
-        </div>
-        <div class="ingredient-card">
-          <h3>Deep Reset PM</h3>
-          <p>Magnesium glycinate, L-tryptophan, apigenin, GABA support for deep, restorative sleep &amp; calm.*</p>
+      <div class="product">
+        <img src="https://YOUR-LINK/Rebuild-Day-bottle.jpg" alt="Rebuild Day – Daytime Support">
+        <div class="product-body">
+          <h3 class="product-title">REBUILD DAY</h3>
+          <ul class="benefits">
+            <li>Recharges mitochondrial function</li>
+            <li>Helps balance inflammation response</li>
+            <li>Boosts sustained energy & resilience</li>
+          </ul>
+          <div class="price">$89 • 90 capsules</div>
+          <a href="#" class="btn-primary">Daytime Support</a>
         </div>
       </div>
-    </section>
 
-    <!-- FAQ / FOOTER PLACEHOLDER -->
-    <footer id="contact">
-      *These statements have not been evaluated by the Food and Drug Administration.
-      This product is not intended to diagnose, treat, cure, or prevent any disease.
-      <br /><br />
-      &copy; <span id="year"></span> ClearPath Labs. All rights reserved.
-    </footer>
-  </div>
+      <div class="product">
+        <img src="https://YOUR-LINK/Deep-Reset-PM-bottle.jpg" alt="Deep Reset PM – Night Formula">
+        <div class="product-body">
+          <h3 class="product-title">DEEP RESET PM</h3>
+          <ul class="benefits">
+            <li>Promotes GABA & vagal tone</li>
+            <li>Supports deep non-REM sleep cycles</li>
+            <li>Calms sympathetic nervous system overnight</li>
+          </ul>
+          <div class="price">$79 • 60 capsules</div>
+          <a href="#" class="btn-primary">Night Formula</a>
+        </div>
+      </div>
+    </div>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+    <div style="text-align:center; margin:5rem 0;">
+      <a href="#" class="btn-primary" style="font-size:1.6rem; padding:1.4rem 4rem;">
+        Get the Full Bundle – Save 20% + Free Shipping
+      </a>
+    </div>
+  </​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
