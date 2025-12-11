@@ -1,180 +1,579 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NeuroBalance | 3-Part Autonomic Nervous System Healing Supplements</title>
-    <meta name="description" content="Restore your autonomic nervous system with our AM, Day, and PM supplements. Wake energized, thrive joyfully, sleep deeply.">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        :root {
-            --dawn-orange: #FFDAB9;
-            --midday-green: #A8D5BA;
-            --twilight-blue: #B0C4DE;
-            --deep-night: #2C3E50;
-            --text-dark: #333;
-            --text-light: #fff;
-        }
-        
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Montserrat', sans-serif; color: var(--text-dark); line-height: 1.6; overflow-x: hidden; }
-        h1, h2, h3 { font-family: 'Playfair Display', serif; }
-        
-        /* Subtle ANS Background (glowing neural overlay) */
-        .ans-bg {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at center, rgba(150,200,255,0.1) 0%, transparent 70%);
-            pointer-events: none;
-            z-index: -1;
-            animation: pulse 20s infinite alternate;
-        }
-        .ans-bg::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&auto=format&fit=crop&q=80') center/cover no-repeat;
-            opacity: 0.15;
-            filter: blur(2px);
-        }
-        @keyframes pulse { 0% { opacity: 0.1; } 100% { opacity: 0.2; } }
-        
-        header {
-            background: linear-gradient(to bottom, var(--dawn-orange), rgba(255,255,255,0.8));
-            text-align: center;
-            padding: 120px 20px 80px;
-            position: relative;
-        }
-        header h1 { font-size: 3.5rem; margin-bottom: 20px; }
-        header p { font-size: 1.4rem; max-width: 800px; margin: 0 auto 30px; }
-        .cta-btn {
-            background: var(--deep-night);
-            color: white;
-            padding: 15px 40px;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.2rem;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .cta-btn:hover { transform: scale(1.05); }
-        
-        section { padding: 100px 20px; text-align: center; position: relative; }
-        .container { max-width: 1200px; margin: 0 auto; }
-        
-        /* AM Section - Sunrise Theme */
-        #am { background: linear-gradient(to bottom, var(--dawn-orange), white); }
-        #am img { max-width: 100%; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        
-        /* Day Section - Energetic */
-        #day { background: linear-gradient(to bottom, var(--midday-green), white); }
-        
-        /* PM Section - Restful */
-        #pm { background: linear-gradient(to bottom, var(--twilight-blue), var(--deep-night)); color: white; }
-        #pm .cta-btn { background: white; color: var(--deep-night); }
-        
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 50px;
-        }
-        .product-card {
-            background: white;
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-        .product-card:hover { transform: translateY(-10px); }
-        .product-card h3 { font-size: 2rem; margin-bottom: 15px; }
-        .price { font-size: 1.8rem; font-weight: bold; color: var(--deep-night); }
-        
-        footer {
-            background: var(--deep-night);
-            color: white;
-            text-align: center;
-            padding: 60px 20px;
-        }
-        
-        @media (max-width: 768px) {
-            header h1 { font-size: 2.5rem; }
-            section { padding: 80px 20px; }
-        }
-    </style>
-</head>
-<body>
-    <div class="ans-bg"></div>
-    
-    <header>
-        <div class="container">
-            <h1>NeuroBalance</h1>
-            <p>Heal Your Autonomic Nervous System Naturally<br>With Our 3-Part Daily Ritual: Energize AM • Thrive Day • Restore PM</p>
-            <button class="cta-btn">Start Your Healing Journey</button>
-        </div>
-    </header>
-    
-    <section id="am">
-        <div class="container">
-            <h2>Awaken with the Sunrise – AM Formula</h2>
-            <p>Gently activate your sympathetic system for focused, jitter-free energy as you rise.</p>
-            <img src="https://images.unsplash.com/photo-1541781777318-2d7c87c0e59d?ixlib=rb-4.0.3&auto=format&fit=crop&q=80" alt="Person waking up peacefully to sunrise">
-            <div class="product-grid">
-                <div class="product-card">
-                    <h3>AM Energize</h3>
-                    <p>Natural adaptogens to balance your morning nervous system response.</p>
-                    <div class="price">$39</div>
-                    <button class="cta-btn">Add to Cart</button>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section id="day">
-        <div class="container">
-            <h2>Move, Laugh & Thrive – Day Formula</h2>
-            <p>Sustain joyful energy and autonomic harmony through workouts, work, and laughter.</p>
-            <img src="https://images.unsplash.com/photo-1518614368374-6d2e5d84b036?ixlib=rb-4.0.3&auto=format&fit=crop&q=80" alt="People laughing and working out joyfully">
-            <div class="product-grid">
-                <div class="product-card">
-                    <h3>Day Thrive</h3>
-                    <p>Balanced nootropics for all-day vitality without crashes.</p>
-                    <div class="price">$45</div>
-                    <button class="cta-btn">Add to Cart</button>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section id="pm">
-        <div class="container">
-            <h2>Surrender to Deep Rest – PM Formula</h2>
-            <p>Calm overactive nerves and drift into restorative, healing sleep.</p>
-            <img src="https://images.unsplash.com/photo-1541783245832-7d38d7d4a3e3?ixlib=rb-4.0.3&auto=format&fit=crop&q=80" alt="Peaceful person sleeping under moonlight">
-            <div class="product-grid">
-                <div class="product-card" style="background: rgba(255,255,255,0.2); color: white;">
-                    <h3>PM Restore</h3>
-                    <p>Gentle botanicals to activate parasympathetic recovery.</p>
-                    <div class="price">$42</div>
-                    <button class="cta-btn">Add to Cart</button>
-                </div>
-            </div>
-            <button class="cta-btn" style="margin-top: 40px;">Get the Full 3-Part Kit – Save 20%</button>
-        </div>
-    </section>
-    
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 NeuroBalance Supplements. All rights reserved.</p>
-            <p>30-Day Money-Back Guarantee • Free Shipping on Orders Over $80</p>
-        </div>
-    </footer>
-</body>
-</html>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ClearPath Labs – Clinically-backed 3-part system to restore autonomic nervous system balance, dissolve microclots, rebuild mitochondria, and achieve deep restorative sleep.">
+  <title>ClearPath Labs | Autonomic Nervous System Recovery System</title>
 
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    :root {
+      --bg: #050814;
+      --card: #111827;
+      --text: #e6edf3;
+      --text-muted: #8b949e;
+      --primary: #7c3aed;
+      --accent: #22d3ee;
+      --gradient: linear-gradient(135deg, #7c3aed, #22d3ee);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: radial-gradient(circle at top, #020617 0%, #020617 55%, #000 100%);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* NAVBAR */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(to right, rgba(2,6,23,0.9), rgba(15,23,42,0.9));
+      border-bottom: 1px solid rgba(148,163,184,0.25);
+    }
+
+    .nav-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0.9rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.9rem;
+      padding: 0.55rem 1.3rem;
+      border-radius: 999px;
+      text-decoration: none;
+      background: rgba(15,23,42,0.9);
+      border: 1px solid rgba(148,163,184,0.6);
+      color: #e5e7eb;
+    }
+
+    .nav-cta i {
+      font-size: 0.85rem;
+      color: var(--accent);
+    }
+
+    /* HERO */
+    header {
+      position: relative;
+      min-height: 100vh;
+      background: radial-gradient(circle at top, #1e293b 0%, #020617 75%);
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      padding-top: 4.5rem; /* room for nav */
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      opacity: 0.35;
+      background: url('./images/ans-hero.jpg') center/cover no-repeat; /* optional neuron background */
+      mix-blend-mode: screen;
+      pointer-events: none;
+    }
+
+    .hero-overlay-gradient {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at top left, rgba(34,211,238,0.18), transparent 55%),
+        radial-gradient(circle at bottom right, rgba(129,140,248,0.25), transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 860px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 3.5rem 0 3rem;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.5);
+      background: radial-gradient(circle at top left, rgba(34,211,238,0.10), rgba(15,23,42,0.9));
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #cbd5f5;
+      margin-bottom: 1.5rem;
+    }
+
+    .eyebrow i {
+      color: var(--accent);
+      font-size: 0.75rem;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: #cbd5f5;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      opacity: 0.9;
+      margin-bottom: 1.3rem;
+    }
+
+    .tagline {
+      font-size: 1.5rem;
+      color: #94a3b8;
+      margin: 1.5rem 0 2.5rem;
+    }
+
+    .tagline strong {
+      color: #e2e8f0;
+    }
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2.1rem;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      padding: 1.1rem 2.8rem;
+      background: var(--gradient);
+      color: white;
+      border-radius: 100px;
+      font-weight: 600;
+      font-size: 1.02rem;
+      text-decoration: none;
+      box-shadow: 0 14px 40px rgba(124,58,237,0.5);
+      transition: all .25s;
+      white-space: nowrap;
+    }
+
+    .btn-primary i {
+      font-size: 0.95rem;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px) scale(1.01);
+      box-shadow: 0 20px 50px rgba(124,58,237,0.65);
+    }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.9rem 1.4rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.7);
+      color: #e5e7eb;
+      text-decoration: none;
+      font-size: 0.9rem;
+      background: rgba(15,23,42,0.9);
+    }
+
+    .btn-ghost i {
+      font-size: 0.85rem;
+      color: var(--accent);
+    }
+
+    .trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-top: 1.7rem;
+      font-size: 0.8rem;
+      color: #9ca3af;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .trust-row span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      opacity: 0.9;
+    }
+
+    .trust-row span i {
+      color: var(--accent);
+      font-size: 0.85rem;
+    }
+
+    /* SECTION HEADERS */
+    section {
+      padding: 6rem 0;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      font-size: 1.2rem;
+      color: #94a3b8;
+      max-width: 820px;
+      margin: 0 auto 3rem;
+    }
+
+    /* PRODUCT SCROLL SECTIONS */
+    .product-section {
+      position: relative;
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      color: #e5e7eb;
+      overflow: hidden;
+    }
+
+    .product-section::before {
+      /* dark gradient overlay for readability */
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to right, rgba(15,23,42,0.92), rgba(15,23,42,0.6), rgba(15,23,42,0.95));
+      pointer-events: none;
+    }
+
+    .product-section-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 4.5rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 3.5rem;
+    }
+
+    .product-media {
+      flex: 0 0 340px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .product-media img {
+      width: 100%;
+      max-width: 320px;
+      height: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 18px 60px rgba(0,0,0,0.8));
+    }
+
+    .product-copy {
+      flex: 1;
+    }
+
+    .product-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.25rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.7);
+      background: rgba(15,23,42,0.85);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #cbd5f5;
+      margin-bottom: 0.9rem;
+    }
+
+    .product-label {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #9ca3af;
+      margin-bottom: 0.25rem;
+    }
+
+    .product-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .product-tagline {
+      font-size: 1rem;
+      color: #cbd5f5;
+      margin-bottom: 1.3rem;
+    }
+
+    .product-benefits {
+      list-style: none;
+      margin: 0 0 1.4rem;
+      padding: 0;
+      color: var(--text-muted);
+    }
+
+    .product-benefits li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.55rem;
+      margin-bottom: 0.55rem;
+      font-size: 0.96rem;
+    }
+
+    .product-benefits li i {
+      margin-top: 0.2rem;
+      font-size: 0.9rem;
+      color: var(--accent);
+    }
+
+    .product-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: baseline;
+      margin-bottom: 1.3rem;
+    }
+
+    .product-price {
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: #22d3ee;
+    }
+
+    .product-price span {
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: #9ca3af;
+      margin-left: 0.25rem;
+    }
+
+    .product-supply {
+      font-size: 0.9rem;
+      color: #9ca3af;
+    }
+
+    .product-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      align-items: center;
+    }
+
+    .product-cta-row a {
+      font-size: 0.9rem;
+    }
+
+    .product-cta-row .btn-ghost {
+      padding: 0.75rem 1.2rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+    }
+
+    /* Background images per section */
+    .product-section--am {
+      background: url('./images/bg-clearflow-am.jpg') center/cover no-repeat;
+    }
+
+    .product-section--rebuild {
+      background: url('./images/bg-rebuild-day.jpg') center/cover no-repeat;
+    }
+
+    .product-section--pm {
+      background: url('./images/bg-deep-reset-pm.jpg') center/cover no-repeat;
+    }
+
+    /* Alternate layout: AM left, Rebuild right, PM left */
+    .product-section--rebuild .product-section-inner {
+      flex-direction: row-reverse;
+    }
+
+    /* SCIENCE BLOCK */
+    .science {
+      background: radial-gradient(circle at top left, rgba(56,189,248,0.23), rgba(15,23,42,0.97));
+      border-radius: 26px;
+      padding: 4rem 3rem;
+      margin: 6rem auto 0;
+      max-width: 1080px;
+      text-align: center;
+      border: 1px solid rgba(148,163,184,0.45);
+      box-shadow: 0 24px 70px rgba(15,23,42,1);
+    }
+
+    .science h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .science p {
+      color: #e2e8f0;
+      margin-bottom: 2rem;
+      font-size: 1rem;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .science-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      margin-top: 1.4rem;
+    }
+
+    .science-card {
+      background: rgba(15,23,42,0.94);
+      border-radius: 18px;
+      padding: 1.8rem 1.7rem;
+      border: 1px solid rgba(148,163,184,0.45);
+      text-align: left;
+      box-shadow: 0 18px 55px rgba(15,23,42,0.9);
+    }
+
+    .science-card-header {
+      display: flex;
+      gap: 0.6rem;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .science-card-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at top, rgba(56,189,248,0.7), rgba(37,99,235,0.7));
+      color: #0b1120;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .science-card h4 {
+      font-size: 1.05rem;
+      color: #e5e7eb;
+    }
+
+    .science-card p {
+      font-size: 0.93rem;
+      color: var(--text-muted);
+      margin: 0.4rem 0 0;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #020617;
+      padding: 4rem 0 2rem;
+      text-align: center;
+      color: #6b7280;
+      font-size: 0.95rem;
+      border-top: 1px solid #111827;
+      margin-top: 5rem;
+    }
+
+    .trust-badges {
+      margin: 2.6rem 0 2rem;
+      opacity: 0.9;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.2rem;
+      font-size: 0.85rem;
+      color: #9ca3af;
+    }
+
+    .trust-badges span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.55rem 1.1rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.4);
+      background: rgba(15,23,42,0.9);
+    }
+
+    .trust-badges i {
+      color: var(--accent);
+      font-size: 0.95rem;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .product-section-inner {
+        flex-direction: column;
+        padding: 4rem 1.5rem;
+      }
+
+      .product-section--rebuild .product-section-inner {
+        flex-direction: column; /* disable reverse on mobile */
+      }
+
+      .product-media {
+        order: -1;
+      }
+
+      .product-media img {
+        max-width: 260px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .container
