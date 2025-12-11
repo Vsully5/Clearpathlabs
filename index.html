@@ -729,4 +729,225 @@
     .footer-inner {
       max-width: 1120px;
       margin: 0 auto;
-      disp
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-inner span {
+      opacity: 0.9;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--text-soft);
+    }
+
+    .footer-links a:hover {
+      color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="brand">
+        <div class="logo-orb"></div>
+        <div>
+          <div class="brand-text-main">CLEARPATH LABS</div>
+          <div class="brand-text-sub">AUTONOMIC RECOVERY SYSTEM</div>
+        </div>
+      </div>
+
+      <nav>
+        <a href="#system">System</a>
+        <a href="#products">Formulas</a>
+        <a href="#stack">Complete Stack</a>
+      </nav>
+
+      <div class="pill-beta">
+        <div class="pill-dot"></div>
+        Clinical-first beta
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-gradient-overlay"></div>
+
+      <div class="hero-left">
+        <div class="hero-eyebrow">
+          Autonomic imbalance →
+          <span>restored</span>
+        </div>
+        <h1 class="hero-title">
+          A clear path to a
+          <span>regulated nervous system</span>
+          and deep restorative sleep.
+        </h1>
+        <p class="hero-subtitle">
+          ClearPath Labs is a three-part system designed to dissolve microclots, restore
+          mitochondrial energy, and gently re-train your autonomic nervous system back to safety.
+        </p>
+
+        <div class="hero-chips">
+          <div class="chip"><strong>Step 1:</strong> ClearFlow AM – microclot + viscosity support</div>
+          <div class="chip"><strong>Step 2:</strong> Rebuild Day – cellular energy & recovery</div>
+          <div class="chip"><strong>Step 3:</strong> Deep Reset PM – sleep, GABA & vagal tone</div>
+        </div>
+
+        <div class="hero-cta-row">
+          <button class="hero-button-main" onclick="document.getElementById('products').scrollIntoView({behavior: 'smooth'})">
+            View the 3-part system
+            <span>↗</span>
+          </button>
+
+          <div class="hero-button-ghost">
+            Science-backed ingredients
+          </div>
+        </div>
+
+        <div class="hero-microcopy">
+          Designed to complement movement, breathing, and
+          <span>nervous system retraining</span> — not replace them.
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="hero-right-card">
+          <div class="hero-right-pill">
+            Autonomic dashboard
+            <span>Prototype · v0.3</span>
+          </div>
+
+          <div class="hero-nervous-grid">
+            <div class="hero-nervous-item">
+              <div class="hero-nervous-label">Sympathetic</div>
+              <div class="hero-nervous-value">Dialed down</div>
+              <div class="hero-spectrum"></div>
+            </div>
+            <div class="hero-nervous-item">
+              <div class="hero-nervous-label">Parasympathetic</div>
+              <div class="hero-nervous-value">Re-engaged</div>
+              <div class="hero-spectrum" style="background: linear-gradient(to right, #64748b, #22c55e);"></div>
+            </div>
+            <div class="hero-nervous-item">
+              <div class="hero-nervous-label">Sleep Depth</div>
+              <div class="hero-nervous-value">Restorative</div>
+              <div class="hero-spectrum" style="background: linear-gradient(to right, #4b5563, #22c55e, #06b6d4);"></div>
+            </div>
+          </div>
+
+          <div class="hero-footnote">
+            <span><strong>Clinical advisory</strong>: built alongside patients recovering from autonomic dysfunction.</span>
+            <span>Not a drug. Not a stimulant. No “sleep hangover.”</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- THREE-STEP SYSTEM -->
+    <section id="system" class="section">
+      <div class="section-header">
+        <div class="eyebrow">Three-part autonomic nervous system recovery</div>
+        <h2 class="section-title">ClearFlow AM · Rebuild Day · Deep Reset PM</h2>
+        <p class="section-subtitle">
+          Each formula is built to do one job extremely well, while working together
+          as a coordinated recovery system for long-haul stress, post-viral, and burnout physiology.
+        </p>
+      </div>
+
+      <div class="steps-grid">
+        <article class="step-card">
+          <div class="step-bg" style="background-image: url('images/clearflow-am.jpg');"></div>
+          <div class="step-content">
+            <div class="step-label"><span>Step 1</span> · ClearFlow AM</div>
+            <div class="step-title">Blood-flow & microclot support</div>
+            <p class="step-copy">
+              Targeted enzymes, flavonoids, and endothelial support nutrients to help unwind
+              the “sticky blood” state that keeps tissues hypoxic and the brain foggy.
+            </p>
+            <ul class="step-list">
+              <li>Supports healthy fibrin + microclot breakdown</li>
+              <li>Helps unstick red blood cell aggregation</li>
+              <li>Pairs with hydration, light movement, and breath work</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="step-card">
+          <div class="step-bg" style="background-image: url('images/rebuild-day.jpg');"></div>
+          <div class="step-content">
+            <div class="step-label"><span>Step 2</span> · Rebuild Day</div>
+            <div class="step-title">Mitochondria, myelin, and repair</div>
+            <p class="step-copy">
+              Co-factors for ATP production, nervous system repair, and anti-inflammatory signaling,
+              calibrated for all-day clarity without a wired, overstimulated crash.
+            </p>
+            <ul class="step-list">
+              <li>Supports mitochondrial resilience and energy</li>
+              <li>Nutrient support for nerves & myelin</li>
+              <li>Pairs with sunlight, gentle training, and real food</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="step-card">
+          <div class="step-bg" style="background-image: url('images/deep-reset-pm.jpg');"></div>
+          <div class="step-content">
+            <div class="step-label"><span>Step 3</span> · Deep Reset PM</div>
+            <div class="step-title">Sleep, vagal tone & repair mode</div>
+            <p class="step-copy">
+              A non-knockout nighttime formula to help the brain drop into slow-wave sleep
+              while gently signaling the autonomic nervous system that it’s safe to stand down.
+            </p>
+            <ul class="step-list">
+              <li>Supports GABAergic calm and sleep architecture</li>
+              <li>Magnesium + amino support without groggy hangover</li>
+              <li>Pairs with dark room, breath work, and no doomscrolling</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- PRODUCT GRID -->
+    <section id="products" class="section product-section">
+      <div class="section-header">
+        <div class="eyebrow">Formulas</div>
+        <h2 class="section-title">Meet the ClearPath Labs lineup</h2>
+        <p class="section-subtitle">
+          Final label design and exact ingredient stacks will ship with our first manufacturing batch.
+          These are the core products in the system.
+        </p>
+      </div>
+
+      <div class="product-grid">
+        <article class="product-card">
+          <div class="product-image-wrap">
+            <img src="clean_am.png" alt="ClearFlow AM bottle" />
+          </div>
+          <div class="product-pill">Step 1 · Morning</div>
+          <div class="product-title">ClearFlow AM</div>
+          <p class="product-copy">
+            Microclot & circulation support to help unlock oxygen delivery, mental clarity, and calm focus.
+          </p>
+          <div class="product-microtag">
+            <span class="product-microtag-dot"></span>
+            Designed to pair with hydration + light movement.
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image-wrap">
+            <img src="clean_day.png" alt="Rebuild Day bottle" />
+          </div>
+          <div class="product-pill">Step 2
