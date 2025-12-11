@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta
     name="description"
-    content="ClearPath Labs – 3-part autonomic nervous system recovery system to support microcirculation, mitochondrial energy, and deep restorative sleep."
+    content="ClearPath Labs – a synchronized 3-part autonomic nervous system recovery system to support healthy circulation, mitochondrial energy, and deep restorative recovery."
   />
   <title>ClearPath Labs | Autonomic Nervous System Recovery System</title>
 
@@ -169,36 +169,30 @@
       margin-bottom: 1.1rem;
     }
 
-    .tagline {
+    .tagline-main {
       font-size: 1.3rem;
       color: #111827;
-      margin-bottom: 1.6rem;
+      margin-bottom: 0.5rem;
       max-width: 32rem;
     }
 
-    .tagline strong {
+    .tagline-main strong {
       color: var(--highlight);
       font-weight: 700;
     }
 
-    .hero-list {
-      list-style: none;
-      margin-bottom: 1.8rem;
+    .tagline-sub {
+      font-size: 0.98rem;
       color: #4b5563;
-      font-size: 0.95rem;
+      margin-bottom: 1.4rem;
+      max-width: 32rem;
     }
 
-    .hero-list li {
-      display: flex;
-      gap: 0.5rem;
-      align-items: flex-start;
-      margin-bottom: 0.45rem;
-    }
-
-    .hero-list li i {
-      color: var(--accent);
-      font-size: 0.9rem;
-      margin-top: 0.15rem;
+    .punchline {
+      font-size: 0.98rem;
+      color: #6b7280;
+      margin-bottom: 1.8rem;
+      font-weight: 500;
     }
 
     .btn-row {
@@ -269,9 +263,22 @@
     .hero-image-wrap {
       display: flex;
       justify-content: center;
+      position: relative;
+    }
+
+    .hero-image-bg {
+      position: absolute;
+      inset: auto;
+      width: 260px;
+      height: 260px;
+      background: radial-gradient(circle, rgba(129, 140, 248, 0.15), transparent 70%);
+      top: 10%;
+      z-index: 0;
     }
 
     .hero-image-wrap img {
+      position: relative;
+      z-index: 1;
       width: 100%;
       max-width: 360px;
       height: auto;
@@ -300,7 +307,7 @@
       margin: 0 auto 2.5rem;
     }
 
-    /* PRODUCT CARD ROW (like example screenshot) */
+    /* PRODUCT CARD ROW (under hero) */
     .product-row {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -319,7 +326,7 @@
 
     .product-card img {
       width: 100%;
-      max-width: 180px;
+      max-width: 160px;
       height: auto;
       object-fit: contain;
       margin-bottom: 1rem;
@@ -341,22 +348,22 @@
     }
 
     .product-card-tagline {
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       color: #6b7280;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.7rem;
     }
 
     .product-card-meta {
       font-size: 0.86rem;
       color: #6b7280;
-      margin-bottom: 0.9rem;
+      margin-bottom: 0.7rem;
     }
 
     .product-card-price {
       font-size: 1.15rem;
       font-weight: 700;
       color: var(--accent);
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.3rem;
     }
 
     .product-card-cta {
@@ -385,7 +392,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(255, 255, 255, 0.65); /* soft white overlay */
+      background: rgba(255, 255, 255, 0.7); /* soft overlay so text is readable */
       pointer-events: none;
     }
 
@@ -504,4 +511,512 @@
 
     .product-cta-row {
       display: flex;
-      flex
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      align-items: center;
+    }
+
+    .product-cta-row .btn-primary {
+      padding: 0.9rem 2rem;
+      font-size: 0.9rem;
+    }
+
+    .product-cta-row .btn-secondary {
+      padding: 0.75rem 1.2rem;
+      font-size: 0.82rem;
+    }
+
+    /* BACKGROUNDS */
+    .product-section--am {
+      background: #ffffff url("./images/bg-clearflow-am.jpg") center/cover no-repeat;
+    }
+
+    .product-section--rebuild {
+      background: radial-gradient(circle at top, #e0f2fe 0%, #ffffff 40%, #ffffff 100%);
+    }
+
+    .product-section--pm {
+      background: #ffffff url("./images/bg-deep-reset-pm.jpg") center/cover no-repeat;
+    }
+
+    .product-section--rebuild .product-section-inner {
+      flex-direction: row-reverse;
+    }
+
+    /* SCIENCE */
+    .science-wrap {
+      background: #f8fafc;
+      border-radius: 24px;
+      padding: 3.2rem 2.6rem;
+      margin: 0 auto;
+      max-width: 1080px;
+      text-align: center;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 18px 50px rgba(15, 23, 42, 0.04);
+    }
+
+    .science-wrap h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 2rem;
+      margin-bottom: 0.8rem;
+      color: #0f172a;
+    }
+
+    .science-wrap p {
+      color: #4b5563;
+      margin-bottom: 2rem;
+      font-size: 0.96rem;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .science-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .science-card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 1.6rem 1.5rem;
+      border: 1px solid #e5e7eb;
+      text-align: left;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .science-card-header {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .science-card-icon {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at top, rgba(56, 189, 248, 0.7), rgba(37, 99, 235, 0.7));
+      color: #0b1120;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .science-card h4 {
+      font-size: 0.98rem;
+      color: #0f172a;
+    }
+
+    .bundle-cta {
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .bundle-note {
+      font-size: 0.9rem;
+      color: #6b7280;
+      margin-top: 0.7rem;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #f9fafb;
+      padding: 3.5rem 0 2rem;
+      text-align: center;
+      color: #6b7280;
+      font-size: 0.9rem;
+      border-top: 1px solid #e5e7eb;
+      margin-top: 4rem;
+    }
+
+    .trust-badges {
+      margin: 0 0 1.8rem;
+      opacity: 0.95;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      font-size: 0.85rem;
+      color: #6b7280;
+    }
+
+    .trust-badges span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      border: 1px solid #e5e7eb;
+      background: #ffffff;
+    }
+
+    .trust-badges i {
+      color: var(--accent);
+      font-size: 0.9rem;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: minmax(0, 1fr);
+        text-align: center;
+      }
+
+      .hero-image-wrap {
+        order: -1;
+      }
+
+      .hero-image-bg {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .tagline-main,
+      .tagline-sub,
+      .punchline {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .trust-row {
+        justify-content: center;
+      }
+
+      .product-section-inner {
+        flex-direction: column;
+        padding: 3rem 1.6rem;
+      }
+
+      .product-section--rebuild .product-section-inner {
+        flex-direction: column;
+      }
+
+      .product-media img {
+        max-width: 260px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 1.4rem;
+      }
+
+      .logo {
+        font-size: 2.2rem;
+      }
+
+      h2.section-title {
+        font-size: 2rem;
+      }
+
+      .science-wrap {
+        padding: 2.6rem 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="nav-logo">CLEARPATH LABS</div>
+      <div class="nav-links">
+        <a href="#shop">Shop</a>
+        <a href="#science">Science</a>
+        <a href="#footer">Support</a>
+        <a href="#shop" class="nav-cta">
+          Get the System
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header>
+    <div class="hero-inner">
+      <div>
+        <div class="eyebrow">
+          <i class="fa-solid fa-bolt"></i>
+          Autonomic Nervous System • 3-Part Protocol
+        </div>
+        <h1 class="logo">Feel Better, Naturally</h1>
+        <div class="hero-subtitle">AUTONOMIC NERVOUS SYSTEM RECOVERY SYSTEM</div>
+
+        <p class="tagline-main">
+          Restore your autonomic balance with a synchronized 3-part system that supports
+          healthy circulation, mitochondrial energy, and deep restorative recovery.
+        </p>
+
+        <p class="tagline-sub">
+          Designed to work with your circadian rhythm from morning to night, so your body has what
+          it needs to move out of survival mode and back into repair.
+        </p>
+
+        <p class="punchline">
+          Clear flow. Clean energy. Deep reset.
+        </p>
+
+        <div class="btn-row">
+          <a href="#shop" class="btn-primary">
+            Get the Complete Recovery Bundle
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a href="#science" class="btn-secondary">
+            Learn the science
+            <i class="fa-solid fa-flask"></i>
+          </a>
+        </div>
+
+        <div class="trust-row">
+          <span><i class="fa-solid fa-stethoscope"></i> Clinician-informed formulation</span>
+          <span><i class="fa-solid fa-heart-pulse"></i> Focused on autonomic balance</span>
+          <span><i class="fa-solid fa-moon"></i> AM / Day / PM synchronized support</span>
+        </div>
+      </div>
+
+      <div class="hero-image-wrap">
+        <div class="hero-image-bg"></div>
+        <img src="./images/clean_stack.png" alt="ClearPath Labs 3-bottle stack" />
+      </div>
+    </div>
+  </header>
+
+  <!-- PRODUCT OVERVIEW ROW -->
+  <section id="shop">
+    <div class="container">
+      <h2 class="section-title">The 3-Part Autonomic Recovery System</h2>
+      <p class="section-subtitle">
+        Three complementary formulas designed to support autonomic balance around the clock:
+        ClearFlow AM for circulation, Rebuild Day for mitochondrial resilience, and Deep Reset PM
+        for sleep and parasympathetic tone.
+      </p>
+
+      <div class="product-row">
+        <!-- CLEARFLOW AM CARD -->
+        <article class="product-card">
+          <img src="./images/clean_am.png" alt="ClearFlow AM bottle" />
+          <div class="product-card-label">Morning • Step 1</div>
+          <div class="product-card-title">CLEARFLOW AM</div>
+          <div class="product-card-tagline">Enzymatic support for healthy circulation and flow.</div>
+          <div class="product-card-meta">Supports microcirculation and oxygen delivery.</div>
+          <div class="product-card-price">$79 <span style="font-size:0.85rem; color:#6b7280;">• 90 capsules</span></div>
+          <a href="#clearflow-am" class="product-card-cta">
+            Learn more <i class="fa-solid fa-arrow-right-long"></i>
+          </a>
+        </article>
+
+        <!-- REBUILD DAY CARD -->
+        <article class="product-card">
+          <img src="./images/clean_day.png" alt="Rebuild Day bottle" />
+          <div class="product-card-label">Daytime • Step 2</div>
+          <div class="product-card-title">REBUILD DAY</div>
+          <div class="product-card-tagline">Daily mitochondrial and resilience support.</div>
+          <div class="product-card-meta">Backs stable energy and inflammatory balance.</div>
+          <div class="product-card-price">$89 <span style="font-size:0.85rem; color:#6b7280;">• 90 capsules</span></div>
+          <a href="#rebuild-day" class="product-card-cta">
+            Learn more <i class="fa-solid fa-arrow-right-long"></i>
+          </a>
+        </article>
+
+        <!-- DEEP RESET PM CARD -->
+        <article class="product-card">
+          <img src="./images/clean_pm.png" alt="Deep Reset PM bottle" />
+          <div class="product-card-label">Night • Step 3</div>
+          <div class="product-card-title">DEEP RESET PM</div>
+          <div class="product-card-tagline">Sleep and parasympathetic support.</div>
+          <div class="product-card-meta">Helps support deep non-REM sleep and calm overnight.</div>
+          <div class="product-card-price">$79 <span style="font-size:0.85rem; color:#6b7280;">• 60 capsules</span></div>
+          <a href="#deep-reset-pm" class="product-card-cta">
+            Learn more <i class="fa-solid fa-arrow-right-long"></i>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT STORY SECTIONS -->
+  <main>
+    <!-- CLEARFLOW AM SECTION -->
+    <section id="clearflow-am" class="product-section product-section--am">
+      <div class="product-section-inner">
+        <div class="product-media">
+          <img src="./images/clean_am.png" alt="ClearFlow AM bottle" />
+        </div>
+        <div class="product-copy">
+          <div class="product-pill">Step 1 • Morning</div>
+          <div class="product-label">Enzymatic Vascular Support</div>
+          <h2 class="product-title">CLEARFLOW AM</h2>
+          <p class="product-tagline">
+            Start the day by supporting microcirculation and enzymatic fibrin breakdown, so your brain and
+            tissues can receive the oxygen and nutrients they’re asking for.
+          </p>
+          <ul class="product-benefits">
+            <li><i class="fa-solid fa-circle-check"></i>Supports targeted enzymatic fibrin breakdown.</li>
+            <li><i class="fa-solid fa-circle-check"></i>Helps maintain healthy blood viscosity and flow.</li>
+            <li><i class="fa-solid fa-circle-check"></i>Backs oxygen delivery to brain and peripheral tissues.</li>
+          </ul>
+          <div class="product-meta">
+            <div class="product-price">$79 <span>• 90 capsules</span></div>
+            <div class="product-supply">Approx. 30-day supply • Morning use</div>
+          </div>
+          <div class="product-cta-row">
+            <a href="#" class="btn-primary">Add CLEARFLOW AM</a>
+            <a href="#science" class="btn-secondary">
+              How this fits into the system
+              <i class="fa-solid fa-arrow-right-long"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REBUILD DAY SECTION -->
+    <section id="rebuild-day" class="product-section product-section--rebuild">
+      <div class="product-section-inner">
+        <div class="product-media">
+          <img src="./images/clean_day.png" alt="Rebuild Day bottle" />
+        </div>
+        <div class="product-copy">
+          <div class="product-pill">Step 2 • Daytime</div>
+          <div class="product-label">Mitochondrial Resilience</div>
+          <h2 class="product-title">REBUILD DAY</h2>
+          <p class="product-tagline">
+            Midday support for mitochondrial function, inflammatory balance, and clean energy—without the
+            stimulants that push your nervous system further into overdrive.
+          </p>
+          <ul class="product-benefits">
+            <li><i class="fa-solid fa-circle-check"></i>Supports mitochondrial function and ATP output.</li>
+            <li><i class="fa-solid fa-circle-check"></i>Helps balance oxidative stress and inflammation.</li>
+            <li><i class="fa-solid fa-circle-check"></i>Promotes stable daytime energy and mental clarity.</li>
+          </ul>
+          <div class="product-meta">
+            <div class="product-price">$89 <span>• 90 capsules</span></div>
+            <div class="product-supply">Approx. 30-day supply • Daytime use</div>
+          </div>
+          <div class="product-cta-row">
+            <a href="#" class="btn-primary">Add REBUILD DAY</a>
+            <a href="#science" class="btn-secondary">
+              How this fits into the system
+              <i class="fa-solid fa-arrow-right-long"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEEP RESET PM SECTION -->
+    <section id="deep-reset-pm" class="product-section product-section--pm">
+      <div class="product-section-inner">
+        <div class="product-media">
+          <img src="./images/clean_pm.png" alt="Deep Reset PM bottle" />
+        </div>
+        <div class="product-copy">
+          <div class="product-pill">Step 3 • Night</div>
+          <div class="product-label">Sleep & Parasympathetic Support</div>
+          <h2 class="product-title">DEEP RESET PM</h2>
+          <p class="product-tagline">
+            Close the loop at night by supporting GABA, vagal tone, and deep non-REM sleep, so your nervous
+            system can spend more time in true repair instead of chronic survival mode.
+          </p>
+          <ul class="product-benefits">
+            <li><i class="fa-solid fa-circle-check"></i>Supports GABA activity and parasympathetic tone.</li>
+            <li><i class="fa-solid fa-circle-check"></i>Helps support deep non-REM sleep cycles.</li>
+            <li><i class="fa-solid fa-circle-check"></i>Encourages a calmer overnight nervous system state.</li>
+          </ul>
+          <div class="product-meta">
+            <div class="product-price">$79 <span>• 60 capsules</span></div>
+            <div class="product-supply">Approx. 30-night supply • Bedtime use</div>
+          </div>
+          <div class="product-cta-row">
+            <a href="#" class="btn-primary">Add DEEP RESET PM</a>
+            <a href="#science" class="btn-secondary">
+              How this fits into the system
+              <i class="fa-solid fa-arrow-right-long"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- SCIENCE SECTION -->
+  <section id="science">
+    <div class="container">
+      <div class="science-wrap">
+        <h3>Why the Autonomic Nervous System Matters</h3>
+        <p>
+          When the autonomic nervous system is stuck in “fight or flight,” blood flow, oxygen delivery, and
+          mitochondrial output can all be impacted. This system was designed to support three key areas at once:
+          healthy circulation, mitochondrial function, and parasympathetic tone.
+        </p>
+        <div class="science-grid">
+          <article class="science-card">
+            <div class="science-card-header">
+              <div class="science-card-icon">1</div>
+              <h4>Support Healthy Microcirculation</h4>
+            </div>
+            <p>
+              ClearFlow AM provides enzymatic and circulation-focused support to help maintain healthy blood
+              viscosity and microcirculation, so tissues and nerves receive what they need.
+            </p>
+          </article>
+          <article class="science-card">
+            <div class="science-card-header">
+              <div class="science-card-icon">2</div>
+              <h4>Feed the Mitochondria</h4>
+            </div>
+            <p>
+              Rebuild Day delivers mitochondrial cofactors and antioxidants to support stable ATP production and
+              cellular resilience, instead of quick, jittery energy spikes.
+            </p>
+          </article>
+          <article class="science-card">
+            <div class="science-card-header">
+              <div class="science-card-icon">3</div>
+              <h4>Encourage Parasympathetic Tone</h4>
+            </div>
+            <p>
+              Deep Reset PM includes calming nutrients intended to support GABA, vagal tone, and deep sleep
+              architecture, so your nervous system can spend more time in “rest and repair.”
+            </p>
+          </article>
+        </div>
+
+        <div class="bundle-cta">
+          <a href="#shop" class="btn-primary">
+            Get the Full 3-Part Recovery Bundle
+          </a>
+          <div class="bundle-note">
+            Many people choose to use all three together consistently for at least 8–12 weeks to support their recovery goals.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="container">
+      <div class="trust-badges">
+        <span><i class="fa-solid fa-shield-heart"></i> Formulated with clinician input</span>
+        <span><i class="fa-solid fa-flask"></i> Third-party tested for quality</span>
+        <span><i class="fa-solid fa-truck-fast"></i> Fast, tracked U.S. shipping</span>
+      </div>
+      <p>© <span id="year"></span> ClearPath Labs. All rights reserved.</p>
+      <p style="margin-top: 0.4rem; font-size: 0.82rem;">
+        These products are intended to support general wellness. They are not intended to diagnose, treat, cure, or prevent any disease. Always consult your healthcare provider before starting any new supplement regimen.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
