@@ -3,984 +3,593 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ClearPath Labs | 3-Part Nervous System Recovery Stack</title>
   <meta
     name="description"
-    content="ClearPath Labs is a 3-part daily supplement system designed to support autonomic nervous system regulation, microclot resolution, mitochondrial energy, and deep restorative sleep."
+    content="ClearPath Labs – a synchronized 3-part autonomic nervous system recovery system to support healthy circulation, mitochondrial energy, and deep restorative recovery."
   />
+  <title>ClearPath Labs | Autonomic Nervous System Recovery System</title>
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
     rel="stylesheet"
   />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
 
   <style>
-    :root {
-      --bg: #f3f4f6;
-      --bg-soft: #e5e7eb;
-      --card: #ffffff;
-      --border: #e5e7eb;
-      --text: #0f172a;
-      --text-muted: #6b7280;
-      --accent: #0ea5e9;
-      --accent-soft: #e0f2fe;
-      --accent-strong: #0284c7;
-      --shadow-soft: 0 20px 40px rgba(15, 23, 42, 0.12);
-      --radius-lg: 1.25rem;
-      --radius-xl: 1.75rem;
+    :root{
+      --bg:#ffffff;
+      --text:#0f172a;
+      --muted:#64748b;
+      --line:#e5e7eb;
+
+      --accent:#c2410c; /* warm copper */
+      --accent2:#16a34a; /* natural green */
+      --grad: linear-gradient(135deg, var(--accent), var(--accent2));
     }
 
-    * {
-      box-sizing: border-box;
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.65;
+      overflow-x:hidden;
+    }
+    a{color:inherit}
+    .container{max-width:1180px;margin:0 auto;padding:0 22px}
+
+    /* NAV */
+    .nav{
+      position:sticky; top:0; z-index:50;
+      background:rgba(255,255,255,.92);
+      backdrop-filter: blur(14px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav-inner{
+      height:58px;
+      display:flex; align-items:center; justify-content:space-between;
+    }
+    .brand{
+      font-family:"Playfair Display",serif;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      font-size:1.05rem;
+    }
+    .nav-links{
+      display:flex; gap:18px; align-items:center;
+      font-size:.9rem; color:#475569;
+    }
+    .nav-links a{ text-decoration:none; font-weight:500 }
+    .nav-links a:hover{ color:#0f172a }
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:10px 14px;
+      border-radius:999px;
+      background:#0f172a; color:#fff;
+      text-decoration:none; font-weight:600;
+      font-size:.88rem;
     }
 
-    html,
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
-        "Segoe UI", sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      scroll-behavior: smooth;
-    }
-
-    body {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .page {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 1.25rem 1.25rem 3.5rem;
-    }
-
-    /* HEADER */
-
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      padding: 0.5rem 0 1rem;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
-
-    .logo-orb {
-      width: 32px;
-      height: 32px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 20% 20%, #fef9c3, #7dd3fc 45%, #0ea5e9 75%);
-      box-shadow: 0 0 14px rgba(56, 189, 248, 0.7);
-    }
-
-    .brand-main {
-      font-weight: 600;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      font-size: 0.78rem;
-    }
-
-    .brand-sub {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--text-muted);
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      font-size: 0.8rem;
-    }
-
-    nav a {
-      padding: 0.25rem 0.6rem;
-      border-radius: 999px;
-      color: var(--text-muted);
-      border: 1px solid transparent;
-      transition: all 0.16s ease;
-      white-space: nowrap;
-    }
-
-    nav a:hover {
-      color: var(--accent-strong);
-      border-color: var(--accent-soft);
-      background: #ffffff;
-    }
-
-    .header-cta {
-      padding: 0.45rem 1rem;
-      border-radius: 999px;
-      border: none;
-      background: linear-gradient(135deg, #0ea5e9, #22c55e);
-      color: #ffffff;
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.11em;
-      text-transform: uppercase;
-      box-shadow: 0 12px 25px rgba(34, 197, 94, 0.35);
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-    }
-
-    .header-cta span {
-      font-size: 1rem;
-    }
-
-    @media (max-width: 720px) {
-      header {
-        flex-wrap: wrap;
-        justify-content: center;
-        text-align: center;
-      }
-      nav {
-        order: 3;
-      }
-    }
-
-    /* HERO */
-
-    .hero {
-      margin-top: 0.5rem;
-      border-radius: var(--radius-xl);
-      padding: 2.2rem 2rem 2.3rem;
+    /* HEADER (SHORTER ~30%) */
+    header{
+      padding:22px 0 26px;
       background:
-        radial-gradient(circle at top left, rgba(59, 130, 246, 0.16), transparent 55%),
-        radial-gradient(circle at bottom right, rgba(16, 185, 129, 0.14), transparent 55%),
-        #ffffff;
-      box-shadow: var(--shadow-soft);
-      border: 1px solid #e5e7eb;
-      display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
-      gap: 1.7rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-bg-soft {
-      position: absolute;
-      inset: 0;
-      background: url("images/ans-hero.jpg") center/cover no-repeat;
-      opacity: 0.08;
-      mix-blend-mode: screen;
-      pointer-events: none;
-    }
-
-    .hero-inner {
-      position: relative;
-      z-index: 1;
-      display: contents;
-    }
-
-    .hero-left,
-    .hero-right {
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.2rem 0.7rem;
-      border-radius: 999px;
-      background: var(--accent-soft);
-      color: var(--accent-strong);
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      margin-bottom: 0.8rem;
-    }
-
-    .hero-pill-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: var(--accent);
-      box-shadow: 0 0 10px rgba(56, 189, 248, 0.8);
-    }
-
-    .hero-title {
-      font-family: "Playfair Display", serif;
-      font-size: clamp(2rem, 3vw, 2.6rem);
-      line-height: 1.1;
-      margin: 0 0 0.5rem;
-      color: #020617;
-    }
-
-    .hero-title span {
-      color: var(--accent-strong);
-    }
-
-    .hero-subtitle {
-      font-size: 0.96rem;
-      color: var(--text-muted);
-      max-width: 430px;
-      margin-bottom: 1.1rem;
-    }
-
-    .hero-chip-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-bottom: 1.1rem;
-    }
-
-    .hero-chip {
-      padding: 0.22rem 0.7rem;
-      border-radius: 999px;
-      border: 1px solid #e5e7eb;
-      background: rgba(249, 250, 251, 0.9);
-      font-size: 0.78rem;
-      color: var(--text-muted);
-    }
-
-    .hero-chip strong {
-      color: var(--text);
-      font-weight: 600;
-    }
-
-    .hero-cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 0.7rem;
-      margin-bottom: 0.9rem;
-    }
-
-    .hero-button-main {
-      padding: 0.6rem 1.4rem;
-      border-radius: 999px;
-      border: none;
-      background: #0ea5e9;
-      color: #ffffff;
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.11em;
-      text-transform: uppercase;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      box-shadow: 0 16px 30px rgba(14, 165, 233, 0.35);
-    }
-
-    .hero-button-main span {
-      font-size: 1rem;
-    }
-
-    .hero-button-ghost {
-      padding: 0.6rem 1rem;
-      border-radius: 999px;
-      border: 1px solid #d1d5db;
-      background: rgba(255, 255, 255, 0.9);
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-    }
-
-    .hero-note {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-    }
-
-    .hero-note span {
-      color: var(--accent-strong);
-      font-weight: 500;
-    }
-
-    .hero-right-card {
-      border-radius: var(--radius-lg);
-      background: rgba(248, 250, 252, 0.8);
-      border: 1px solid #e5e7eb;
-      padding: 1.1rem 1.1rem 1.2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.85rem;
-    }
-
-    .hero-products-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.8rem;
-      color: var(--text-muted);
-    }
-
-    .hero-products-header strong {
-      color: var(--text);
-    }
-
-    .hero-mini-pills {
-      display: inline-flex;
-      gap: 0.25rem;
-      flex-wrap: wrap;
-    }
-
-    .hero-mini-pill {
-      border-radius: 999px;
-      padding: 0.1rem 0.5rem;
-      font-size: 0.7rem;
-      background: #ffffff;
-      border: 1px solid #e5e7eb;
-    }
-
-    .hero-product-thumbs {
-      display: flex;
-      gap: 0.5rem;
-      justify-content: space-between;
-      align-items: flex-end;
-    }
-
-    .hero-thumb {
-      flex: 1;
-      border-radius: 1rem;
-      background: #ffffff;
-      border: 1px solid #e5e7eb;
-      padding: 0.5rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.3rem;
-      font-size: 0.75rem;
-      color: var(--text-muted);
-    }
-
-    .hero-thumb img {
-      height: 70px;
-      width: auto;
-      object-fit: contain;
-    }
-
-    .hero-thumb-title {
-      font-weight: 600;
-      font-size: 0.78rem;
-      color: var(--text);
-    }
-
-    .hero-right-foot {
-      font-size: 0.74rem;
-      color: var(--text-muted);
-      display: flex;
-      justify-content: space-between;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-    }
-
-    .hero-right-foot span strong {
-      color: var(--accent-strong);
-    }
-
-    @media (max-width: 900px) {
-      .hero {
-        grid-template-columns: minmax(0, 1fr);
-        padding: 1.7rem 1.5rem 1.8rem;
-      }
-    }
-
-    /* SECTIONS */
-
-    .section {
-      margin-top: 2.7rem;
-    }
-
-    .section-header {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
-    .section-eyebrow {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--accent-strong);
-      margin-bottom: 0.4rem;
-    }
-
-    .section-title {
-      font-family: "Playfair Display", serif;
-      font-size: clamp(1.7rem, 2.4vw, 2.1rem);
-      margin: 0 0 0.5rem;
-    }
-
-    .section-subtitle {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      max-width: 540px;
-      margin: 0 auto;
-    }
-
-    /* PRODUCT GRID */
-
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 1.5rem;
-    }
-
-    @media (max-width: 1024px) {
-      .product-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    @media (max-width: 640px) {
-      .product-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .product-card {
-      border-radius: var(--radius-lg);
-      background: #ffffff;
-      border: 1px solid #e5e7eb;
-      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
-      padding: 1rem 1rem 1.25rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.5rem;
-      text-align: center;
-      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
-    }
-
-    .product-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 16px 36px rgba(15, 23, 42, 0.12);
-      border-color: var(--accent-soft);
-    }
-
-    .product-image-wrap {
-      width: 100%;
-      max-width: 170px;
-      aspect-ratio: 3 / 5;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .product-image-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-
-    .product-pill {
-      font-size: 0.74rem;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      padding: 0.16rem 0.65rem;
-      border-radius: 999px;
-      border: 1px solid #e5e7eb;
-      background: #f9fafb;
-      color: var(--text-muted);
-    }
-
-    .product-title {
-      font-size: 0.9rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-    }
-
-    .product-copy {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      margin: 0;
-    }
-
-    .product-tagline {
-      font-size: 0.78rem;
-      color: var(--accent-strong);
-      margin-top: 0.2rem;
-    }
-
-    /* SYSTEM STEPS */
-
-    .steps-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.4rem;
-    }
-
-    @media (max-width: 960px) {
-      .steps-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .step-card {
-      position: relative;
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      background: #ffffff;
-      border: 1px solid #e5e7eb;
-      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
-    }
-
-    .step-bg {
-      position: absolute;
-      inset: 0;
-      background-size: cover;
-      background-position: center;
-      opacity: 0.18;
-      mix-blend-mode: multiply;
-      pointer-events: none;
-    }
-
-    .step-inner {
-      position: relative;
-      z-index: 1;
-      padding: 1.1rem 1.05rem 1.2rem;
-      background: linear-gradient(to bottom, rgba(248, 250, 252, 0.92), #ffffff);
-    }
-
-    .step-label {
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--text-muted);
-      margin-bottom: 0.3rem;
-    }
-
-    .step-label span {
-      color: var(--accent-strong);
-      font-weight: 600;
-    }
-
-    .step-title {
-      font-weight: 600;
-      margin-bottom: 0.35rem;
-    }
-
-    .step-copy {
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      margin: 0 0 0.4rem;
-    }
-
-    .step-bullets {
-      margin: 0;
-      padding-left: 1rem;
-      font-size: 0.8rem;
-      color: var(--text-muted);
-    }
-
-    /* STACK BANNER */
-
-    .stack-banner {
-      margin-top: 2.7rem;
-      border-radius: var(--radius-xl);
-      background: linear-gradient(135deg, #e0f2fe, #dcfce7);
-      border: 1px solid #bae6fd;
-      padding: 1.7rem 1.7rem;
-      display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-      gap: 1.5rem;
-      align-items: center;
-    }
-
-    @media (max-width: 900px) {
-      .stack-banner {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .stack-text h3 {
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      color: var(--accent-strong);
-      margin: 0 0 0.35rem;
-    }
-
-    .stack-text h2 {
-      font-family: "Playfair Display", serif;
-      font-size: 1.7rem;
-      margin: 0 0 0.45rem;
-      color: #022c22;
-    }
-
-    .stack-text p {
-      font-size: 0.86rem;
-      color: #065f46;
-      margin: 0 0 0.7rem;
-    }
-
-    .stack-points {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0.4rem 1rem;
-      font-size: 0.8rem;
-      color: #047857;
-    }
-
-    @media (max-width: 640px) {
-      .stack-points {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .stack-points span {
-      font-weight: 600;
-    }
-
-    .stack-note {
-      font-size: 0.78rem;
-      color: #047857;
-      margin-top: 0.5rem;
-    }
-
-    .stack-note strong {
-      color: #022c22;
-    }
-
-    .stack-image-wrap {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .stack-image-card {
-      width: 100%;
-      max-width: 320px;
-      border-radius: 1.5rem;
-      background: #ffffff;
-      border: 1px solid #d1fae5;
-      box-shadow: 0 18px 40px rgba(22, 163, 74, 0.28);
-      padding: 0.9rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .stack-image-card img {
-      width: 100%;
-      height: auto;
-      object-fit: contain;
-    }
-
-    /* FOOTER */
-
-    footer {
-      padding: 1.4rem 1.25rem 2rem;
-      border-top: 1px solid #e5e7eb;
-      margin-top: auto;
-      background: #f9fafb;
-      font-size: 0.78rem;
-      color: var(--text-muted);
-    }
-
-    .footer-inner {
-      max-width: 1120px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-    }
-
-    .footer-links a {
-      color: var(--text-muted);
-    }
-
-    .footer-links a:hover {
-      color: var(--accent-strong);
+        radial-gradient(1200px 500px at 40% 0%, rgba(194,65,12,.22), transparent 55%),
+        radial-gradient(900px 420px at 85% 30%, rgba(22,163,74,.18), transparent 60%),
+        #fff;
+      border-bottom:1px solid var(--line);
+    }
+
+    .hero-card{
+      border-radius:22px;
+      overflow:hidden;
+      background:
+        radial-gradient(900px 500px at 20% 0%, rgba(194,65,12,.38), transparent 60%),
+        radial-gradient(900px 480px at 100% 60%, rgba(22,163,74,.25), transparent 55%),
+        linear-gradient(135deg, #0b1220, #0a0f1a 65%);
+      box-shadow: 0 26px 70px rgba(15,23,42,.22);
+      border:1px solid rgba(255,255,255,.06);
+      padding:26px 26px 18px; /* tighter */
+      color:#f8fafc;
+      position:relative;
+      min-height: 320px; /* shorter */
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+
+    .hero-top{
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      align-items:flex-start;
+      flex-wrap:wrap;
+    }
+
+    .hero-kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.06);
+      padding:7px 12px;
+      border-radius:999px;
+      font-size:.72rem;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:rgba(248,250,252,.84);
+    }
+    .hero-kicker i{ color: #f59e0b }
+
+    .hero-title{
+      font-family:"Playfair Display",serif;
+      font-size:1.85rem;  /* smaller */
+      line-height:1.12;
+      margin:10px 0 8px;
+    }
+    .hero-title .accent{
+      background:var(--grad);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+    .hero-sub{
+      max-width:560px;
+      color:rgba(226,232,240,.82);
+      font-size:.98rem; /* smaller */
+    }
+    .hero-punch{
+      margin-top:10px;
+      color:rgba(226,232,240,.9);
+      font-weight:600;
+      letter-spacing:.02em;
+    }
+
+    .hero-actions{
+      margin-top:14px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:10px 14px; /* smaller */
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:600;
+      font-size:.9rem;
+      white-space:nowrap;
+    }
+    .btn-primary{
+      background:var(--grad);
+      color:#0b1220;
+      box-shadow:0 14px 30px rgba(22,163,74,.22);
+    }
+    .btn-ghost{
+      border:1px solid rgba(255,255,255,.18);
+      background:rgba(255,255,255,.06);
+      color:#f8fafc;
+    }
+
+    .hero-bottles{
+      margin-top:6px;
+      display:flex;
+      justify-content:center;
+    }
+    .hero-bottles img{
+      width:min(460px, 90%); /* smaller so header isn't huge */
+      height:auto;
+      object-fit:contain;
+      filter: drop-shadow(0 18px 40px rgba(0,0,0,.45));
+      transform: translateY(8px);
+    }
+
+    section{ padding:34px 0; }
+    .section-title{
+      text-align:center;
+      font-family:"Playfair Display",serif;
+      font-size:1.55rem;
+      margin-bottom:6px;
+    }
+    .section-subtitle{
+      text-align:center;
+      color:var(--muted);
+      font-size:.95rem;
+      max-width:760px;
+      margin:0 auto 20px;
+    }
+
+    .product-strip{
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+      background:#fff;
+      padding:18px 0;
+    }
+
+    .product-row{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:18px;
+      align-items:stretch;
+    }
+
+    /* PRODUCT CARDS WITH BACKGROUND IMAGES */
+    .card{
+      position:relative;
+      border:1px solid var(--line);
+      border-radius:18px;
+      overflow:hidden;
+      background:#fff;
+      padding:16px 16px 14px;
+      box-shadow: 0 14px 34px rgba(15,23,42,.06);
+      text-align:center;
+      isolation:isolate;
+    }
+    .card::before{
+      content:"";
+      position:absolute; inset:0;
+      background: var(--card-bg) center/cover no-repeat;
+      opacity:0.18; /* subtle */
+      filter:saturate(1.05) contrast(1.05);
+      z-index:0;
+    }
+    .card::after{
+      content:"";
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(255,255,255,.55), rgba(255,255,255,.92));
+      z-index:1;
+    }
+    .card > *{ position:relative; z-index:2; }
+
+    .card.am { --card-bg: url("./images/bg-clearflow-am.jpg"); }
+    .card.day { --card-bg: url("./images/bg-clear-day.jpg"); }
+    .card.pm { --card-bg: url("./images/bg-deep-reset-pm.jpg"); }
+
+    .card img{
+      width:100%;
+      max-width:140px;
+      height:auto;
+      object-fit:contain;
+      margin:4px auto 10px;
+      filter: drop-shadow(0 10px 18px rgba(15,23,42,.12));
+    }
+    .card .label{
+      font-size:.72rem;
+      text-transform:uppercase;
+      letter-spacing:.16em;
+      color:#94a3b8;
+      margin-bottom:4px;
+    }
+    .card .name{
+      font-weight:800;
+      letter-spacing:.05em;
+      font-size:1.02rem;
+      margin-bottom:4px;
+    }
+    .card .desc{
+      color:var(--muted);
+      font-size:.9rem;
+      min-height: 42px;
+      margin-bottom:10px;
+    }
+    .card .meta{
+      display:flex;
+      justify-content:center;
+      gap:10px;
+      align-items:baseline;
+      color:#0f172a;
+      margin-bottom:10px;
+    }
+    .price{
+      font-weight:900;
+      color: var(--accent2);
+    }
+    .caps{
+      color:var(--muted);
+      font-size:.88rem;
+    }
+    .card a{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      text-decoration:none;
+      font-weight:700;
+      font-size:.9rem;
+      color:#0f172a;
+    }
+    .card a i{ color: var(--accent); }
+
+    /* SHORT story sections */
+    .story{
+      position:relative;
+      min-height: 46vh;
+      display:flex;
+      align-items:center;
+      overflow:hidden;
+      border-top:1px solid var(--line);
+    }
+    .story::before{
+      content:"";
+      position:absolute; inset:0;
+      background:rgba(255,255,255,.72);
+      pointer-events:none;
+    }
+    .story-inner{
+      position:relative; z-index:2;
+      width:100%;
+      display:flex;
+      gap:24px;
+      align-items:center;
+      justify-content:space-between;
+      padding:30px 0;
+    }
+    .story-left{
+      flex:0 0 300px;
+      display:flex;
+      justify-content:center;
+    }
+    .story-left img{
+      width:100%;
+      max-width:240px;
+      height:auto;
+      object-fit:contain;
+      filter: drop-shadow(0 16px 34px rgba(15,23,42,.14));
+    }
+    .story-right{
+      flex:1;
+      max-width:680px;
+    }
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.78);
+      font-size:.72rem;
+      text-transform:uppercase;
+      letter-spacing:.14em;
+      color:#64748b;
+      margin-bottom:10px;
+    }
+    .story-title{
+      font-family:"Playfair Display",serif;
+      font-size:1.55rem;
+      margin-bottom:6px;
+    }
+    .story-blurb{
+      color:#334155;
+      margin-bottom:10px;
+      font-size:.96rem;
+      max-width: 52ch;
+    }
+    .bullets{
+      list-style:none;
+      color:#475569;
+      font-size:.92rem;
+    }
+    .bullets li{
+      display:flex; gap:10px;
+      margin:6px 0;
+      align-items:flex-start;
+    }
+    .bullets i{
+      color:var(--accent2);
+      margin-top:4px;
+      font-size:.9rem;
+    }
+
+    .story-am{ background: url("./images/bg-clearflow-am.jpg") center/cover no-repeat; }
+    .story-day{ background: url("./images/bg-clear-day.jpg") center/cover no-repeat; }
+    .story-pm{ background: url("./images/bg-deep-reset-pm.jpg") center/cover no-repeat; }
+
+    .reverse .story-inner{ flex-direction:row-reverse; }
+
+    footer{
+      border-top:1px solid var(--line);
+      background:#f8fafc;
+      padding:26px 0 20px;
+      color:#64748b;
+      font-size:.9rem;
+      text-align:center;
+      margin-top:16px;
+    }
+
+    @media (max-width: 980px){
+      .product-row{ grid-template-columns: 1fr; }
+      .hero-card{ padding:22px 16px 16px; min-height: unset; }
+      .hero-title{ font-size:1.7rem; }
+      .story-inner{ flex-direction:column; padding:26px 0; }
+      .reverse .story-inner{ flex-direction:column; }
+      .story-left{ flex:unset; }
+      .story-right{ max-width:unset; }
+      .nav-links{ gap:12px; }
     }
   </style>
 </head>
+
 <body>
-  <div class="page">
-    <!-- HEADER -->
-    <header>
-      <div class="brand">
-        <div class="logo-orb"></div>
-        <div>
-          <div class="brand-main">CLEARPATH LABS</div>
-          <div class="brand-sub">3-PART NERVOUS SYSTEM STACK</div>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <div class="brand">CLEARPATH LABS</div>
+      <div class="nav-links">
+        <a href="#shop">Shop</a>
+        <a href="#protocol">Protocol</a>
+        <a href="#footer">Support</a>
+        <a class="pill" href="#shop">Get the System <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <div class="container">
+      <div class="hero-card">
+        <div class="hero-top">
+          <div>
+            <div class="hero-kicker">
+              <i class="fa-solid fa-leaf"></i>
+              Autonomic Recovery • 3-Part Protocol
+            </div>
+
+            <h1 class="hero-title">
+              Feel Better, <span class="accent">Naturally</span>
+            </h1>
+
+            <p class="hero-sub">
+              Restore your autonomic balance with a synchronized 3-part system that supports
+              healthy circulation, mitochondrial energy, and deep restorative recovery.
+            </p>
+
+            <div class="hero-punch">Clear flow. Clean energy. Deep reset.</div>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#shop">
+                Shop the system <i class="fa-solid fa-arrow-right"></i>
+              </a>
+              <a class="btn btn-ghost" href="#protocol">
+                How it works <i class="fa-solid fa-circle-info"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-bottles" aria-hidden="true">
+          <img src="./images/clean_stack.png" alt="ClearPath Labs 3-bottle stack" />
         </div>
       </div>
+    </div>
+  </header>
 
-      <nav>
-        <a href="#top">Home</a>
-        <a href="#products">Formulas</a>
-        <a href="#system">How it works</a>
-      </nav>
+  <section id="shop">
+    <div class="container">
+      <div class="section-title">Premium Natural Supplements</div>
+      <div class="section-subtitle">
+        A synchronized AM / Day / PM system designed to work with your circadian rhythm.
+      </div>
+    </div>
 
-      <button class="header-cta" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
-        View products
-        <span>↗</span>
-      </button>
-    </header>
-
-    <!-- HERO -->
-    <main id="top">
-      <section class="hero">
-        <div class="hero-bg-soft"></div>
-        <div class="hero-inner">
-          <div class="hero-left">
-            <div class="hero-pill">
-              <div class="hero-pill-dot"></div>
-              3-part daily supplement system
+    <div class="product-strip">
+      <div class="container">
+        <div class="product-row">
+          <div class="card am">
+            <img src="./images/clean_am.png" alt="ClearFlow AM" />
+            <div class="label">Morning • Step 1</div>
+            <div class="name">CLEARFLOW AM</div>
+            <div class="desc">Supports healthy circulation and microcirculation.</div>
+            <div class="meta">
+              <div class="price">$79</div><div class="caps">• 90 caps</div>
             </div>
-            <h1 class="hero-title">
-              Help your
-              <span>nervous system</span>
-              remember what “safe” feels like.
-            </h1>
-            <p class="hero-subtitle">
-              ClearPath Labs is a three-part supplement stack designed to support autonomic nervous system regulation,
-              microclot resolution, mitochondrial energy, and deep, restorative sleep.
-            </p>
-
-            <div class="hero-chip-row">
-              <div class="hero-chip"><strong>AM</strong> · ClearFlow – circulation & microclot support</div>
-              <div class="hero-chip"><strong>DAY</strong> · Rebuild – energy & repair</div>
-              <div class="hero-chip"><strong>PM</strong> · Deep Reset – sleep & vagal tone</div>
-            </div>
-
-            <div class="hero-cta-row">
-              <button class="hero-button-main" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
-                See the formulas
-                <span>↓</span>
-              </button>
-              <button class="hero-button-ghost" onclick="document.getElementById('system').scrollIntoView({behavior:'smooth'})">
-                How the 3-part system works
-              </button>
-            </div>
-
-            <div class="hero-note">
-              Built for people doing the work
-              (<span>pacing, breath, sleep, retraining</span>) and needing their body to finally catch up.
-            </div>
+            <a href="#clearflow">View details <i class="fa-solid fa-arrow-right-long"></i></a>
           </div>
 
-          <div class="hero-right">
-            <div class="hero-right-card">
-              <div class="hero-products-header">
-                <span><strong>What’s in the stack?</strong></span>
-                <div class="hero-mini-pills">
-                  <span class="hero-mini-pill">AM</span>
-                  <span class="hero-mini-pill">DAY</span>
-                  <span class="hero-mini-pill">PM</span>
-                </div>
-              </div>
-
-              <div class="hero-product-thumbs">
-                <div class="hero-thumb">
-                  <img src="clean_am.png" alt="ClearFlow AM bottle" />
-                  <div class="hero-thumb-title">ClearFlow AM</div>
-                  <div>Flow & microclots</div>
-                </div>
-                <div class="hero-thumb">
-                  <img src="clean_day.png" alt="Rebuild Day bottle" />
-                  <div class="hero-thumb-title">Rebuild Day</div>
-                  <div>Energy & repair</div>
-                </div>
-                <div class="hero-thumb">
-                  <img src="clean_pm.png" alt="Deep Reset PM bottle" />
-                  <div class="hero-thumb-title">Deep Reset PM</div>
-                  <div>Sleep & calm</div>
-                </div>
-              </div>
-
-              <div class="hero-right-foot">
-                <span><strong>Not medical advice.</strong> Designed to sit alongside your clinician, not replace them.</span>
-                <span>First manufacturing run planned after formulas are finalized.</span>
-              </div>
+          <div class="card day">
+            <img src="./images/clean_day.png" alt="Rebuild Day" />
+            <div class="label">Daytime • Step 2</div>
+            <div class="name">REBUILD DAY</div>
+            <div class="desc">Mitochondrial resilience for steady, clean energy.</div>
+            <div class="meta">
+              <div class="price">$89</div><div class="caps">• 90 caps</div>
             </div>
+            <a href="#rebuild">View details <i class="fa-solid fa-arrow-right-long"></i></a>
+          </div>
+
+          <div class="card pm">
+            <img src="./images/clean_pm.png" alt="Deep Reset PM" />
+            <div class="label">Night • Step 3</div>
+            <div class="name">DEEP RESET PM</div>
+            <div class="desc">Supports deep sleep and parasympathetic tone.</div>
+            <div class="meta">
+              <div class="price">$79</div><div class="caps">• 60 caps</div>
+            </div>
+            <a href="#deepreset">View details <i class="fa-solid fa-arrow-right-long"></i></a>
           </div>
         </div>
-      </section>
+      </div>
+    </div>
+  </section>
 
-      <!-- PRODUCTS SECTION -->
-      <section id="products" class="section">
-        <div class="section-header">
-          <div class="section-eyebrow">The formulas</div>
-          <h2 class="section-title">A clear AM / DAY / PM rhythm</h2>
-          <p class="section-subtitle">
-            Three formulas. One job: help your nervous system shift out of “survival mode” and back toward safety,
-            rest, and repair.
-          </p>
+  <section id="protocol" class="story story-am">
+    <div class="container">
+      <div class="story-inner">
+        <div class="story-left">
+          <img src="./images/clean_am.png" alt="ClearFlow AM bottle" />
         </div>
-
-        <div class="product-grid">
-          <article class="product-card">
-            <div class="product-image-wrap">
-              <img src="clean_am.png" alt="ClearFlow AM bottle" />
-            </div>
-            <div class="product-pill">Step 1 · Morning</div>
-            <div class="product-title">ClearFlow AM</div>
-            <p class="product-copy">
-              Circulation & microclot support to help unlock oxygen delivery and reduce that “heavy, stuck” feeling.
-            </p>
-            <div class="product-tagline">Pairs with hydration, light movement, and breath work.</div>
-          </article>
-
-          <article class="product-card">
-            <div class="product-image-wrap">
-              <img src="clean_day.png" alt="Rebuild Day bottle" />
-            </div>
-            <div class="product-pill">Step 2 · Daytime</div>
-            <div class="product-title">Rebuild Day</div>
-            <p class="product-copy">
-              Mitochondrial and nervous system support so you’re rebuilding capacity, not just pushing through.
-            </p>
-            <div class="product-tagline">Clarity and resilience, without fake stimulant hype.</div>
-          </article>
-
-          <article class="product-card">
-            <div class="product-image-wrap">
-              <img src="clean_pm.png" alt="Deep Reset PM bottle" />
-            </div>
-            <div class="product-pill">Step 3 · Night</div>
-            <div class="product-title">Deep Reset PM</div>
-            <p class="product-copy">
-              Sleep & calm support to help your brain drop into restorative sleep and your body into repair mode.
-            </p>
-            <div class="product-tagline">Built to avoid the groggy “sleep hangover.”</div>
-          </article>
-
-          <article class="product-card">
-            <div class="product-image-wrap">
-              <img src="clean_stack.png" alt="ClearPath Labs 3-part stack bottles" />
-            </div>
-            <div class="product-pill">The complete system</div>
-            <div class="product-title">3-Part Stack</div>
-            <p class="product-copy">
-              All three formulas working together: flow, rebuild, and deep reset aligned with your daily rhythm.
-            </p>
-            <div class="product-tagline">Think protocol, not random supplement drawer.</div>
-          </article>
-        </div>
-      </section>
-
-      <!-- SYSTEM SECTION -->
-      <section id="system" class="section">
-        <div class="section-header">
-          <div class="section-eyebrow">How it works</div>
-          <h2 class="section-title">Built around your nervous system, not just your symptoms.</h2>
-          <p class="section-subtitle">
-            ClearPath Labs is meant to sit alongside pacing, nervous system retraining, breath work, and good sleep
-            hygiene—not replace them.
-          </p>
-        </div>
-
-        <div class="steps-grid">
-          <article class="step-card">
-            <div class="step-bg" style="background-image: url('images/clearflow-am.jpg');"></div>
-            <div class="step-inner">
-              <div class="step-label"><span>Step 1</span> · ClearFlow AM</div>
-              <div class="step-title">Get things moving again.</div>
-              <p class="step-copy">
-                Formulated to support microclot breakdown, smoother blood flow, and better oxygen delivery to tissues.
-              </p>
-              <ul class="step-bullets">
-                <li>Supports healthy blood viscosity and flow</li>
-                <li>Pairs well with hydration, light walking, and breath work</li>
-                <li>First signal to your body: “It’s safe to move again.”</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="step-card">
-            <div class="step-bg" style="background-image: url('images/rebuild-day.jpg');"></div>
-            <div class="step-inner">
-              <div class="step-label"><span>Step 2</span> · Rebuild Day</div>
-              <div class="step-title">Refuel and repair.</div>
-              <p class="step-copy">
-                Mitochondrial and nervous system support built for slow, steady rebuilding—not quick, jittery spikes.
-              </p>
-              <ul class="step-bullets">
-                <li>Supports ATP production and cell repair</li>
-                <li>Helps buffer stress signals in a wired-but-tired body</li>
-                <li>Made to be cycled and adjusted with your clinician</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="step-card">
-            <div class="step-bg" style="background-image: url('images/deep-reset-pm.jpg');"></div>
-            <div class="step-inner">
-              <div class="step-label"><span>Step 3</span> · Deep Reset PM</div>
-              <div class="step-title">Let your brain finally rest.</div>
-              <p class="step-copy">
-                Sleep architecture and GABA-supportive nutrients to encourage deeper, calmer nights and easier mornings.
-              </p>
-              <ul class="step-bullets">
-                <li>Supports parasympathetic “rest & digest” signaling</li>
-                <li>Helps you drop into deeper sleep cycles</li>
-                <li>Aim: wake up less wrecked, more steady</li>
-              </ul>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- STACK BANNER -->
-      <section class="stack-banner">
-        <div class="stack-text">
-          <h3>The full ClearPath stack</h3>
-          <h2>Want to know when we launch?</h2>
-          <p>
-            We’re finalizing formulas and manufacturing partners now. The goal: a transparent, non-hype launch that
-            actually serves people recovering from long-haul stress and post-viral chaos.
-          </p>
-          <div class="stack-points">
-            <div><span>•</span> No “miracle cure” claims.</div>
-            <div><span>•</span> Built to work with your existing protocol.</div>
-            <div><span>•</span> Science-backed ingredients, clearly labeled.</div>
-            <div><span>•</span> Designed with clinicians and real patients in mind.</div>
+        <div class="story-right" id="clearflow">
+          <div class="chip">Step 1 • Morning</div>
+          <div class="story-title">ClearFlow AM</div>
+          <div class="story-blurb">
+            Start the day by supporting healthy circulation and microcirculation to help oxygen and nutrients
+            reach the tissues that need them.
           </div>
-          <div class="stack-note">
-            Mailing list and founding clinical beta coming soon.
-            <strong>This is the place to start when you’re ready to put your nervous system first.</strong>
-          </div>
+          <ul class="bullets">
+            <li><i class="fa-solid fa-circle-check"></i>Supports healthy flow and microcirculation</li>
+            <li><i class="fa-solid fa-circle-check"></i>Promotes daily clarity and oxygen delivery</li>
+            <li><i class="fa-solid fa-circle-check"></i>Designed for morning use</li>
+          </ul>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="stack-image-wrap">
-          <div class="stack-image-card">
-            <img src="clearflow-stack.png" alt="ClearPath Labs full supplement stack" />
-          </div>
+  <section class="story story-day reverse">
+    <div class="container">
+      <div class="story-inner">
+        <div class="story-left">
+          <img src="./images/clean_day.png" alt="Rebuild Day bottle" />
         </div>
-      </section>
-    </main>
-  </div>
+        <div class="story-right" id="rebuild">
+          <div class="chip">Step 2 • Daytime</div>
+          <div class="story-title">Rebuild Day</div>
+          <div class="story-blurb">
+            Midday mitochondrial support designed to help you feel steady energy and resilience—without
+            pushing the nervous system into overdrive.
+          </div>
+          <ul class="bullets">
+            <li><i class="fa-solid fa-circle-check"></i>Supports mitochondrial function and ATP output</li>
+            <li><i class="fa-solid fa-circle-check"></i>Helps balance oxidative stress</li>
+            <li><i class="fa-solid fa-circle-check"></i>Designed for daytime use</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <footer>
-    <div class="footer-inner">
-      <span>© <span id="year"></span> ClearPath Labs. Not medical advice. Always talk with your clinician.</span>
-      <div class="footer-links">
-        <a href="#products">Formulas</a>
-        <a href="#system">How it works</a>
+  <section class="story story-pm">
+    <div class="container">
+      <div class="story-inner">
+        <div class="story-left">
+          <img src="./images/clean_pm.png" alt="Deep Reset PM bottle" />
+        </div>
+        <div class="story-right" id="deepreset">
+          <div class="chip">Step 3 • Night</div>
+          <div class="story-title">Deep Reset PM</div>
+          <div class="story-blurb">
+            Close the loop at night with sleep and parasympathetic support so your body can spend more time
+            in true “rest and repair.”
+          </div>
+          <ul class="bullets">
+            <li><i class="fa-solid fa-circle-check"></i>Supports deep non-REM sleep cycles</li>
+            <li><i class="fa-solid fa-circle-check"></i>Promotes calm nighttime nervous system tone</li>
+            <li><i class="fa-solid fa-circle-check"></i>Designed for bedtime use</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="footer">
+    <div class="container">
+      <div style="margin-bottom:8px;font-weight:600;color:#334155;">
+        © <span id="year"></span> ClearPath Labs
+      </div>
+      <div style="max-width:900px;margin:0 auto;">
+        These products are intended to support general wellness. They are not intended to diagnose, treat, cure,
+        or prevent any disease. Always consult your healthcare provider before starting any new supplement regimen.
       </div>
     </div>
   </footer>
