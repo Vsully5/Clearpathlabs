@@ -3,539 +3,433 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>ClearPath Labs — Premium Natural Supplements</title>
-  <meta name="description" content="ClearPath Labs: clean, premium natural supplements for Day, Night, and foundational wellness." />
-
+  <title>ClearPath Labs — Heal Naturally</title>
+  <meta name="description" content="Heal naturally with a 3-part daily system for circulation, energy, and deep sleep." />
   <style>
     :root{
       --bg:#ffffff;
       --text:#0b1220;
-      --muted:#5a6578;
+      --muted:#5c6b7a;
       --card:#ffffff;
-      --border:rgba(15, 23, 42, .12);
-      --shadow: 0 10px 30px rgba(15,23,42,.08);
-      --shadow2: 0 14px 40px rgba(15,23,42,.10);
-      --radius: 18px;
-      --radius2: 26px;
-
-      --brand1:#3b82f6;
-      --brand2:#22c55e;
-      --brand3:#a855f7;
-      --brand4:#f97316;
+      --stroke:rgba(15,23,42,.10);
+      --shadow: 0 18px 50px rgba(2, 8, 23, .10);
+      --shadow2: 0 10px 26px rgba(2, 8, 23, .08);
+      --radius: 22px;
+      --accent1:#13b6d8;
+      --accent2:#2dd4bf;
+      --accent3:#60a5fa;
     }
 
     *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
       color:var(--text);
       background:
-        radial-gradient(900px 500px at 10% 0%, rgba(59,130,246,.10), transparent 60%),
-        radial-gradient(700px 450px at 90% 10%, rgba(168,85,247,.10), transparent 60%),
-        radial-gradient(700px 450px at 60% 90%, rgba(34,197,94,.10), transparent 60%),
+        radial-gradient(900px 420px at 15% -10%, rgba(19,182,216,.18), transparent 60%),
+        radial-gradient(850px 420px at 85% 0%, rgba(45,212,191,.16), transparent 55%),
+        radial-gradient(750px 380px at 70% 70%, rgba(96,165,250,.12), transparent 60%),
         var(--bg);
     }
 
-    a{color:inherit;text-decoration:none}
-    .container{width:min(1180px, 92vw); margin:0 auto}
+    a{color:inherit; text-decoration:none}
+    .container{max-width:1100px; margin:0 auto; padding:18px 18px 64px}
 
-    /* Header (shorter + cleaner) */
+    /* Header (shorter + clean) */
     header{
-      position:sticky; top:0; z-index:50;
-      backdrop-filter:saturate(160%) blur(10px);
-      background:rgba(255,255,255,.75);
-      border-bottom:1px solid rgba(15,23,42,.08);
+      position:sticky; top:0; z-index:20;
+      backdrop-filter:saturate(180%) blur(14px);
+      background:rgba(255,255,255,.72);
+      border-bottom:1px solid var(--stroke);
     }
     .nav{
-      height:64px; /* shorter header */
+      max-width:1100px; margin:0 auto;
       display:flex; align-items:center; justify-content:space-between;
+      padding:12px 18px;
       gap:14px;
     }
     .brand{
-      display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.2px;
+      display:flex; align-items:center; gap:10px;
+      min-width:180px;
     }
-    .mark{
-      width:34px;height:34px;border-radius:12px;
-      background: conic-gradient(from 220deg, var(--brand1), var(--brand3), var(--brand2), var(--brand4), var(--brand1));
-      box-shadow: 0 12px 22px rgba(0,0,0,.10);
+    .logo{
+      width:34px; height:34px; border-radius:14px;
+      background: radial-gradient(circle at 30% 25%, #bff3ff, #1db5ff 45%, #0ea5e9 75%, #0b4fa8 100%);
+      box-shadow:0 10px 22px rgba(2,8,23,.12);
     }
-    nav ul{
-      list-style:none; display:flex; gap:18px; padding:0; margin:0;
-      font-weight:650; color:rgba(15,23,42,.78);
+    .brand-text{display:flex; flex-direction:column; line-height:1.05}
+    .brand-text b{letter-spacing:.12em; font-size:12px}
+    .brand-text span{font-size:11px; color:var(--muted); letter-spacing:.18em}
+    .links{
+      display:flex; align-items:center; gap:14px;
+      color:var(--muted); font-size:14px;
     }
-    .nav-actions{display:flex; align-items:center; gap:10px}
+    .links a{padding:8px 10px; border-radius:12px}
+    .links a:hover{background:rgba(15,23,42,.05); color:var(--text)}
+    .cta{
+      display:flex; gap:10px; align-items:center;
+    }
     .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      border:1px solid rgba(15,23,42,.14);
-      padding:10px 14px; border-radius:999px;
-      font-weight:750;
-      background: rgba(255,255,255,.7);
-      transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
-      cursor:pointer;
-    }
-    .btn:hover{transform: translateY(-1px); box-shadow: 0 12px 24px rgba(15,23,42,.10); background:#fff}
-    .btn.primary{
-      border-color:transparent;
-      background: linear-gradient(135deg, var(--brand1), var(--brand3));
-      color:#fff;
-      box-shadow: 0 14px 34px rgba(59,130,246,.22);
-    }
-    .menu-btn{display:none}
-
-    /* Hero */
-    .hero{padding:54px 0 26px}
-    .hero-grid{
-      display:grid; grid-template-columns: 1.1fr .9fr;
-      gap:26px; align-items:center;
-    }
-    .pill{
-      display:inline-flex; gap:10px; align-items:center;
-      border:1px solid rgba(15,23,42,.12);
-      background: rgba(255,255,255,.75);
-      padding:8px 12px;
+      border:1px solid var(--stroke);
+      padding:10px 14px;
       border-radius:999px;
       font-weight:700;
-      color: rgba(15,23,42,.78);
-      box-shadow: var(--shadow);
+      font-size:14px;
+      background:#fff;
+      box-shadow:0 8px 18px rgba(2,8,23,.06);
     }
-    .dot{
-      width:10px; height:10px; border-radius:99px;
-      background: linear-gradient(135deg, var(--brand2), var(--brand1));
-      box-shadow: 0 0 0 6px rgba(34,197,94,.12);
-    }
-    h1{
-      margin:14px 0 10px;
-      font-size: clamp(30px, 3.2vw, 52px);
-      line-height:1.05;
-      letter-spacing:-.6px;
-    }
-    .sub{
-      color:var(--muted);
-      font-size: 17px;
-      line-height:1.6;
-      max-width: 52ch;
-      margin-bottom:18px;
-    }
-    .hero-ctas{display:flex; gap:10px; flex-wrap:wrap}
-    .trust{
-      margin-top:16px;
-      display:flex; gap:14px; flex-wrap:wrap;
-      color: rgba(15,23,42,.70);
-      font-weight:650;
-      font-size: 14px;
-    }
-    .trust span{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:8px 10px;
-      border:1px solid rgba(15,23,42,.10);
-      border-radius:999px;
-      background: rgba(255,255,255,.7);
+    .btn:hover{transform:translateY(-1px)}
+    .btn-primary{
+      border:none;
+      background:linear-gradient(90deg, var(--accent1), var(--accent2));
+      color:#fff;
+      box-shadow:0 14px 30px rgba(19,182,216,.28);
     }
 
+    /* Hero */
+    .hero{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:18px;
+      padding:28px 0 18px;
+      align-items:stretch;
+    }
     .hero-card{
-      border:1px solid rgba(15,23,42,.10);
-      border-radius: var(--radius2);
-      background: rgba(255,255,255,.72);
-      box-shadow: var(--shadow2);
+      border:1px solid var(--stroke);
+      background:rgba(255,255,255,.82);
+      border-radius:var(--radius);
+      padding:26px;
+      box-shadow:var(--shadow);
       overflow:hidden;
       position:relative;
     }
-    .hero-card::before{
-      content:"";
-      position:absolute; inset:-40% -20% auto -20%;
-      height: 260px;
-      background: radial-gradient(circle at 30% 40%, rgba(59,130,246,.22), transparent 55%),
-                  radial-gradient(circle at 70% 30%, rgba(168,85,247,.20), transparent 55%),
-                  radial-gradient(circle at 70% 70%, rgba(34,197,94,.18), transparent 55%);
-      filter: blur(10px);
+    .pill{
+      display:inline-flex;
+      gap:10px; align-items:center;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid var(--stroke);
+      background:rgba(255,255,255,.9);
+      color:var(--muted);
+      font-weight:700;
+      font-size:12px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
     }
-    .hero-media{
-      position:relative;
-      padding:18px 18px 6px;
-      display:flex; align-items:center; justify-content:center;
+    .dot{
+      width:8px; height:8px; border-radius:999px;
+      background:linear-gradient(90deg, var(--accent1), var(--accent2));
+      box-shadow:0 0 0 6px rgba(45,212,191,.12);
     }
-    .hero-media img{
-      width:min(420px, 80%);
-      height:auto;
-      filter: drop-shadow(0 22px 40px rgba(0,0,0,.18));
+    h1{
+      margin:14px 0 10px;
+      font-size:clamp(34px, 4.2vw, 54px);
+      line-height:1.02;
+      letter-spacing:-.02em;
     }
-    .hero-mini{
-      display:grid; grid-template-columns:1fr 1fr;
-      gap:10px; padding: 0 14px 16px;
+    .grad{
+      background:linear-gradient(90deg, #0ea5e9, #14b8a6);
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
     }
+    .sub{
+      margin:0;
+      color:var(--muted);
+      font-size:16px;
+      line-height:1.6;
+      max-width:56ch;
+    }
+
+    .hero-actions{
+      display:flex; gap:12px; flex-wrap:wrap;
+      margin-top:18px;
+    }
+
     .mini{
-      border:1px solid rgba(15,23,42,.10);
-      background: rgba(255,255,255,.75);
-      border-radius: 16px;
-      padding:12px;
+      display:grid; gap:10px;
+      border:1px solid var(--stroke);
+      background:rgba(255,255,255,.82);
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow:var(--shadow2);
     }
-    .mini .k{font-weight:850}
-    .mini .v{color:var(--muted); font-weight:650; margin-top:4px; font-size:14px}
+    .mini img{
+      width:100%;
+      max-height:210px;
+      object-fit:contain;
+      border-radius:18px;
+      background:rgba(2,8,23,.02);
+      border:1px dashed rgba(15,23,42,.12);
+      padding:14px;
+    }
+    .mini b{font-size:14px}
+    .mini p{margin:0; color:var(--muted); font-size:14px; line-height:1.5}
 
     /* Sections */
-    .section{padding:28px 0}
-    .section-head{
-      display:flex; justify-content:space-between; align-items:flex-end; gap:18px;
-      margin: 6px 0 14px;
+    .section{
+      margin-top:18px;
+      border:1px solid var(--stroke);
+      background:rgba(255,255,255,.80);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow2);
+      overflow:hidden;
     }
-    h2{margin:0; font-size: 26px; letter-spacing:-.3px}
-    .hint{color:var(--muted); font-weight:650; line-height:1.5; max-width:60ch}
+    .section-head{
+      padding:18px 18px 10px;
+      display:flex; justify-content:space-between; align-items:flex-end;
+      gap:12px;
+      border-bottom:1px solid rgba(15,23,42,.06);
+    }
+    .section-head h2{
+      margin:0;
+      font-size:20px;
+      letter-spacing:-.01em;
+    }
+    .section-head span{color:var(--muted); font-size:14px}
 
-    /* Category cards with background images */
     .grid{
       display:grid;
       grid-template-columns: repeat(3, 1fr);
       gap:14px;
+      padding:14px;
     }
-    .cat{
+    .product{
+      border-radius:20px;
       border:1px solid rgba(15,23,42,.10);
-      border-radius: var(--radius2);
-      overflow:hidden;
-      position:relative;
-      min-height: 230px;
       background:#fff;
-      box-shadow: var(--shadow);
-      transition: transform .16s ease, box-shadow .16s ease;
-    }
-    .cat:hover{transform: translateY(-2px); box-shadow: var(--shadow2)}
-    .cat .bg{
-      position:absolute; inset:0;
-      background-size: cover;
-      background-position: center;
-      filter:saturate(1.05);
-      transform: scale(1.02);
-    }
-    .cat .bg::after{
-      content:"";
-      position:absolute; inset:0;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.80), rgba(255,255,255,.70) 40%, rgba(255,255,255,.92));
-    }
-    .cat .content{
-      position:relative;
-      padding:18px;
+      box-shadow:0 10px 26px rgba(2,8,23,.06);
+      overflow:hidden;
       display:flex;
       flex-direction:column;
-      gap:10px;
-      height:100%;
+      min-height:270px;
+    }
+    .product .bg{
+      height:118px;
+      background-size:cover;
+      background-position:center;
+      position:relative;
+    }
+    .product .bg::after{
+      content:"";
+      position:absolute; inset:0;
+      background:linear-gradient(to bottom, rgba(255,255,255,.05), rgba(255,255,255,.80));
+    }
+    .product .content{
+      padding:14px 14px 16px;
+      display:grid;
+      gap:8px;
     }
     .tag{
+      display:inline-flex;
       width:max-content;
-      padding:7px 10px;
+      padding:6px 10px;
       border-radius:999px;
-      font-weight:800;
       font-size:12px;
-      border:1px solid rgba(15,23,42,.12);
-      background: rgba(255,255,255,.75);
-    }
-    .cat h3{margin:0; font-size:18px; letter-spacing:-.2px}
-    .cat p{margin:0; color:var(--muted); font-weight:650; line-height:1.55}
-    .cat .row{margin-top:auto; display:flex; gap:10px; align-items:center; flex-wrap:wrap}
-
-    /* Product/stack section */
-    .cards{display:grid; grid-template-columns: 1.25fr .75fr; gap:14px}
-    .card{
-      border:1px solid rgba(15,23,42,.10);
-      border-radius: var(--radius2);
-      background: rgba(255,255,255,.78);
-      box-shadow: var(--shadow);
-      padding:18px;
-    }
-    .list{margin:10px 0 0; padding:0; list-style:none; display:grid; gap:10px}
-    .li{
-      display:flex; gap:10px; align-items:flex-start;
-      padding:10px 12px;
-      border:1px solid rgba(15,23,42,.10);
-      border-radius:16px;
-      background: rgba(255,255,255,.75);
-    }
-    .check{
-      width:20px;height:20px;border-radius:999px;
-      background: linear-gradient(135deg, var(--brand2), var(--brand1));
-      box-shadow: 0 0 0 6px rgba(59,130,246,.10);
-      flex:0 0 auto;
-      margin-top:2px;
-    }
-    .li b{display:block}
-    .li span{display:block; color:var(--muted); font-weight:650; margin-top:2px; line-height:1.45}
-
-    /* Footer */
-    footer{padding:22px 0 34px; color:rgba(15,23,42,.68); font-weight:650}
-    .foot{
-      border-top:1px solid rgba(15,23,42,.10);
-      padding-top:16px;
-      display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
-    }
-
-    /* Mobile */
-    @media (max-width: 900px){
-      nav ul{display:none}
-      .menu-btn{display:inline-flex}
-      .hero-grid{grid-template-columns:1fr}
-      .grid{grid-template-columns:1fr}
-      .cards{grid-template-columns:1fr}
-    }
-
-    /* Mobile dropdown menu */
-    .mobile-menu{
-      display:none;
-      border-top:1px solid rgba(15,23,42,.08);
-      background: rgba(255,255,255,.85);
-    }
-    .mobile-menu.open{display:block}
-    .mobile-menu a{
-      display:block;
-      padding:12px 4vw;
       font-weight:800;
-      color:rgba(15,23,42,.82);
-      border-bottom:1px solid rgba(15,23,42,.06);
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      border:1px solid var(--stroke);
+      background:rgba(255,255,255,.9);
+    }
+    .product h3{margin:0; font-size:18px}
+    .product p{margin:0; color:var(--muted); line-height:1.5; font-size:14px}
+    .product .row{
+      display:flex; gap:10px; align-items:center; justify-content:space-between;
+      margin-top:6px;
+    }
+    .ghost{
+      background:rgba(15,23,42,.04);
+      border:1px solid rgba(15,23,42,.08);
+      color:var(--text);
+      font-weight:800;
+    }
+
+    /* How it works */
+    .how{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+      padding:14px;
+    }
+    .how-card{
+      border:1px solid var(--stroke);
+      background:#fff;
+      border-radius:20px;
+      padding:16px;
+      box-shadow:0 10px 26px rgba(2,8,23,.06);
+    }
+    .how-card b{display:block; margin-bottom:6px}
+    .how-card p{margin:0; color:var(--muted); line-height:1.6}
+
+    footer{
+      margin-top:18px;
+      color:var(--muted);
+      font-size:13px;
+      text-align:center;
+      padding:18px 0 0;
+    }
+
+    @media (max-width: 920px){
+      .hero{grid-template-columns:1fr; }
+      .grid{grid-template-columns:1fr; }
+      .how{grid-template-columns:1fr;}
+      .links{display:none}
     }
   </style>
 </head>
 
 <body>
-<header>
-  <div class="container">
+  <header>
     <div class="nav">
-      <a class="brand" href="#top" aria-label="ClearPath Labs home">
-        <span class="mark"></span>
-        <span>ClearPath Labs</span>
+      <a class="brand" href="#top">
+        <div class="logo" aria-hidden="true"></div>
+        <div class="brand-text">
+          <b>CLEARPATH LABS</b>
+          <span>HEAL NATURALLY • 3-PART SYSTEM</span>
+        </div>
       </a>
 
-      <nav aria-label="Primary">
-        <ul>
-          <li><a href="#categories">Categories</a></li>
-          <li><a href="#stack">The Stack</a></li>
-          <li><a href="#faq">FAQ</a></li>
-        </ul>
+      <nav class="links">
+        <a href="#formulas">Formulas</a>
+        <a href="#how">How it works</a>
+        <a href="#faq">FAQ</a>
       </nav>
 
-      <div class="nav-actions">
-        <a class="btn" href="#categories">Explore</a>
-        <a class="btn primary" href="#stack">Shop / Learn</a>
-        <button class="btn menu-btn" id="menuBtn" aria-label="Open menu">Menu</button>
+      <div class="cta">
+        <a class="btn" href="#formulas">View products</a>
+        <a class="btn btn-primary" href="#formulas">Start your stack →</a>
       </div>
     </div>
-  </div>
-  <div class="mobile-menu" id="mobileMenu" aria-label="Mobile menu">
-    <a href="#categories">Categories</a>
-    <a href="#stack">The Stack</a>
-    <a href="#faq">FAQ</a>
-  </div>
-</header>
+  </header>
 
-<main id="top">
-  <section class="hero">
-    <div class="container">
-      <div class="hero-grid">
-        <div>
-          <div class="pill"><span class="dot"></span> Premium Natural Supplements • Clean, modern, effective</div>
-          <h1>Feel better — day and night — with a simple, premium stack.</h1>
-          <p class="sub">
-            ClearPath Labs is built around clarity: focused daytime support, calming nighttime recovery,
-            and foundational essentials that fit real life.
-          </p>
+  <main id="top" class="container">
+    <section class="hero">
+      <div class="hero-card">
+        <div class="pill"><span class="dot"></span> Heal naturally — daily nervous system support</div>
+        <h1>Help your body <span class="grad">recover</span> with a simple 3-part routine.</h1>
+        <p class="sub">
+          ClearPath Labs is a daily system built for circulation support, cellular energy, and deep restorative sleep —
+          designed to help you feel steady, clear, and resilient.
+        </p>
 
-          <div class="hero-ctas">
-            <a class="btn primary" href="#categories">Browse Categories</a>
-            <a class="btn" href="#stack">See the 3-Bottle System</a>
-          </div>
-
-          <div class="trust">
-            <span>✅ Transparent formulas</span>
-            <span>✅ Modern dosing logic</span>
-            <span>✅ Designed for consistency</span>
-          </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#formulas">See the formulas ↓</a>
+          <a class="btn ghost" href="#how">How it works</a>
         </div>
-
-        <div class="hero-card" aria-label="Product hero">
-          <div class="hero-media">
-            <img src="./clean_stack.png" alt="ClearPath Labs clean stack bottles" />
-          </div>
-          <div class="hero-mini">
-            <div class="mini">
-              <div class="k">Day</div>
-              <div class="v">Energy + focus without chaos</div>
-            </div>
-            <div class="mini">
-              <div class="k">Night</div>
-              <div class="v">Recovery + calm nervous system support</div>
-            </div>
-          </div>
-        </div>
-
       </div>
-    </div>
-  </section>
 
-  <section class="section" id="categories">
-    <div class="container">
+      <aside class="mini">
+        <img src="images/clean_stack.png" alt="ClearPath Labs 3-bottle stack" />
+        <b>One system. Three moments.</b>
+        <p><b>AM</b> supports flow • <b>DAY</b> supports energy & repair • <b>PM</b> supports sleep & vagal tone.</p>
+      </aside>
+    </section>
+
+    <section id="formulas" class="section">
       <div class="section-head">
         <div>
-          <h2>Premium Natural Supplements</h2>
-          <div class="hint">Each category uses its own background image (like the template you wanted).</div>
+          <h2>Formulas</h2>
+          <span>Pick a starting point — or run the full system.</span>
         </div>
-        <a class="btn" href="#stack">Jump to the Stack →</a>
+        <a class="btn" href="#how">See how it works</a>
       </div>
 
       <div class="grid">
-        <!-- DAY -->
-        <article class="cat">
-          <div class="bg" style="background-image:url('./bg-clear-day.jpg');"></div>
+        <article class="product">
+          <div class="bg" style="background-image:url('images/bg-clear-am.jpg')"></div>
           <div class="content">
-            <div class="tag">DAY</div>
-            <h3>Daytime Clarity</h3>
-            <p>Designed for focus, stable energy, and productivity — without the jittery crash.</p>
+            <span class="tag">AM • ClearFlow</span>
+            <h3>Circulation & microclot support</h3>
+            <p>Designed to support healthy blood flow, endothelial function, and recovery momentum.</p>
             <div class="row">
-              <a class="btn primary" href="#stack">View Day System</a>
-              <a class="btn" href="#faq">Ingredients approach</a>
+              <a class="btn ghost" href="#faq">What’s inside?</a>
+              <a class="btn btn-primary" href="#formulas">Shop AM</a>
             </div>
           </div>
         </article>
 
-        <!-- NIGHT -->
-        <article class="cat">
-          <div class="bg" style="background-image:url('./bg-clear-night.jpg');"></div>
+        <article class="product">
+          <div class="bg" style="background-image:url('images/bg-clear-day.jpg')"></div>
           <div class="content">
-            <div class="tag">NIGHT</div>
-            <h3>Night Recovery</h3>
-            <p>Support sleep quality, recovery, and a calmer nervous system so you wake up ready.</p>
+            <span class="tag">DAY • Rebuild</span>
+            <h3>Energy & repair</h3>
+            <p>Supports mitochondrial output, cellular repair pathways, and daytime performance without jitters.</p>
             <div class="row">
-              <a class="btn primary" href="#stack">View Night System</a>
-              <a class="btn" href="#faq">How it’s built</a>
+              <a class="btn ghost" href="#faq">What’s inside?</a>
+              <a class="btn btn-primary" href="#formulas">Shop DAY</a>
             </div>
           </div>
         </article>
 
-        <!-- FOUNDATION -->
-        <article class="cat">
-          <div class="bg" style="background-image:url('./bg-clear-focus.jpg');"></div>
+        <article class="product">
+          <div class="bg" style="background-image:url('images/bg-clear-pm.jpg')"></div>
           <div class="content">
-            <div class="tag">FOUNDATION</div>
-            <h3>Core Essentials</h3>
-            <p>Foundational support for consistency — the “base layer” that makes everything work better.</p>
+            <span class="tag">PM • Deep Reset</span>
+            <h3>Sleep & vagal tone</h3>
+            <p>Supports downshift, calm, and deeper sleep quality so you wake up more restored.</p>
             <div class="row">
-              <a class="btn primary" href="#stack">See full stack</a>
-              <a class="btn" href="#faq">Quality standards</a>
+              <a class="btn ghost" href="#faq">What’s inside?</a>
+              <a class="btn btn-primary" href="#formulas">Shop PM</a>
             </div>
           </div>
         </article>
       </div>
+    </section>
 
-    </div>
-  </section>
-
-  <section class="section" id="stack">
-    <div class="container">
+    <section id="how" class="section">
       <div class="section-head">
         <div>
-          <h2>The 3-Bottle System</h2>
-          <div class="hint">Simple, clean, and designed to feel “premium” — like the template layout.</div>
+          <h2>How the 3-part system works</h2>
+          <span>Built to match your body’s natural rhythm.</span>
         </div>
       </div>
-
-      <div class="cards">
-        <div class="card">
-          <h3 style="margin:0 0 8px;">What you get</h3>
-          <p style="margin:0;color:var(--muted);font-weight:650;line-height:1.6;">
-            A straightforward system you can actually stick to. Use it daily, track how you feel,
-            and adjust with intention — not guesswork.
-          </p>
-
-          <ul class="list">
-            <li class="li">
-              <span class="check"></span>
-              <div>
-                <b>Day formula</b>
-                <span>Clarity, energy, focus, mood support.</span>
-              </div>
-            </li>
-            <li class="li">
-              <span class="check"></span>
-              <div>
-                <b>Night formula</b>
-                <span>Calm + recovery support for better sleep quality.</span>
-              </div>
-            </li>
-            <li class="li">
-              <span class="check"></span>
-              <div>
-                <b>Foundation formula</b>
-                <span>The daily baseline to make the system consistent.</span>
-              </div>
-            </li>
-          </ul>
-
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;">
-            <a class="btn primary" href="#faq">Read FAQ</a>
-            <a class="btn" href="#categories">Back to Categories</a>
-          </div>
+      <div class="how">
+        <div class="how-card">
+          <b>1) Support flow first (AM)</b>
+          <p>Start the day by supporting circulation and delivery — a foundation for everything that follows.</p>
         </div>
-
-        <div class="card" style="position:relative; overflow:hidden;">
-          <div style="display:flex; align-items:center; justify-content:center; padding:8px 0 2px;">
-            <img src="./clean_stack.png" alt="Clean Stack" style="width:min(320px, 86%); height:auto; filter: drop-shadow(0 18px 34px rgba(0,0,0,.16));">
-          </div>
-          <div style="margin-top:8px; color:var(--muted); font-weight:650; line-height:1.5;">
-            Want Amazon-ready pages later? This layout is already built to convert: clear sections, clean CTAs, scannable text.
-          </div>
+        <div class="how-card">
+          <b>2) Build energy + repair (DAY)</b>
+          <p>Midday support for cellular energy and recovery signals — steady output, cleaner focus.</p>
+        </div>
+        <div class="how-card">
+          <b>3) Downshift deeply (PM)</b>
+          <p>Evening support to calm the system, support vagal tone, and improve restorative sleep.</p>
+        </div>
+        <div class="how-card">
+          <b>Simple, consistent, repeatable</b>
+          <p>No complicated protocols. The goal is a daily rhythm you can stick to.</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section" id="faq">
-    <div class="container">
+    <section id="faq" class="section">
       <div class="section-head">
         <div>
           <h2>FAQ</h2>
-          <div class="hint">If anything looks “old,” it’s almost always the wrong file/branch or cache.</div>
+          <span>We can swap this for your exact copy later.</span>
         </div>
       </div>
-
-      <div class="grid" style="grid-template-columns: repeat(3,1fr);">
-        <div class="card">
-          <h3 style="margin:0 0 8px;">Why do images not show?</h3>
-          <p style="margin:0;color:var(--muted);font-weight:650;line-height:1.6;">
-            The path is wrong. This file uses <b>./filename</b> so images must sit next to index.html.
-          </p>
+      <div class="how">
+        <div class="how-card">
+          <b>Is this medical advice?</b>
+          <p>No — this is a wellness supplement concept site. Always consult your clinician for medical decisions.</p>
         </div>
-        <div class="card">
-          <h3 style="margin:0 0 8px;">Why does Vercel show old?</h3>
-          <p style="margin:0;color:var(--muted);font-weight:650;line-height:1.6;">
-            Wrong branch/repo, or iPhone cache. Try Private tab + confirm the latest deployment is “Ready”.
-          </p>
-        </div>
-        <div class="card">
-          <h3 style="margin:0 0 8px;">What should header look like?</h3>
-          <p style="margin:0;color:var(--muted);font-weight:650;line-height:1.6;">
-            This header is intentionally shorter (64px), sticky, and clean — like the template vibe you wanted.
-          </p>
+        <div class="how-card">
+          <b>Can I take only one formula?</b>
+          <p>Yes. But the full system is designed to work together across the day.</p>
         </div>
       </div>
-    </div>
-  </section>
-</main>
+    </section>
 
-<footer>
-  <div class="container">
-    <div class="foot">
-      <div>© <span id="yr"></span> ClearPath Labs</div>
-      <div>Premium Natural Supplements • Built for clarity</div>
-    </div>
-  </div>
-</footer>
+    <footer>
+      © <span id="y"></span> ClearPath Labs • Heal Naturally
+    </footer>
+  </main>
 
-<script>
-  // year
-  document.getElementById('yr').textContent = new Date().getFullYear();
-
-  // mobile menu
-  const btn = document.getElementById('menuBtn');
-  const menu = document.getElementById('mobileMenu');
-  btn?.addEventListener('click', () => menu.classList.toggle('open'));
-  menu?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
-</script>
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
