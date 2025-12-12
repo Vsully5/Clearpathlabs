@@ -26,7 +26,6 @@
       --muted:#64748b;
       --line:#e5e7eb;
 
-      /* “Natural + premium” accent like the reference */
       --accent:#c2410c; /* warm copper */
       --accent2:#16a34a; /* natural green */
       --grad: linear-gradient(135deg, var(--accent), var(--accent2));
@@ -43,7 +42,7 @@
     a{color:inherit}
     .container{max-width:1180px;margin:0 auto;padding:0 22px}
 
-    /* NAV (simple + legit) */
+    /* NAV */
     .nav{
       position:sticky; top:0; z-index:50;
       background:rgba(255,255,255,.92);
@@ -75,9 +74,9 @@
       font-size:.88rem;
     }
 
-    /* HERO — “dark card” like reference */
+    /* HEADER (SHORTER ~30%) */
     header{
-      padding:26px 0 34px;
+      padding:22px 0 26px;
       background:
         radial-gradient(1200px 500px at 40% 0%, rgba(194,65,12,.22), transparent 55%),
         radial-gradient(900px 420px at 85% 30%, rgba(22,163,74,.18), transparent 60%),
@@ -94,10 +93,10 @@
         linear-gradient(135deg, #0b1220, #0a0f1a 65%);
       box-shadow: 0 26px 70px rgba(15,23,42,.22);
       border:1px solid rgba(255,255,255,.06);
-      padding:34px 34px 26px;
+      padding:26px 26px 18px; /* tighter */
       color:#f8fafc;
       position:relative;
-      min-height: 420px;
+      min-height: 320px; /* shorter */
       display:flex;
       flex-direction:column;
       justify-content:space-between;
@@ -106,7 +105,7 @@
     .hero-top{
       display:flex;
       justify-content:space-between;
-      gap:24px;
+      gap:20px;
       align-items:flex-start;
       flex-wrap:wrap;
     }
@@ -128,9 +127,9 @@
 
     .hero-title{
       font-family:"Playfair Display",serif;
-      font-size:2.25rem;      /* shorter than before */
+      font-size:1.85rem;  /* smaller */
       line-height:1.12;
-      margin:12px 0 10px;
+      margin:10px 0 8px;
     }
     .hero-title .accent{
       background:var(--grad);
@@ -138,19 +137,19 @@
       -webkit-text-fill-color:transparent;
     }
     .hero-sub{
-      max-width:520px;
+      max-width:560px;
       color:rgba(226,232,240,.82);
-      font-size:1rem;
+      font-size:.98rem; /* smaller */
     }
     .hero-punch{
-      margin-top:14px;
+      margin-top:10px;
       color:rgba(226,232,240,.9);
       font-weight:600;
       letter-spacing:.02em;
     }
 
     .hero-actions{
-      margin-top:18px;
+      margin-top:14px;
       display:flex;
       gap:10px;
       flex-wrap:wrap;
@@ -158,11 +157,11 @@
     }
     .btn{
       display:inline-flex; align-items:center; justify-content:center; gap:10px;
-      padding:11px 16px;
+      padding:10px 14px; /* smaller */
       border-radius:999px;
       text-decoration:none;
       font-weight:600;
-      font-size:.92rem;
+      font-size:.9rem;
       white-space:nowrap;
     }
     .btn-primary{
@@ -176,28 +175,24 @@
       color:#f8fafc;
     }
 
-    /* bottles centered like reference */
     .hero-bottles{
-      margin-top:10px;
+      margin-top:6px;
       display:flex;
       justify-content:center;
     }
     .hero-bottles img{
-      width:min(560px, 92%);
+      width:min(460px, 90%); /* smaller so header isn't huge */
       height:auto;
       object-fit:contain;
       filter: drop-shadow(0 18px 40px rgba(0,0,0,.45));
       transform: translateY(8px);
     }
 
-    /* WHITE “Premium Natural Supplements” section */
-    section{
-      padding:34px 0; /* tighter */
-    }
+    section{ padding:34px 0; }
     .section-title{
       text-align:center;
       font-family:"Playfair Display",serif;
-      font-size:1.55rem; /* smaller */
+      font-size:1.55rem;
       margin-bottom:6px;
     }
     .section-subtitle{
@@ -222,20 +217,45 @@
       align-items:stretch;
     }
 
+    /* PRODUCT CARDS WITH BACKGROUND IMAGES */
     .card{
+      position:relative;
       border:1px solid var(--line);
       border-radius:18px;
+      overflow:hidden;
       background:#fff;
       padding:16px 16px 14px;
       box-shadow: 0 14px 34px rgba(15,23,42,.06);
       text-align:center;
+      isolation:isolate;
     }
+    .card::before{
+      content:"";
+      position:absolute; inset:0;
+      background: var(--card-bg) center/cover no-repeat;
+      opacity:0.18; /* subtle */
+      filter:saturate(1.05) contrast(1.05);
+      z-index:0;
+    }
+    .card::after{
+      content:"";
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(255,255,255,.55), rgba(255,255,255,.92));
+      z-index:1;
+    }
+    .card > *{ position:relative; z-index:2; }
+
+    .card.am { --card-bg: url("./images/bg-clearflow-am.jpg"); }
+    .card.day { --card-bg: url("./images/bg-clear-day.jpg"); }
+    .card.pm { --card-bg: url("./images/bg-deep-reset-pm.jpg"); }
+
     .card img{
       width:100%;
       max-width:140px;
       height:auto;
       object-fit:contain;
       margin:4px auto 10px;
+      filter: drop-shadow(0 10px 18px rgba(15,23,42,.12));
     }
     .card .label{
       font-size:.72rem;
@@ -245,8 +265,8 @@
       margin-bottom:4px;
     }
     .card .name{
-      font-weight:700;
-      letter-spacing:.04em;
+      font-weight:800;
+      letter-spacing:.05em;
       font-size:1.02rem;
       margin-bottom:4px;
     }
@@ -265,7 +285,7 @@
       margin-bottom:10px;
     }
     .price{
-      font-weight:800;
+      font-weight:900;
       color: var(--accent2);
     }
     .caps{
@@ -277,16 +297,16 @@
       align-items:center;
       gap:8px;
       text-decoration:none;
-      font-weight:600;
+      font-weight:700;
       font-size:.9rem;
       color:#0f172a;
     }
     .card a i{ color: var(--accent); }
 
-    /* SHORT story sections so you see next section */
+    /* SHORT story sections */
     .story{
       position:relative;
-      min-height: 46vh;  /* shorter => preview next */
+      min-height: 46vh;
       display:flex;
       align-items:center;
       overflow:hidden;
@@ -305,7 +325,7 @@
       gap:24px;
       align-items:center;
       justify-content:space-between;
-      padding:30px 0; /* tighter */
+      padding:30px 0;
     }
     .story-left{
       flex:0 0 300px;
@@ -339,7 +359,7 @@
     }
     .story-title{
       font-family:"Playfair Display",serif;
-      font-size:1.55rem;  /* smaller */
+      font-size:1.55rem;
       margin-bottom:6px;
     }
     .story-blurb{
@@ -364,21 +384,11 @@
       font-size:.9rem;
     }
 
-    .story-am{
-      background: url("./images/bg-clearflow-am.jpg") center/cover no-repeat;
-    }
-    .story-day{
-      background:
-        radial-gradient(800px 420px at 10% 10%, rgba(22,163,74,.14), transparent 60%),
-        radial-gradient(900px 480px at 95% 60%, rgba(194,65,12,.12), transparent 55%),
-        #ffffff;
-    }
-    .story-pm{
-      background: url("./images/bg-deep-reset-pm.jpg") center/cover no-repeat;
-    }
-    .reverse .story-inner{
-      flex-direction:row-reverse;
-    }
+    .story-am{ background: url("./images/bg-clearflow-am.jpg") center/cover no-repeat; }
+    .story-day{ background: url("./images/bg-clear-day.jpg") center/cover no-repeat; }
+    .story-pm{ background: url("./images/bg-deep-reset-pm.jpg") center/cover no-repeat; }
+
+    .reverse .story-inner{ flex-direction:row-reverse; }
 
     footer{
       border-top:1px solid var(--line);
@@ -390,15 +400,15 @@
       margin-top:16px;
     }
 
-    /* responsive */
     @media (max-width: 980px){
       .product-row{ grid-template-columns: 1fr; }
-      .hero-card{ padding:26px 18px 20px; min-height: unset; }
-      .hero-title{ font-size:2rem; }
+      .hero-card{ padding:22px 16px 16px; min-height: unset; }
+      .hero-title{ font-size:1.7rem; }
       .story-inner{ flex-direction:column; padding:26px 0; }
       .reverse .story-inner{ flex-direction:column; }
       .story-left{ flex:unset; }
       .story-right{ max-width:unset; }
+      .nav-links{ gap:12px; }
     }
   </style>
 </head>
@@ -455,7 +465,6 @@
     </div>
   </header>
 
-  <!-- Premium Natural Supplements strip -->
   <section id="shop">
     <div class="container">
       <div class="section-title">Premium Natural Supplements</div>
@@ -467,7 +476,7 @@
     <div class="product-strip">
       <div class="container">
         <div class="product-row">
-          <div class="card">
+          <div class="card am">
             <img src="./images/clean_am.png" alt="ClearFlow AM" />
             <div class="label">Morning • Step 1</div>
             <div class="name">CLEARFLOW AM</div>
@@ -478,7 +487,7 @@
             <a href="#clearflow">View details <i class="fa-solid fa-arrow-right-long"></i></a>
           </div>
 
-          <div class="card">
+          <div class="card day">
             <img src="./images/clean_day.png" alt="Rebuild Day" />
             <div class="label">Daytime • Step 2</div>
             <div class="name">REBUILD DAY</div>
@@ -489,7 +498,7 @@
             <a href="#rebuild">View details <i class="fa-solid fa-arrow-right-long"></i></a>
           </div>
 
-          <div class="card">
+          <div class="card pm">
             <img src="./images/clean_pm.png" alt="Deep Reset PM" />
             <div class="label">Night • Step 3</div>
             <div class="name">DEEP RESET PM</div>
@@ -504,7 +513,6 @@
     </div>
   </section>
 
-  <!-- Short story sections (peek next section) -->
   <section id="protocol" class="story story-am">
     <div class="container">
       <div class="story-inner">
