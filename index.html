@@ -3,21 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta
-    name="description"
-    content="ClearPath Labs – a synchronized 3-part autonomic nervous system recovery system to support healthy circulation, mitochondrial energy, and deep restorative recovery."
-  />
-  <title>ClearPath Labs | Autonomic Nervous System Recovery System</title>
+  <title>ClearPath Labs | Autonomic Recovery System</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
-    rel="stylesheet"
-  />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
 
   <style>
     :root{
@@ -26,10 +15,9 @@
       --muted:#64748b;
       --line:#e5e7eb;
 
-      /* “Natural + premium” accent like the reference */
-      --accent:#c2410c;  /* warm copper */
-      --accent2:#16a34a; /* natural green */
-      --grad: linear-gradient(135deg, var(--accent), var(--accent2));
+      /* accents that feel “natural premium” like the reference */
+      --accent:#d97706;   /* warm amber */
+      --accent2:#16a34a;  /* natural green */
     }
 
     *{margin:0;padding:0;box-sizing:border-box}
@@ -38,116 +26,133 @@
       background:var(--bg);
       color:var(--text);
       line-height:1.65;
-      overflow-x:hidden;
     }
     a{color:inherit}
     .container{max-width:1180px;margin:0 auto;padding:0 22px}
 
-    /* NAV (simple + legit) */
+    /* NAV (simple, like reference) */
     .nav{
       position:sticky; top:0; z-index:50;
       background:rgba(255,255,255,.92);
-      backdrop-filter: blur(14px);
+      backdrop-filter: blur(12px);
       border-bottom:1px solid var(--line);
     }
     .nav-inner{
       height:58px;
       display:flex; align-items:center; justify-content:space-between;
+      gap:16px;
     }
     .brand{
       font-family:"Playfair Display",serif;
-      letter-spacing:.14em;
+      letter-spacing:.16em;
       text-transform:uppercase;
-      font-size:1.05rem;
-      white-space:nowrap;
+      font-size:1rem;
     }
     .nav-links{
       display:flex; gap:18px; align-items:center;
-      font-size:.9rem; color:#475569;
+      font-size:.92rem; color:#475569;
     }
     .nav-links a{ text-decoration:none; font-weight:500 }
     .nav-links a:hover{ color:#0f172a }
-    .pill{
-      display:inline-flex; align-items:center; gap:8px;
+    .cta{
+      display:inline-flex; align-items:center; gap:10px;
       padding:10px 14px;
       border-radius:999px;
       background:#0f172a; color:#fff;
-      text-decoration:none; font-weight:600;
-      font-size:.88rem;
+      text-decoration:none; font-weight:700;
+      font-size:.9rem;
+      white-space:nowrap;
     }
+    .cta:after{content:"→"; font-size:1.05rem}
 
-    /* HERO — SHORTER + prevents bottle stretching */
-    header{
-      padding:14px 0 18px; /* shorter than before */
-      background:
-        radial-gradient(1200px 500px at 40% 0%, rgba(194,65,12,.22), transparent 55%),
-        radial-gradient(900px 420px at 85% 30%, rgba(22,163,74,.18), transparent 60%),
-        #fff;
+    /* HERO (matches reference vibe) */
+    .hero{
+      position:relative;
+      padding:26px 0 0;
       border-bottom:1px solid var(--line);
     }
 
+    /* “banner card” */
     .hero-card{
-      border-radius:22px;
+      position:relative;
+      border-radius:18px;
       overflow:hidden;
+      min-height: 430px; /* not too tall */
+      box-shadow: 0 26px 70px rgba(15,23,42,.18);
+      border:1px solid rgba(0,0,0,.06);
+      background:#0b1220;
+    }
+
+    /* background image */
+    .hero-card::before{
+      content:"";
+      position:absolute; inset:0;
+      background:url("./images/bg-hero.jpg") center/cover no-repeat;
+      transform: scale(1.04);
+      filter:saturate(1.05);
+      opacity:.85;
+    }
+
+    /* dark overlay (keeps text readable like reference) */
+    .hero-card::after{
+      content:"";
+      position:absolute; inset:0;
       background:
-        radial-gradient(900px 500px at 20% 0%, rgba(194,65,12,.38), transparent 60%),
-        radial-gradient(900px 480px at 100% 60%, rgba(22,163,74,.25), transparent 55%),
-        linear-gradient(135deg, #0b1220, #0a0f1a 65%);
-      box-shadow: 0 26px 70px rgba(15,23,42,.22);
-      border:1px solid rgba(255,255,255,.06);
+        radial-gradient(900px 500px at 20% 20%, rgba(217,119,6,.22), transparent 60%),
+        radial-gradient(900px 500px at 90% 60%, rgba(22,163,74,.18), transparent 55%),
+        linear-gradient(90deg,
+          rgba(7,10,16,.86) 0%,
+          rgba(7,10,16,.62) 55%,
+          rgba(7,10,16,.55) 100%);
+    }
 
-      /* key: shorter layout */
-      padding:20px 22px 14px;
-      min-height: 290px;
-
-      color:#f8fafc;
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-      gap:10px;
+    .hero-content{
+      position:relative; z-index:2;
+      height:100%;
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:24px;
+      padding:34px;
+      align-items:start;
     }
 
     .hero-kicker{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      border:1px solid rgba(255,255,255,.14);
+      display:inline-flex; align-items:center; gap:8px;
+      border:1px solid rgba(255,255,255,.18);
       background:rgba(255,255,255,.06);
       padding:7px 12px;
       border-radius:999px;
       font-size:.72rem;
       letter-spacing:.14em;
       text-transform:uppercase;
-      color:rgba(248,250,252,.84);
-      width:fit-content;
+      color:rgba(248,250,252,.86);
+      margin-bottom:12px;
     }
-    .hero-kicker i{ color: #f59e0b }
-
+    .hero-kicker b{ color: rgba(255,255,255,.92) }
     .hero-title{
       font-family:"Playfair Display",serif;
-      font-size:1.85rem; /* smaller => shorter header */
-      line-height:1.12;
-      margin:10px 0 8px;
+      font-size:2.45rem;
+      line-height:1.08;
+      color:#f8fafc;
+      margin-bottom:10px;
     }
     .hero-title .accent{
-      background:var(--grad);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
+      color: var(--accent);
     }
     .hero-sub{
-      max-width:560px;
-      color:rgba(226,232,240,.82);
-      font-size:.98rem;
+      color: rgba(226,232,240,.84);
+      max-width: 56ch;
+      font-size:1.02rem;
+      margin-bottom:14px;
     }
-    .hero-punch{
-      margin-top:10px;
-      color:rgba(226,232,240,.9);
-      font-weight:600;
-      letter-spacing:.02em;
+    .hero-note{
+      color: rgba(226,232,240,.9);
+      font-weight:700;
+      letter-spacing:.01em;
+      margin-bottom:18px;
     }
 
     .hero-actions{
-      margin-top:12px;
       display:flex;
       gap:10px;
       flex-wrap:wrap;
@@ -155,292 +160,132 @@
     }
     .btn{
       display:inline-flex; align-items:center; justify-content:center; gap:10px;
-      padding:10px 14px; /* smaller */
+      padding:11px 16px;
       border-radius:999px;
       text-decoration:none;
-      font-weight:600;
-      font-size:.9rem;
+      font-weight:800;
+      font-size:.92rem;
       white-space:nowrap;
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
     }
     .btn-primary{
-      background:var(--grad);
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
       color:#0b1220;
-      box-shadow:0 14px 30px rgba(22,163,74,.22);
+      box-shadow: 0 16px 34px rgba(22,163,74,.18);
     }
+    .btn-primary:hover{ transform: translateY(-2px); box-shadow: 0 20px 42px rgba(22,163,74,.24); }
     .btn-ghost{
       border:1px solid rgba(255,255,255,.18);
       background:rgba(255,255,255,.06);
       color:#f8fafc;
     }
+    .btn-ghost:hover{ transform: translateY(-2px); }
 
-    /* IMPORTANT: no stretching */
+    /* bottles area on right (like reference center bottles) */
     .hero-bottles{
+      align-self:end;
       display:flex;
       justify-content:center;
       align-items:flex-end;
-      margin-top:6px;
+      padding-bottom:6px;
     }
     .hero-bottles img{
-      width:auto;                /* stops stretching */
-      max-width:520px;           /* cap width */
-      max-height:170px;          /* cap height (short hero) */
-      height:auto;               /* keep aspect */
-      object-fit:contain;        /* keep aspect */
-      filter: drop-shadow(0 18px 40px rgba(0,0,0,.45));
-      transform: translateY(6px);
+      width: min(420px, 100%);
+      max-height: 280px;
+      height:auto;
+      object-fit:contain;
+      filter: drop-shadow(0 20px 46px rgba(0,0,0,.55));
+      transition: transform .25s ease;
+    }
+    .hero-bottles img:hover{ transform: translateY(-4px) scale(1.01); }
+
+    /* “surface” to mimic bottles sitting on a table */
+    .hero-shelf{
+      position:absolute;
+      left:0; right:0; bottom:0;
+      height:110px;
+      z-index:2;
+      background: linear-gradient(to top,
+        rgba(255,255,255,.10) 0%,
+        rgba(255,255,255,.06) 50%,
+        rgba(255,255,255,0) 100%);
+      pointer-events:none;
     }
 
-    /* SECTION */
-    section{ padding:28px 0; }
-    .section-title{
+    /* WHITE STRIP like reference (“Premium Natural Supplements”) */
+    .strip{
+      background:#fff;
+      padding:26px 0 28px;
+    }
+    .strip h2{
       text-align:center;
       font-family:"Playfair Display",serif;
-      font-size:1.55rem;
+      font-size:1.35rem;
       margin-bottom:6px;
     }
-    .section-subtitle{
+    .strip p{
       text-align:center;
       color:var(--muted);
       font-size:.95rem;
-      max-width:760px;
-      margin:0 auto 18px;
+      margin-bottom:18px;
     }
 
-    .product-strip{
-      border-top:1px solid var(--line);
-      border-bottom:1px solid var(--line);
-      background:#fff;
-      padding:18px 0;
-    }
-
-    .product-row{
-      display:grid;
-      grid-template-columns:repeat(3, minmax(0,1fr));
+    .mini-row{
+      display:flex;
+      align-items:center;
+      justify-content:center;
       gap:18px;
-      align-items:stretch;
     }
-
-    /* CARD (with background images + hover) */
-    .card{
-      position:relative;
-      border:1px solid var(--line);
-      border-radius:18px;
-      background:#fff;
-      padding:16px 16px 14px;
-      box-shadow: 0 14px 34px rgba(15,23,42,.06);
-      text-align:center;
-      overflow:hidden;
-      isolation:isolate;
-      transition: transform .22s ease, box-shadow .22s ease;
-    }
-
-    .card::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background: var(--card-bg) center/cover no-repeat;
-      opacity:0.16;
-      transform: scale(1.02);
-      transition: transform .35s ease, opacity .35s ease;
-      z-index:0;
-    }
-
-    .card::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background: linear-gradient(180deg, rgba(255,255,255,.55), rgba(255,255,255,.92));
-      z-index:1;
-    }
-
-    .card > *{
-      position:relative;
-      z-index:2;
-    }
-
-    .card:hover{
-      transform: translateY(-6px);
-      box-shadow: 0 24px 58px rgba(15,23,42,.12);
-    }
-    .card:hover::before{
-      transform: scale(1.08);
-      opacity: 0.22;
-    }
-
-    /* background mappings */
-    .card.am  { --card-bg: url("./images/bg-clearflow-am.jpg"); }
-    .card.day { --card-bg: url("./images/bg-clear-day.jpg"); }
-    .card.pm  { --card-bg: url("./images/bg-deep-reset-pm.jpg"); }
-
-    .card img{
-      width:auto;         /* prevents stretching */
-      max-width:140px;
-      height:auto;
-      object-fit:contain;
-      margin:4px auto 10px;
-      display:block;
-      filter: drop-shadow(0 10px 18px rgba(15,23,42,.12));
-    }
-    .card .label{
-      font-size:.72rem;
-      text-transform:uppercase;
-      letter-spacing:.16em;
-      color:#94a3b8;
-      margin-bottom:4px;
-    }
-    .card .name{
-      font-weight:700;
-      letter-spacing:.04em;
-      font-size:1.02rem;
-      margin-bottom:4px;
-    }
-    .card .desc{
-      color:var(--muted);
-      font-size:.9rem;
-      min-height: 42px;
-      margin-bottom:10px;
-    }
-    .card .meta{
-      display:flex;
-      justify-content:center;
-      gap:10px;
-      align-items:baseline;
-      color:#0f172a;
-      margin-bottom:10px;
-    }
-    .price{
-      font-weight:800;
-      color: var(--accent2);
-    }
-    .caps{
-      color:var(--muted);
-      font-size:.88rem;
-    }
-    .card a{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      text-decoration:none;
-      font-weight:600;
-      font-size:.9rem;
-      color:#0f172a;
-    }
-    .card a i{ color: var(--accent); }
-
-    /* STORY sections (shorter for “peek next”) */
-    .story{
-      position:relative;
-      min-height: 44vh;
-      display:flex;
-      align-items:center;
-      overflow:hidden;
-      border-top:1px solid var(--line);
-    }
-    .story::before{
-      content:"";
-      position:absolute; inset:0;
-      background:rgba(255,255,255,.42);
-      pointer-events:none;
-    }
-    .story-inner{
-      position:relative; z-index:2;
-      width:100%;
-      display:flex;
-      gap:24px;
-      align-items:center;
-      justify-content:space-between;
-      padding:26px 0;
-    }
-    .story-left{
-      flex:0 0 300px;
-      display:flex;
-      justify-content:center;
-    }
-    .story-left img{
-      width:auto;
-      max-width:240px;
-      height:auto;
-      object-fit:contain;
-      filter: drop-shadow(0 16px 34px rgba(15,23,42,.14));
-    }
-    .story-right{
-      flex:1;
-      max-width:680px;
-    }
-    .chip{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:6px 10px;
+    .arrow{
+      width:38px; height:38px;
       border-radius:999px;
       border:1px solid var(--line);
-      background:rgba(255,255,255,.78);
-      font-size:.72rem;
-      text-transform:uppercase;
-      letter-spacing:.14em;
-      color:#64748b;
-      margin-bottom:10px;
-      width:fit-content;
+      background:#fff;
+      display:grid;
+      place-items:center;
+      cursor:pointer;
+      user-select:none;
+      transition: transform .18s ease;
     }
-    .story-title{
-      font-family:"Playfair Display",serif;
-      font-size:1.55rem;
-      margin-bottom:6px;
+    .arrow:hover{ transform: translateY(-1px); }
+    .mini-cards{
+      display:flex;
+      gap:18px;
+      align-items:flex-end;
+      justify-content:center;
+      flex-wrap:wrap;
     }
-    .story-blurb{
-      color:#334155;
-      margin-bottom:10px;
-      font-size:.96rem;
-      max-width: 52ch;
-    }
-    .bullets{
-      list-style:none;
-      color:#475569;
-      font-size:.92rem;
-    }
-    .bullets li{
-      display:flex; gap:10px;
-      margin:6px 0;
-      align-items:flex-start;
-    }
-    .bullets i{
-      color:var(--accent2);
-      margin-top:4px;
-      font-size:.9rem;
-    }
-
-    .story-am{ background: url("./images/bg-clearflow-am.jpg") center/cover no-repeat; }
-    .story-day{ background: url("./images/bg-clear-day.jpg") center/cover no-repeat; }
-    .story-pm{ background: url("./images/bg-deep-reset-pm.jpg") center/cover no-repeat; }
-
-    .reverse .story-inner{ flex-direction:row-reverse; }
-
-    footer{
-      border-top:1px solid var(--line);
-      background:#f8fafc;
-      padding:26px 0 20px;
-      color:#64748b;
-      font-size:.9rem;
+    .mini{
+      width:140px;
       text-align:center;
-      margin-top:16px;
+      color:#0f172a;
+    }
+    .mini img{
+      width:86px;
+      height:auto;
+      object-fit:contain;
+      filter: drop-shadow(0 12px 20px rgba(15,23,42,.12));
+      transition: transform .2s ease;
+    }
+    .mini:hover img{ transform: translateY(-3px); }
+    .mini .name{
+      margin-top:10px;
+      font-weight:800;
+      font-size:.85rem;
+      letter-spacing:.08em;
+      text-transform:uppercase;
     }
 
     /* responsive */
     @media (max-width: 980px){
-      .product-row{ grid-template-columns: 1fr; }
-      .hero-card{ padding:18px 16px 12px; min-height: unset; }
-      .hero-title{ font-size:1.7rem; }
-      .hero-bottles img{ max-height:150px; max-width:420px; }
-      .story-inner{ flex-direction:column; padding:22px 0; }
-      .reverse .story-inner{ flex-direction:column; }
-      .story-left{ flex:unset; }
-      .story-right{ max-width:unset; }
-      .nav-links{ gap:12px; }
-    }
-
-    @media (max-width: 520px){
-      .nav-links a:not(.pill){ display:none; } /* cleaner on tiny screens */
-      .hero-bottles img{ max-height:140px; }
+      .hero-content{
+        grid-template-columns: 1fr;
+        padding:22px;
+      }
+      .hero-card{ min-height: unset; }
+      .hero-bottles{ padding-top:8px; }
+      .hero-title{ font-size:2.1rem; }
+      .nav-links a:not(.cta){ display:none; }
     }
   </style>
 </head>
@@ -452,177 +297,84 @@
       <div class="nav-links">
         <a href="#shop">Shop</a>
         <a href="#protocol">Protocol</a>
-        <a href="#footer">Support</a>
-        <a class="pill" href="#shop">Get the System <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="#support">Support</a>
+        <a class="cta" href="#shop">Get the System</a>
       </div>
     </div>
   </nav>
 
-  <header>
+  <header class="hero">
     <div class="container">
       <div class="hero-card">
-        <div>
-          <div class="hero-kicker">
-            <i class="fa-solid fa-leaf"></i>
-            Autonomic Recovery • 3-Part Protocol
+        <div class="hero-content">
+          <div>
+            <div class="hero-kicker">
+              <b>3-Part Protocol</b> • Circadian-timed system
+            </div>
+
+            <h1 class="hero-title">
+              Be A Better You, <span class="accent">Naturally</span>
+            </h1>
+
+            <p class="hero-sub">
+              A synchronized AM / Day / PM recovery system designed to support healthy circulation,
+              mitochondrial energy, and deep restorative recovery.
+            </p>
+
+            <div class="hero-note">Clear flow. Clean energy. Deep reset.</div>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#shop">Shop the System</a>
+              <a class="btn btn-ghost" href="#protocol">How it Works</a>
+            </div>
           </div>
 
-          <h1 class="hero-title">
-            Feel Better, <span class="accent">Naturally</span>
-          </h1>
-
-          <p class="hero-sub">
-            Restore your autonomic balance with a synchronized 3-part system that supports
-            healthy circulation, mitochondrial energy, and deep restorative recovery.
-          </p>
-
-          <div class="hero-punch">Clear flow. Clean energy. Deep reset.</div>
-
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#shop">
-              Shop the system <i class="fa-solid fa-arrow-right"></i>
-            </a>
-            <a class="btn btn-ghost" href="#protocol">
-              How it works <i class="fa-solid fa-circle-info"></i>
-            </a>
+          <div class="hero-bottles">
+            <img src="./images/clean_stack.png" alt="ClearPath Labs 3-part system" />
           </div>
         </div>
 
-        <div class="hero-bottles" aria-hidden="true">
-          <img src="./images/clean_stack.png" alt="ClearPath Labs 3-bottle stack" />
-        </div>
+        <div class="hero-shelf"></div>
       </div>
     </div>
   </header>
 
-  <!-- Premium Natural Supplements strip -->
-  <section id="shop">
+  <section id="shop" class="strip">
     <div class="container">
-      <div class="section-title">Premium Natural Supplements</div>
-      <div class="section-subtitle">
-        A synchronized AM / Day / PM system designed to work with your circadian rhythm.
-      </div>
-    </div>
+      <h2>Premium Natural Supplements</h2>
+      <p>A synchronized 3-part system designed to work with your circadian rhythm.</p>
 
-    <div class="product-strip">
-      <div class="container">
-        <div class="product-row">
-          <div class="card am">
+      <div class="mini-row">
+        <div class="arrow" aria-hidden="true">‹</div>
+
+        <div class="mini-cards">
+          <div class="mini">
             <img src="./images/clean_am.png" alt="ClearFlow AM" />
-            <div class="label">Morning • Step 1</div>
-            <div class="name">CLEARFLOW AM</div>
-            <div class="desc">Supports healthy circulation and microcirculation.</div>
-            <div class="meta">
-              <div class="price">$79</div><div class="caps">• 90 caps</div>
-            </div>
-            <a href="#clearflow">View details <i class="fa-solid fa-arrow-right-long"></i></a>
+            <div class="name">ClearFlow AM</div>
           </div>
-
-          <div class="card day">
+          <div class="mini">
             <img src="./images/clean_day.png" alt="Rebuild Day" />
-            <div class="label">Daytime • Step 2</div>
-            <div class="name">REBUILD DAY</div>
-            <div class="desc">Mitochondrial resilience for steady, clean energy.</div>
-            <div class="meta">
-              <div class="price">$89</div><div class="caps">• 90 caps</div>
-            </div>
-            <a href="#rebuild">View details <i class="fa-solid fa-arrow-right-long"></i></a>
+            <div class="name">Rebuild Day</div>
           </div>
-
-          <div class="card pm">
+          <div class="mini">
             <img src="./images/clean_pm.png" alt="Deep Reset PM" />
-            <div class="label">Night • Step 3</div>
-            <div class="name">DEEP RESET PM</div>
-            <div class="desc">Supports deep sleep and parasympathetic tone.</div>
-            <div class="meta">
-              <div class="price">$79</div><div class="caps">• 60 caps</div>
-            </div>
-            <a href="#deepreset">View details <i class="fa-solid fa-arrow-right-long"></i></a>
+            <div class="name">Deep Reset PM</div>
           </div>
         </div>
+
+        <div class="arrow" aria-hidden="true">›</div>
       </div>
     </div>
   </section>
 
-  <!-- Short story sections (peek next section) -->
-  <section id="protocol" class="story story-am">
-    <div class="container">
-      <div class="story-inner">
-        <div class="story-left">
-          <img src="./images/clean_am.png" alt="ClearFlow AM bottle" />
-        </div>
-        <div class="story-right" id="clearflow">
-          <div class="chip">Step 1 • Morning</div>
-          <div class="story-title">ClearFlow AM</div>
-          <div class="story-blurb">
-            Start the day by supporting healthy circulation and microcirculation to help oxygen and nutrients
-            reach the tissues that need them.
-          </div>
-          <ul class="bullets">
-            <li><i class="fa-solid fa-circle-check"></i>Supports healthy flow and microcirculation</li>
-            <li><i class="fa-solid fa-circle-check"></i>Promotes daily clarity and oxygen delivery</li>
-            <li><i class="fa-solid fa-circle-check"></i>Designed for morning use</li>
-          </ul>
-        </div>
-      </div>
-    </div>
+  <!-- Next sections can continue here -->
+  <section id="protocol" class="container" style="padding:40px 22px;">
+    <!-- keep your existing protocol/story sections below -->
   </section>
 
-  <section class="story story-day reverse">
+  <footer id="support" style="border-top:1px solid #e5e7eb;background:#f8fafc;padding:22px 0;color:#64748b;text-align:center;font-size:.9rem;">
     <div class="container">
-      <div class="story-inner">
-        <div class="story-left">
-          <img src="./images/clean_day.png" alt="Rebuild Day bottle" />
-        </div>
-        <div class="story-right" id="rebuild">
-          <div class="chip">Step 2 • Daytime</div>
-          <div class="story-title">Rebuild Day</div>
-          <div class="story-blurb">
-            Midday mitochondrial support designed to help you feel steady energy and resilience—without
-            pushing the nervous system into overdrive.
-          </div>
-          <ul class="bullets">
-            <li><i class="fa-solid fa-circle-check"></i>Supports mitochondrial function and ATP output</li>
-            <li><i class="fa-solid fa-circle-check"></i>Helps balance oxidative stress</li>
-            <li><i class="fa-solid fa-circle-check"></i>Designed for daytime use</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="story story-pm">
-    <div class="container">
-      <div class="story-inner">
-        <div class="story-left">
-          <img src="./images/clean_pm.png" alt="Deep Reset PM bottle" />
-        </div>
-        <div class="story-right" id="deepreset">
-          <div class="chip">Step 3 • Night</div>
-          <div class="story-title">Deep Reset PM</div>
-          <div class="story-blurb">
-            Close the loop at night with sleep and parasympathetic support so your body can spend more time
-            in true “rest and repair.”
-          </div>
-          <ul class="bullets">
-            <li><i class="fa-solid fa-circle-check"></i>Supports deep non-REM sleep cycles</li>
-            <li><i class="fa-solid fa-circle-check"></i>Promotes calm nighttime nervous system tone</li>
-            <li><i class="fa-solid fa-circle-check"></i>Designed for bedtime use</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer id="footer">
-    <div class="container">
-      <div style="margin-bottom:8px;font-weight:600;color:#334155;">
-        © <span id="year"></span> ClearPath Labs
-      </div>
-      <div style="max-width:900px;margin:0 auto;">
-        These products are intended to support general wellness. They are not intended to diagnose, treat, cure,
-        or prevent any disease. Always consult your healthcare provider before starting any new supplement regimen.
-      </div>
+      © <span id="year"></span> ClearPath Labs — These products are not intended to diagnose, treat, cure, or prevent any disease.
     </div>
   </footer>
 
