@@ -223,12 +223,34 @@
     }
 
     .card{
-      border:1px solid var(--line);
-      border-radius:18px;
-      background:#fff;
-      padding:16px 16px 14px;
-      box-shadow: 0 14px 34px rgba(15,23,42,.06);
-      text-align:center;
+        position:relative;
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:16px 16px 14px;
+  box-shadow: 0 14px 34px rgba(15,23,42,.06);
+  text-align:center;
+  overflow:hidden;
+  background:#fff;
+    }
+    .card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: var(--card-bg) center/cover no-repeat;
+  opacity:0.18;              /* subtle background image */
+  z-index:0;
+  }
+
+.card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,.55),
+    rgba(255,255,255,.92)
+  );
+  z-index:1;
     }
     .card img{
       width:100%;
