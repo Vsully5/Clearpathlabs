@@ -167,49 +167,44 @@
    /* =========================
    HERO MISSION (INTEGRATED)
    ========================= */
-
 .hero-mission{
-  position: relative;
-  max-width: 62ch;
+  max-width: 64ch;
   margin: 14px 0 18px;
-  padding-left: 16px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.06);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 12px 30px rgba(0,0,0,.22);
 }
 
-/* vertical accent bar that matches hero glow */
-.hero-mission::before{
-  content:"";
-  position:absolute;
-  left:0;
-  top:4px;
-  bottom:4px;
-  width:3px;
-  border-radius:2px;
-  background: linear-gradient(
-    to bottom,
-    rgba(245,158,11,.95),
-    rgba(34,197,94,.85)
-  );
-  box-shadow: 0 0 18px rgba(245,158,11,.35);
-}
-
-/* small uppercase eyebrow */
 .mission-eyebrow{
-  display:block;
-  font-size:.62rem;
-  letter-spacing:.22em;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-size:.66rem;
+  letter-spacing:.20em;
   text-transform:uppercase;
-  font-weight:700;
-  color: rgba(226,232,240,.70);
+  font-weight:800;
+  color: rgba(226,232,240,.78);
   margin-bottom:6px;
 }
 
-/* mission text tuned to hero contrast */
-.mission-text{
-  font-size:.98rem;
-  line-height:1.55;
-  color: rgba(248,250,252,.92);
-  text-shadow: 0 1px 2px rgba(0,0,0,.35);
+.mission-eyebrow::before{
+  content:"";
+  width:10px; height:10px;
+  border-radius:999px;
+  background: linear-gradient(135deg, rgba(215,154,43,.95), rgba(34,197,94,.85));
+  box-shadow: 0 0 16px rgba(215,154,43,.25);
 }
+
+.mission-text{
+  color: rgba(248,250,252,.90);
+  font-size: .98rem;
+  line-height: 1.55;
+  margin:0;
+}
+
 
     .hero-note{
       color:rgba(226,232,240,.92);
@@ -554,9 +549,10 @@
               <div class="hero-mission">
             <span class="mission-eyebrow">Our Mission</span>
             <p class="mission-text">
-            To restore clarity, energy, and resilience through clinical-grade, evidence-aligned recovery support for post-viral fatigue, inflammation, brain fog, and nervous system imbalance.
+              To restore clarity, energy, and resilience through clinical-grade, evidence-aligned recovery support for post-viral fatigue, inflammation, brain fog, and nervous system imbalance.
             </p>
             </div>
+
 
 
             <div class="hero-note">Clear flow. Clean energy. Deep reset.</div>
