@@ -1,10 +1,10 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ClearPath Labs | 3-Phase Recovery System</title>
-  <meta name="description" content="A science-aligned AM/Day/PM system supporting circulation, mitochondrial energy, and sleep, stress & parasympathetic balance.*" />
+  <title>ClearPath Labs™ — The Three-Phase System</title>
+  <meta name="description" content="A three-phase supplement system designed to support circulation, energy, and recovery—aligned with your body's natural rhythms." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,594 +13,377 @@
   <style>
     :root{
       --bg: #ffffff;
-      --text: #0b1220;
-      --muted: #506079;
-      --line: rgba(11,18,32,0.10);
-      --card: rgba(255,255,255,0.78);
-      --shadow: 0 18px 60px rgba(11,18,32,0.10);
+      --ink: #0f172a;
+      --muted: #475569;
+      --line: rgba(15,23,42,.10);
+      --card: rgba(255,255,255,.75);
+      --shadow: 0 18px 50px rgba(2,6,23,.10);
+      --shadow2: 0 12px 28px rgba(2,6,23,.10);
+      --radius: 22px;
+      --radius2: 16px;
 
-      --am: #3C7FB1;
-      --day:#4BA8A5;
-      --pm: #344860;
+      --am1:#f4d27a; --am2:#fff6df;
+      --day1:#5de0d2; --day2:#e8fffb;
+      --pm1:#1f2a57; --pm2:#c9b7ff;
 
-      --radius: 18px;
-      --radius2: 24px;
-      --max: 1160px;
+      --cta:#0f172a;
+      --cta2:#ffffff;
     }
 
-    *{ box-sizing:border-box; }
-    html{ scroll-behavior:smooth; }
-    body{
-      margin:0;
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color:var(--text);
-      background:
-        radial-gradient(1200px 600px at 15% -10%, rgba(60,127,177,0.16), transparent 55%),
-        radial-gradient(900px 500px at 85% 0%, rgba(75,168,165,0.14), transparent 52%),
-        radial-gradient(900px 500px at 70% 95%, rgba(52,72,96,0.14), transparent 52%),
-        var(--bg);
-    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
 
-    a{ color:inherit; text-decoration:none; }
-    .wrap{ max-width:var(--max); margin:0 auto; padding:0 20px; }
-
-    /* Top bar */
-    .nav{
-      position:sticky; top:0; z-index:50;
-      backdrop-filter: blur(14px);
-      background: rgba(255,255,255,0.72);
-      border-bottom: 1px solid var(--line);
+    .container{width:min(1100px, 92vw);margin:0 auto}
+    .pill{
+      display:inline-flex;align-items:center;gap:.5rem;
+      padding:.45rem .7rem;border:1px solid var(--line);border-radius:999px;
+      background:rgba(255,255,255,.7);backdrop-filter: blur(10px);
+      font-size:.85rem;color:var(--muted)
     }
-    .nav .inner{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:14px 0;
-      gap:16px;
-    }
-    .brand{
-      display:flex; align-items:center; gap:10px;
-      font-weight:700; letter-spacing:-0.02em;
-    }
-    .mark{
-      width:36px; height:36px; border-radius:12px;
-      background: linear-gradient(135deg, rgba(60,127,177,1), rgba(75,168,165,1));
-      box-shadow: 0 10px 30px rgba(60,127,177,0.25);
-    }
-    .links{ display:flex; gap:18px; align-items:center; color:var(--muted); font-weight:500; }
-    .links a{ padding:8px 10px; border-radius:12px; }
-    .links a:hover{ background: rgba(11,18,32,0.05); color:var(--text); }
-
-    .ctaRow{ display:flex; gap:10px; align-items:center; }
     .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding:11px 14px;
-      border-radius: 999px;
-      font-weight:700;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.72);
-      box-shadow: 0 10px 30px rgba(11,18,32,0.06);
+      display:inline-flex;align-items:center;justify-content:center;gap:.55rem;
+      padding:.95rem 1.1rem;border-radius:999px;border:1px solid var(--line);
+      background:var(--cta);color:var(--cta2);font-weight:600;
+      box-shadow:var(--shadow2);transition:transform .15s ease, box-shadow .15s ease
     }
-    .btn:hover{ transform: translateY(-1px); }
-    .btnPrimary{
-      border: none;
-      color: white;
-      background: linear-gradient(135deg, rgba(60,127,177,1), rgba(75,168,165,1));
-      box-shadow: 0 14px 40px rgba(60,127,177,0.28);
+    .btn:hover{transform:translateY(-1px)}
+    .btn.secondary{
+      background:rgba(255,255,255,.8);color:var(--ink);
+      box-shadow:none
     }
+    .btn.secondary:hover{box-shadow:var(--shadow2)}
+    .grid{display:grid;gap:18px}
+    .card{
+      border:1px solid var(--line);
+      background:var(--card);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      overflow:hidden
+    }
+    .card-inner{padding:22px}
+    .h1{font-size: clamp(2.1rem, 4vw, 3.2rem); line-height:1.05; letter-spacing:-0.03em;margin:10px 0 12px}
+    .h2{font-size: clamp(1.4rem, 2.2vw, 1.9rem); letter-spacing:-0.02em;margin:0 0 8px}
+    .h3{font-size:1.05rem;margin:0 0 6px}
+    .p{color:var(--muted);line-height:1.6;margin:0}
+    .kicker{font-weight:600;color:var(--muted);letter-spacing:.02em;text-transform:uppercase;font-size:.78rem}
+    .section{padding:78px 0}
+    .divider{height:1px;background:var(--line);margin:18px 0}
 
     /* Hero */
-    .hero{ padding:64px 0 34px; }
-    .heroGrid{
+    .hero{
+      padding:34px 0 0;
+      background:
+        radial-gradient(900px 500px at 12% 0%, rgba(244,210,122,.40), transparent 60%),
+        radial-gradient(900px 500px at 50% 0%, rgba(93,224,210,.25), transparent 60%),
+        radial-gradient(900px 600px at 88% 5%, rgba(201,183,255,.28), transparent 60%),
+        linear-gradient(#fff, #fff);
+    }
+    .hero-wrap{
       display:grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap:28px;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 28px;
       align-items:center;
+      padding: 42px 0 30px;
     }
-    .kicker{
-      display:inline-flex; gap:10px; align-items:center;
-      padding:8px 12px; border-radius: 999px;
-      background: rgba(255,255,255,0.7);
+    @media (max-width: 920px){
+      .hero-wrap{grid-template-columns:1fr; padding: 26px 0 12px}
+    }
+    .hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+    .hero-note{margin-top:14px;font-size:.92rem;color:var(--muted)}
+    .hero-media{
+      border-radius: var(--radius);
       border: 1px solid var(--line);
-      color: var(--muted);
-      font-weight: 600;
-    }
-    .dot{ width:8px; height:8px; border-radius:99px; background: var(--day); box-shadow:0 0 0 4px rgba(75,168,165,0.15); }
-
-    h1{
-      margin:14px 0 10px;
-      font-size: clamp(34px, 4vw, 54px);
-      line-height:1.04;
-      letter-spacing:-0.03em;
-    }
-    .sub{
-      color:var(--muted);
-      font-size: 18px;
-      line-height:1.6;
-      max-width: 56ch;
-    }
-    .heroBtns{ margin-top:18px; display:flex; gap:10px; flex-wrap:wrap; }
-
-    .trustRow{
-      margin-top:18px;
-      display:flex; gap:14px; flex-wrap:wrap;
-      color:var(--muted);
-      font-weight:600;
-      font-size:13px;
-    }
-    .trustPill{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:10px 12px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.72);
-      border: 1px solid var(--line);
-    }
-    .tick{
-      width:18px; height:18px; border-radius:6px;
-      background: rgba(75,168,165,0.16);
-      display:inline-flex; align-items:center; justify-content:center;
-      color: var(--day);
-      font-weight:900;
-    }
-
-    .heroCard{
-      border-radius: var(--radius2);
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.72);
+      background: rgba(255,255,255,.75);
       box-shadow: var(--shadow);
       overflow:hidden;
     }
-    .heroCardTop{
-      padding:16px 16px 10px;
-      display:flex; justify-content:space-between; align-items:flex-start;
+    .hero-media .topbar{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:12px 14px;border-bottom:1px solid var(--line)
     }
-    .miniTitle{ font-weight:800; letter-spacing:-0.02em; }
-    .miniSub{ color:var(--muted); font-size:13px; margin-top:4px; line-height:1.4; }
-    .badge{
-      font-size:12px; font-weight:800;
-      padding:8px 10px; border-radius: 999px;
-      background: rgba(11,18,32,0.05);
-      color: var(--text);
-      border:1px solid var(--line);
-      white-space:nowrap;
+    .dots{display:flex;gap:7px}
+    .dot{width:10px;height:10px;border-radius:999px;background:rgba(15,23,42,.15)}
+    .hero-media .content{padding:16px}
+    .trust-row{
+      display:flex;flex-wrap:wrap;gap:10px;margin-top:16px
     }
-    .heroImgWrap{
-      padding:0 16px 16px;
-    }
-    .heroImg{
-      width:100%;
-      height:auto;
-      display:block;
-      border-radius: 16px;
-      background: rgba(11,18,32,0.03);
-      border: 1px solid rgba(11,18,32,0.06);
+    .trust{
+      padding:.45rem .65rem;border:1px solid var(--line);border-radius:999px;
+      font-size:.84rem;color:var(--muted);background:rgba(255,255,255,.7)
     }
 
-    /* Section base */
-    section{ padding:54px 0; }
-    .sectionHead{
-      display:flex; justify-content:space-between; align-items:flex-end; gap:16px;
-      margin-bottom:18px;
+    /* 3 phase cards */
+    .phase-grid{grid-template-columns:repeat(3, 1fr)}
+    @media (max-width: 920px){ .phase-grid{grid-template-columns:1fr} }
+
+    .phase-head{
+      padding:18px 18px 14px;
+      border-bottom:1px solid var(--line)
     }
-    h2{
-      margin:0;
-      font-size: clamp(24px, 2.4vw, 34px);
-      letter-spacing:-0.02em;
+    .phase-badge{
+      display:inline-flex;align-items:center;gap:.5rem;
+      padding:.4rem .7rem;border-radius:999px;border:1px solid var(--line);
+      background:rgba(255,255,255,.65);font-size:.85rem;color:var(--muted)
     }
-    .lead{
-      margin:8px 0 0;
-      color:var(--muted);
-      line-height:1.7;
-      max-width: 70ch;
-      font-size:16px;
+    .accent-am{background:linear-gradient(135deg, rgba(244,210,122,.65), rgba(255,246,223,.85))}
+    .accent-day{background:linear-gradient(135deg, rgba(93,224,210,.45), rgba(232,255,251,.9))}
+    .accent-pm{background:linear-gradient(135deg, rgba(31,42,87,.18), rgba(201,183,255,.55))}
+    .phase-body{padding:16px 18px 18px}
+    .bullets{margin:12px 0 0;padding:0;list-style:none;display:grid;gap:10px}
+    .bullets li{display:flex;gap:10px;align-items:flex-start;color:var(--muted);line-height:1.45}
+    .check{
+      flex:0 0 auto;width:20px;height:20px;border-radius:999px;
+      border:1px solid var(--line);background:rgba(255,255,255,.7);
+      display:inline-flex;align-items:center;justify-content:center;font-size:12px;color:rgba(15,23,42,.7)
+    }
+    .mini{margin-top:12px;font-size:.9rem;color:rgba(71,85,105,.95)}
+
+    /* Diagram */
+    .diagram-card{overflow:hidden}
+    .diagram-wrap{display:grid;grid-template-columns: 1fr;gap:0}
+    .diagram-top{padding:22px 22px 0}
+    .diagram-img{padding:18px 22px 22px}
+    .diagram-img img{
+
+    {border-radius:18px;border:1px solid var(--line);background:#fff}
+
+    /* Section styles */
+    .two-col{grid-template-columns: 1fr 1fr;align-items:start}
+    @media (max-width: 920px){ .two-col{grid-template-columns:1fr} }
+
+    .list{margin:10px 0 0;color:var(--muted);line-height:1.7}
+    .list li{margin:4px 0}
+    .callout{
+      padding:18px;border-radius:18px;border:1px solid var(--line);
+      background:rgba(255,255,255,.7)
     }
 
-    .grid3{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:14px;
-    }
-    .card{
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.72);
-      border-radius: var(--radius2);
-      box-shadow: 0 14px 50px rgba(11,18,32,0.08);
-      padding:18px;
-      position:relative;
-      overflow:hidden;
-    }
-    .card h3{ margin:0 0 6px; font-size:16px; letter-spacing:-0.01em; }
-    .card p{ margin:0; color:var(--muted); line-height:1.6; font-size:14px; }
-
-    .band{
-      position:absolute; left:0; top:0; right:0; height:6px;
-      background: linear-gradient(90deg, var(--am), var(--day), var(--pm));
-      opacity:0.95;
-    }
-    .band.am{ background: linear-gradient(90deg, rgba(60,127,177,1), rgba(60,127,177,0.25)); }
-    .band.day{ background: linear-gradient(90deg, rgba(75,168,165,1), rgba(75,168,165,0.25)); }
-    .band.pm{ background: linear-gradient(90deg, rgba(52,72,96,1), rgba(52,72,96,0.25)); }
-
-    /* Product cards */
-    .prodGrid{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:14px;
-      margin-top: 14px;
-    }
-    .prodTop{
-      display:flex; align-items:flex-start; justify-content:space-between; gap:10px;
-      margin-bottom:10px;
-    }
-    .tag{
-      display:inline-flex; align-items:center; gap:8px;
-      font-size:12px; font-weight:800;
-      padding:8px 10px; border-radius:999px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.72);
-      color: var(--text);
-    }
-    .tag .sw{ width:10px; height:10px; border-radius:99px; }
-    .sw.am{ background: var(--am); }
-    .sw.day{ background: var(--day); }
-    .sw.pm{ background: var(--pm); }
-
-    .prodImg{
-      width:100%; height:210px; object-fit:contain;
-      border-radius: 16px;
-      background: rgba(11,18,32,0.03);
-      border:1px solid rgba(11,18,32,0.06);
-      padding:14px;
-      margin: 8px 0 12px;
-    }
-    .bullets{ margin:0; padding-left: 18px; color: var(--muted); line-height:1.6; font-size:14px; }
-    .bullets li{ margin:6px 0; }
-
-    .prodBtns{ display:flex; gap:10px; margin-top:14px; flex-wrap:wrap; }
-    .btnSmall{ padding:10px 12px; font-size:14px; }
-
-    /* Science preview */
-    .split{
-      display:grid;
-      grid-template-columns: 0.95fr 1.05fr;
-      gap:18px;
-      align-items:stretch;
-    }
-    .panel{
-      border: 1px solid var(--line);
-      border-radius: var(--radius2);
-      background: rgba(255,255,255,0.72);
+    /* Footer CTA */
+    .cta-band{
+      padding:26px;border-radius:var(--radius);border:1px solid var(--line);
+      background:
+        radial-gradient(700px 220px at 20% 0%, rgba(244,210,122,.35), transparent 60%),
+        radial-gradient(700px 220px at 50% 0%, rgba(93,224,210,.22), transparent 60%),
+        radial-gradient(700px 250px at 80% 0%, rgba(201,183,255,.22), transparent 60%),
+        rgba(255,255,255,.75);
       box-shadow: var(--shadow);
-      padding: 20px;
     }
-    .panel h3{ margin:0 0 8px; font-size:18px; letter-spacing:-0.02em; }
-    .panel p{ margin:0; color: var(--muted); line-height:1.7; font-size:15px; }
-    .steps{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap:12px;
-      margin-top: 12px;
-    }
-    .step{
-      display:flex; gap:12px; align-items:flex-start;
-      padding: 14px;
-      border-radius: 18px;
-      border: 1px solid rgba(11,18,32,0.08);
-      background: rgba(255,255,255,0.70);
-    }
-    .icon{
-      width:38px; height:38px; border-radius:14px;
-      display:flex; align-items:center; justify-content:center;
-      font-weight:900; color: white;
-    }
-    .icon.am{ background: rgba(60,127,177,1); }
-    .icon.day{ background: rgba(75,168,165,1); }
-    .icon.pm{ background: rgba(52,72,96,1); }
-    .step b{ display:block; margin-bottom:4px; letter-spacing:-0.01em; }
-    .step span{ color: var(--muted); font-size:14px; line-height:1.55; display:block; }
-
-    /* Footer */
-    footer{
-      padding: 34px 0 44px;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      font-size: 13px;
-      line-height:1.6;
-    }
-
-    /* Responsive */
-    @media (max-width: 980px){
-      .heroGrid{ grid-template-columns: 1fr; }
-      .split{ grid-template-columns: 1fr; }
-      .grid3, .prodGrid{ grid-template-columns: 1fr; }
-      .links{ display:none; }
-    }
+    .cta-band .row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:14px}
+    .foot{padding:26px 0 52px;color:var(--muted);font-size:.9rem}
   </style>
 </head>
 
 <body>
-  <!-- NAV -->
-  <div class="nav">
-    <div class="wrap">
-      <div class="inner">
-        <div class="brand">
-          <div class="mark"></div>
-          <div>
-            ClearPath Labs<br/>
-            <span style="font-size:12px; color:var(--muted); font-weight:600;">3-Phase Recovery System</span>
-          </div>
-        </div>
-
-        <div class="links">
-          <a href="#system">The System</a>
-          <a href="#products">Products</a>
-          <a href="#science">Why It Works</a>
-          <a href="#protocol">How to Take</a>
-        </div>
-
-        <div class="ctaRow">
-          <a class="btn" href="#products">Shop</a>
-          <a class="btn btnPrimary" href="#science">Read the Science</a>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- HERO -->
   <header class="hero">
-    <div class="wrap">
-      <div class="heroGrid">
+    <div class="container">
+      <div class="hero-wrap">
         <div>
-          <div class="kicker"><span class="dot"></span>Science-aligned, clinical-grade daily support*</div>
-          <h1>Recovery support that matches how the body works — AM, Day, PM.</h1>
-          <p class="sub">
-            A structured 3-phase system supporting <b>circulation & fibrin pathways</b>, <b>mitochondrial energy</b>, and
-            <b>sleep, stress & parasympathetic balance</b> — designed for timing, absorption, and real-world consistency.*
+          <div class="pill">ClearPath Labs™ • Phase-Based Recovery System</div>
+          <h1 class="h1">Restore balance at the cellular level.</h1>
+          <p class="p" style="font-size:1.05rem">
+            A three-phase supplement system designed to support circulation, energy, and recovery—
+            aligned with your body’s natural rhythms.*
           </p>
 
-          <div class="heroBtns">
-            <a class="btn btnPrimary" href="#products">Shop the 3-Step System</a>
-            <a class="btn" href="#science">Why ClearPath Works</a>
+          <div class="hero-cta">
+            <a class="btn" href="#shop">Start the System</a>
+            <a class="btn secondary" href="#how">How It Works</a>
           </div>
 
-          <div class="trustRow">
-            <div class="trustPill"><span class="tick">✓</span> No proprietary blends</div>
-            <div class="trustPill"><span class="tick">✓</span> Evidence-aligned ingredients</div>
-            <div class="trustPill"><span class="tick">✓</span> Designed for timing & absorption</div>
+          <div class="trust-row">
+            <span class="trust">GMP Manufactured</span>
+            <span class="trust">No Stimulants</span>
+            <span class="trust">Clean Label</span>
+            <span class="trust">Designed as a System</span>
           </div>
+
+          <p class="hero-note">
+            *These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.
+          </p>
         </div>
 
-        <div class="heroCard">
-          <div class="heroCardTop">
-            <div>
-              <div class="miniTitle">The 24-Hour ClearPath Cycle</div>
-              <div class="miniSub">Circulation → Energy → Nervous System</div>
+        <div class="hero-media">
+          <div class="topbar">
+            <div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+            <div class="kicker">System Overview</div>
+          </div>
+          <div class="content">
+            <!-- Optional: your trio bottle image -->
+            <!-- <img src="images/clean_stack.png" alt="ClearPath Labs product system" /> -->
+
+            <div class="callout">
+              <div class="kicker">In one sentence</div>
+              <div class="h2" style="margin-top:8px">Clear in the morning → Rebuild in the day → Reset at night.</div>
+              <p class="p">Same ingredients taken at the wrong time can fail. Aligned with biology, they compound.</p>
             </div>
-            <div class="badge">AM / DAY / PM</div>
-          </div>
-          <div class="heroImgWrap">
-            <!-- Replace with your hero diagram if you want -->
-            <img class="heroImg" src="assets/images/clean_stack.png" alt="ClearPath Labs 3-step system" />
           </div>
         </div>
+
       </div>
     </div>
   </header>
 
-  <!-- SYSTEM -->
-  <section id="system">
-    <div class="wrap">
-      <div class="sectionHead">
+  <!-- HOW IT WORKS -->
+  <section class="section" id="how">
+    <div class="container">
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:18px;flex-wrap:wrap">
         <div>
-          <h2>The ClearPath System</h2>
-          <p class="lead">Three formulas. One daily rhythm. Built around the core recovery domains most often stressed by inflammation, lifestyle load, and disrupted sleep.*</p>
+          <div class="kicker">How it works</div>
+          <h2 class="h2">The ClearPath™ Three-Phase System</h2>
+          <p class="p">Three formulas. Three biological windows. One coherent protocol.</p>
+        </div>
+        <a class="btn secondary" href="#diagram">View the Diagram</a>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="grid phase-grid" style="margin-top:18px">
+        <!-- AM -->
+        <div class="card">
+          <div class="phase-head accent-am">
+            <span class="phase-badge">☀️ Phase 1 • Morning</span>
+            <div class="h2" style="margin:10px 0 0">ClearFlow AM</div>
+            <p class="p">Circulation & Clearance*</p>
+          </div>
+          <div class="phase-body">
+            <ul class="bullets">
+              <li><span class="check">✓</span><span>Supports healthy blood flow & oxygen delivery*</span></li>
+              <li><span class="check">✓</span><span>Helps maintain fibrin balance & microcirculation*</span></li>
+              <li><span class="check">✓</span><span>Promotes morning clarity without stimulants*</span></li>
+            </ul>
+            <div class="mini"><strong>Timing:</strong> Empty stomach • 20–30 minutes before food</div>
+          </div>
+        </div>
+
+        <!-- DAY -->
+        <div class="card">
+          <div class="phase-head accent-day">
+            <span class="phase-badge">🌤️ Phase 2 • Day</span>
+            <div class="h2" style="margin:10px 0 0">Rebuild Day</div>
+            <p class="p">Mitochondrial Energy & Defense*</p>
+          </div>
+          <div class="phase-body">
+            <ul class="bullets">
+              <li><span class="check">✓</span><span>Supports cellular energy (ATP) & mitochondrial function*</span></li>
+              <li><span class="check">✓</span><span>Helps recycle antioxidants & restore redox balance*</span></li>
+              <li><span class="check">✓</span><span>Promotes nervous system resilience under daily load*</span></li>
+            </ul>
+            <div class="mini"><strong>Timing:</strong> With food • Lunch or early dinner</div>
+          </div>
+        </div>
+
+        <!-- PM -->
+        <div class="card">
+          <div class="phase-head accent-pm">
+            <span class="phase-badge">🌙 Phase 3 • Night</span>
+            <div class="h2" style="margin:10px 0 0">Deep Reset PM</div>
+            <p class="p">Nervous System & Sleep Recovery*</p>
+          </div>
+          <div class="phase-body">
+            <ul class="bullets">
+              <li><span class="check">✓</span><span>Supports calm & parasympathetic recovery (HRV)*</span></li>
+              <li><span class="check">✓</span><span>Helps regulate cortisol rhythm for overnight repair*</span></li>
+              <li><span class="check">✓</span><span>Promotes deep, restorative sleep quality*</span></li>
+            </ul>
+            <div class="mini"><strong>Timing:</strong> 30–60 minutes before bed</div>
+          </div>
         </div>
       </div>
 
-      <div class="grid3">
-        <div class="card">
-          <div class="band am"></div>
-          <h3>Phase 1 — Morning</h3>
-          <p><b>Microcirculation & fibrin pathways.</b> Enzyme-focused support designed for empty-stomach use to help maintain healthy vascular flow and oxygen delivery.*</p>
+    </div>
+  </section>
+
+  <!-- DIAGRAM SECTION -->
+  <section class="section" id="diagram" style="padding-top:0">
+    <div class="container">
+      <div class="card diagram-card">
+        <div class="diagram-top">
+          <div class="kicker">System diagram</div>
+          <h2 class="h2" style="margin-top:8px">See the 24-hour rhythm at a glance.</h2>
+          <p class="p">
+            This is the simplest way to understand why the system is split into phases. (Replace the image path below.)
+          </p>
         </div>
-        <div class="card">
-          <div class="band day"></div>
-          <h3>Phase 2 — Daytime</h3>
-          <p><b>Mitochondria & inflammatory load.</b> Supports cellular energy production, antioxidant defense, and immune balance with food for better absorption.*</p>
-        </div>
-        <div class="card">
-          <div class="band pm"></div>
-          <h3>Phase 3 — Night</h3>
-          <p><b>Sleep, stress & parasympathetic support.</b> Helps downshift the nervous system and support restorative sleep — without melatonin.*</p>
+        <div class="diagram-img">
+          <img src="images/clearpath-system-diagram.png" alt="ClearPath Three-Phase System diagram" />
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PRODUCTS -->
-  <section id="products">
-    <div class="wrap">
-      <div class="sectionHead">
-        <div>
-          <h2>Shop the Formulas</h2>
-          <p class="lead">Clean, transparent, clinically aligned formulas—built as a system so each ingredient category is used under the conditions where it performs best.*</p>
-        </div>
-      </div>
-
-      <div class="prodGrid">
+  <!-- WHY TIMING MATTERS -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="grid two-col">
         <div class="card">
-          <div class="prodTop">
-            <div>
-              <div class="tag"><span class="sw am"></span> ClearFlow AM</div>
-              <div style="margin-top:8px; font-weight:800; letter-spacing:-0.02em;">Circulation & Enzyme Support</div>
-              <div style="margin-top:4px; color:var(--muted); font-size:14px; line-height:1.5;">
-                Supports healthy fibrin pathways & microcirculation.* (Empty stomach)
-              </div>
+          <div class="card-inner">
+            <div class="kicker">Why timing matters</div>
+            <h2 class="h2">Aligned with biology, ingredients compound.</h2>
+            <p class="p">
+              Most supplements are designed in isolation. The body doesn’t work that way.
+              ClearPath is built around circadian windows: clearance in the morning, rebuilding during activity,
+              and nervous-system downshifting at night.*
+            </p>
+            <div class="divider"></div>
+            <div class="callout">
+              <div class="kicker">Core principle</div>
+              <p class="p" style="font-size:1.05rem;margin-top:8px">
+                Same ingredients taken at the wrong time can fail.
+                <strong>Aligned with biology, they compound.</strong>
+              </p>
             </div>
-          </div>
-
-          <img class="prodImg" src="assets/images/clean_am.png" alt="ClearFlow AM bottle" />
-
-          <ul class="bullets">
-            <li>Nattokinase (4,000 FU)</li>
-            <li>Serrapeptase (250,000 SPU)</li>
-            <li>Bromelain (2400 GDU/g)</li>
-            <li>BioPerine®</li>
-          </ul>
-
-          <div class="prodBtns">
-            <a class="btn btnPrimary btnSmall" href="#protocol">How to take</a>
-            <a class="btn btnSmall" href="science.html#phase1">Read science</a>
           </div>
         </div>
 
         <div class="card">
-          <div class="prodTop">
-            <div>
-              <div class="tag"><span class="sw day"></span> Rebuild Day</div>
-              <div style="margin-top:8px; font-weight:800; letter-spacing:-0.02em;">Mitochondria & Cellular Recovery</div>
-              <div style="margin-top:4px; color:var(--muted); font-size:14px; line-height:1.5;">
-                Supports cellular energy, antioxidant defenses & immune balance.* (With food)
-              </div>
-            </div>
-          </div>
-
-          <img class="prodImg" src="assets/images/clean_day.png" alt="Rebuild Day bottle" />
-
-          <ul class="bullets">
-            <li>NAC + Selenium (glutathione support*)</li>
-            <li>Ubiquinol CoQ10 + PQQ (mitochondria support*)</li>
-            <li>Omega-3 + Quercetin (inflammatory balance*)</li>
-          </ul>
-
-          <div class="prodBtns">
-            <a class="btn btnPrimary btnSmall" href="#protocol">How to take</a>
-            <a class="btn btnSmall" href="science.html#phase2">Read science</a>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="prodTop">
-            <div>
-              <div class="tag"><span class="sw pm"></span> Deep Reset PM</div>
-              <div style="margin-top:8px; font-weight:800; letter-spacing:-0.02em;">Sleep, Stress & Parasympathetic Support</div>
-              <div style="margin-top:4px; color:var(--muted); font-size:14px; line-height:1.5;">
-                Supports calm signaling and restorative sleep.* (No melatonin)
-              </div>
-            </div>
-          </div>
-
-          <img class="prodImg" src="assets/images/clean_pm.png" alt="Deep Reset PM bottle" />
-
-          <ul class="bullets">
-            <li>Magnesium glycinate + Glycine</li>
-            <li>L-Theanine + Taurine + GABA</li>
-            <li>KSM-66® + Apigenin + Phosphatidylserine</li>
-          </ul>
-
-          <div class="prodBtns">
-            <a class="btn btnPrimary btnSmall" href="#protocol">How to take</a>
-            <a class="btn btnSmall" href="science.html#phase3">Read science</a>
+          <div class="card-inner">
+            <div class="kicker">Who it’s for</div>
+            <h2 class="h2">People who feel “off” — even when labs look normal.</h2>
+            <ul class="list">
+              <li>Burnout, chronic stress, or overtraining</li>
+              <li>Post-viral fatigue or sluggish recovery</li>
+              <li>Poor sleep despite “doing everything right”</li>
+              <li>Inflammation and brain fog without a clear cause</li>
+            </ul>
+            <div class="divider"></div>
+            <p class="p">
+              Designed as a system you can run in phases—not a random stack you take forever.
+            </p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SCIENCE PREVIEW -->
-  <section id="science">
-    <div class="wrap">
-      <div class="sectionHead">
-        <div>
-          <h2>Why ClearPath Works</h2>
-          <p class="lead">We support the systems beneath the symptoms—circulation in the morning, cellular energy during the day, and nervous system down-regulation at night.*</p>
-        </div>
-        <div>
-          <a class="btn btnPrimary" href="science.html">Read the full Science Page</a>
-        </div>
-      </div>
-
-      <div class="split">
-        <div class="panel">
-          <h3>The 3-Phase Recovery Model</h3>
-          <p>ClearPath is built as a system because different ingredient categories require different conditions for best performance: enzymes away from food, fat-soluble nutrients with meals, and calming compounds aligned with nighttime physiology.*</p>
-
-          <div class="steps">
-            <div class="step">
-              <div class="icon am">AM</div>
-              <div>
-                <b>Circulation & Fibrin Pathways</b>
-                <span>Enzyme-focused support for microcirculation and oxygen delivery.*</span>
-              </div>
-            </div>
-            <div class="step">
-              <div class="icon day">DAY</div>
-              <div>
-                <b>Mitochondria & Inflammatory Load</b>
-                <span>Cellular energy, antioxidant defense, and immune balance—best with food.*</span>
-              </div>
-            </div>
-            <div class="step">
-              <div class="icon pm">PM</div>
-              <div>
-                <b>Sleep, Stress & Parasympathetic Support</b>
-                <span>Supports calm signaling and restorative sleep—without melatonin.*</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="panel">
-          <h3>Designed for Timing & Absorption</h3>
-          <p><b>All-in-one formulas</b> often compromise absorption and dosing. ClearPath separates phases so each formula can be used under conditions where it performs best—without ingredient competition or dose dilution.*</p>
-          <div style="height:12px;"></div>
-          <a class="btn btnPrimary" href="#protocol">See the Daily Protocol</a>
-          <a class="btn" style="margin-left:8px;" href="science.html">Explore the Science</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROTOCOL -->
-  <section id="protocol">
-    <div class="wrap">
-      <div class="sectionHead">
-        <div>
-          <h2>The ClearPath Daily Protocol</h2>
-          <p class="lead">Simple, habit-friendly timing aligned with absorption and recovery rhythms.*</p>
+  <!-- SHOP / CTA -->
+  <section class="section" id="shop" style="padding-top:0">
+    <div class="container">
+      <div class="cta-band">
+        <div class="kicker">Start here</div>
+        <h2 class="h2" style="margin-top:8px">Begin with Rebuild Day—or run the full system.</h2>
+        <p class="p">
+          For most people, Rebuild Day is the easiest entry point (energy + resilience).
+          Add Deep Reset PM for sleep recovery, then ClearFlow AM as the advanced phase.*
+        </p>
+        <div class="row">
+          <a class="btn" href="#">Shop Rebuild Day</a>
+          <a class="btn secondary" href="#">Shop Deep Reset PM</a>
+          <a class="btn secondary" href="#">View Full System Bundle</a>
         </div>
       </div>
 
-      <div class="grid3">
-        <div class="card">
-          <div class="band am"></div>
-          <h3>Morning</h3>
-          <p><b>ClearFlow AM</b><br/>2 capsules • Empty stomach</p>
-        </div>
-        <div class="card">
-          <div class="band day"></div>
-          <h3>Daytime</h3>
-          <p><b>Rebuild Day</b><br/>3 capsules • With food</p>
-        </div>
-        <div class="card">
-          <div class="band pm"></div>
-          <h3>Night</h3>
-          <p><b>Deep Reset PM</b><br/>3 capsules • 30–60 min before bed</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="wrap">
-      <div style="display:flex; gap:14px; flex-wrap:wrap; justify-content:space-between; align-items:flex-start;">
-        <div>
-          <b>ClearPath Labs</b><br/>
-          Science-aligned recovery support.
-        </div>
-        <div style="max-width: 70ch;">
+      <div class="foot">
+        <div class="divider"></div>
+        <p class="p">
           *These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.
-        </div>
+        </p>
       </div>
     </div>
-  </footer>
+  </section>
+
 </body>
 </html>
