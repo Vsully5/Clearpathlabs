@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ClearPath Labs™ — The Three-Phase System</title>
-  <meta name="description" content="A three-phase supplement system designed to support circulation, energy, and recovery—aligned with your body's natural rhythms." />
+  <title>ClearPath Labs™ — Phase-Based Recovery</title>
+  <meta name="description" content="A three-phase supplement system supporting circulation, cellular energy, and restorative recovery—aligned with your body's natural rhythms." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,378 +12,446 @@
 
   <style>
     :root{
-      --bg: #ffffff;
-      --ink: #0f172a;
-      --muted: #475569;
-      --line: rgba(15,23,42,.10);
-      --card: rgba(255,255,255,.75);
-      --shadow: 0 18px 50px rgba(2,6,23,.10);
-      --shadow2: 0 12px 28px rgba(2,6,23,.10);
-      --radius: 22px;
-      --radius2: 16px;
+      --bg:#ffffff;
+      --ink:#0b1220;
+      --muted:#526072;
+      --line:rgba(11,18,32,.10);
+      --soft:#f6f7f9;
+      --soft2:#fbfbfc;
+      --shadow:0 14px 40px rgba(2,6,23,.08);
+      --radius:18px;
 
-      --am1:#f4d27a; --am2:#fff6df;
-      --day1:#5de0d2; --day2:#e8fffb;
-      --pm1:#1f2a57; --pm2:#c9b7ff;
+      --am:#d9a441;   /* warm gold accent */
+      --day:#1aa6a1;  /* teal accent */
+      --pm:#3a3f86;   /* deep indigo accent */
 
-      --cta:#0f172a;
-      --cta2:#ffffff;
+      --btn:#0b1220;
     }
 
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
     a{color:inherit;text-decoration:none}
     img{max-width:100%;display:block}
+    .container{width:min(1160px, 92vw);margin:0 auto}
 
-    .container{width:min(1100px, 92vw);margin:0 auto}
-    .pill{
-      display:inline-flex;align-items:center;gap:.5rem;
-      padding:.45rem .7rem;border:1px solid var(--line);border-radius:999px;
-      background:rgba(255,255,255,.7);backdrop-filter: blur(10px);
-      font-size:.85rem;color:var(--muted)
+    /* Header */
+    header{
+      position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
     }
+    .nav{
+      display:flex;align-items:center;justify-content:space-between;gap:14px;
+      padding:14px 0;
+    }
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:-0.02em}
+    .logoMark{
+      width:32px;height:32px;border-radius:10px;border:1px solid var(--line);
+      background:linear-gradient(135deg, rgba(217,164,65,.25), rgba(26,166,161,.18), rgba(58,63,134,.18));
+    }
+    .navlinks{display:flex;gap:18px;align-items:center;color:var(--muted);font-weight:600;font-size:.95rem}
+    .navlinks a:hover{color:var(--ink)}
+    .navcta{display:flex;gap:10px;align-items:center}
     .btn{
-      display:inline-flex;align-items:center;justify-content:center;gap:.55rem;
-      padding:.95rem 1.1rem;border-radius:999px;border:1px solid var(--line);
-      background:var(--cta);color:var(--cta2);font-weight:600;
-      box-shadow:var(--shadow2);transition:transform .15s ease, box-shadow .15s ease
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:.78rem 1rem;border-radius:999px;border:1px solid var(--line);
+      font-weight:700;font-size:.95rem
     }
-    .btn:hover{transform:translateY(-1px)}
-    .btn.secondary{
-      background:rgba(255,255,255,.8);color:var(--ink);
-      box-shadow:none
+    .btn.primary{background:var(--btn);color:#fff;border-color:var(--btn)}
+    .btn.ghost{background:#fff;color:var(--ink)}
+    @media (max-width: 860px){
+      .navlinks{display:none}
     }
-    .btn.secondary:hover{box-shadow:var(--shadow2)}
-    .grid{display:grid;gap:18px}
-    .card{
-      border:1px solid var(--line);
-      background:var(--card);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      overflow:hidden
-    }
-    .card-inner{padding:22px}
-    .h1{font-size: clamp(2.1rem, 4vw, 3.2rem); line-height:1.05; letter-spacing:-0.03em;margin:10px 0 12px}
-    .h2{font-size: clamp(1.4rem, 2.2vw, 1.9rem); letter-spacing:-0.02em;margin:0 0 8px}
-    .h3{font-size:1.05rem;margin:0 0 6px}
-    .p{color:var(--muted);line-height:1.6;margin:0}
-    .kicker{font-weight:600;color:var(--muted);letter-spacing:.02em;text-transform:uppercase;font-size:.78rem}
-    .section{padding:78px 0}
-    .divider{height:1px;background:var(--line);margin:18px 0}
 
     /* Hero */
     .hero{
-      padding:34px 0 0;
-      background:
-        radial-gradient(900px 500px at 12% 0%, rgba(244,210,122,.40), transparent 60%),
-        radial-gradient(900px 500px at 50% 0%, rgba(93,224,210,.25), transparent 60%),
-        radial-gradient(900px 600px at 88% 5%, rgba(201,183,255,.28), transparent 60%),
-        linear-gradient(#fff, #fff);
+      padding:58px 0 24px;
+      background:linear-gradient(#fff, #fff);
     }
-    .hero-wrap{
-      display:grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap: 28px;
-      align-items:center;
-      padding: 42px 0 30px;
+    .heroGrid{
+      display:grid;grid-template-columns: 1.15fr .85fr;gap:34px;align-items:center;
     }
-    @media (max-width: 920px){
-      .hero-wrap{grid-template-columns:1fr; padding: 26px 0 12px}
+    @media (max-width: 980px){
+      .heroGrid{grid-template-columns:1fr;gap:18px}
     }
-    .hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
-    .hero-note{margin-top:14px;font-size:.92rem;color:var(--muted)}
-    .hero-media{
-      border-radius: var(--radius);
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.75);
-      box-shadow: var(--shadow);
-      overflow:hidden;
+    .eyebrow{
+      color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:.78rem
     }
-    .hero-media .topbar{
-      display:flex;align-items:center;justify-content:space-between;
-      padding:12px 14px;border-bottom:1px solid var(--line)
+    h1{
+      margin:10px 0 12px;
+      font-size: clamp(2.2rem, 4.2vw, 3.2rem);
+      letter-spacing:-0.04em;line-height:1.06
     }
-    .dots{display:flex;gap:7px}
-    .dot{width:10px;height:10px;border-radius:999px;background:rgba(15,23,42,.15)}
-    .hero-media .content{padding:16px}
-    .trust-row{
-      display:flex;flex-wrap:wrap;gap:10px;margin-top:16px
+    .sub{
+      color:var(--muted);line-height:1.65;font-size:1.05rem;margin:0
     }
-    .trust{
-      padding:.45rem .65rem;border:1px solid var(--line);border-radius:999px;
-      font-size:.84rem;color:var(--muted);background:rgba(255,255,255,.7)
+    .heroActions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+    .microtrust{
+      display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;color:var(--muted);font-size:.92rem
     }
+    .microtrust span{
+      padding:.45rem .7rem;border:1px solid var(--line);border-radius:999px;background:var(--soft2)
+    }
+    .heroCard{
+      border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);
+      background:#fff;overflow:hidden
+    }
+    .heroCardTop{
+      padding:14px 16px;border-bottom:1px solid var(--line);
+      display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-weight:700;font-size:.9rem
+    }
+    .heroCardBody{padding:16px}
+    .productMock{
+      border-radius:14px;border:1px solid var(--line);background:var(--soft);
+      height:280px;display:flex;align-items:center;justify-content:center;
+      color:var(--muted);font-weight:700
+    }
+
+    /* Section basics */
+    section{padding:60px 0}
+    .sectionHead{display:flex;justify-content:space-between;align-items:flex-end;gap:14px;flex-wrap:wrap}
+    h2{
+      margin:0;
+      font-size: clamp(1.5rem, 2.4vw, 2.1rem);
+      letter-spacing:-0.03em
+    }
+    .lead{margin:8px 0 0;color:var(--muted);line-height:1.65;max-width:70ch}
+    .divider{height:1px;background:var(--line);margin:22px 0}
 
     /* 3 phase cards */
-    .phase-grid{grid-template-columns:repeat(3, 1fr)}
-    @media (max-width: 920px){ .phase-grid{grid-template-columns:1fr} }
+    .grid{display:grid;gap:14px}
+    .phaseGrid{grid-template-columns:repeat(3,1fr)}
+    @media (max-width: 980px){ .phaseGrid{grid-template-columns:1fr} }
 
-    .phase-head{
-      padding:18px 18px 14px;
-      border-bottom:1px solid var(--line)
+    .card{
+      border:1px solid var(--line);border-radius:var(--radius);background:#fff;box-shadow:var(--shadow);
+      overflow:hidden
     }
-    .phase-badge{
-      display:inline-flex;align-items:center;gap:.5rem;
-      padding:.4rem .7rem;border-radius:999px;border:1px solid var(--line);
-      background:rgba(255,255,255,.65);font-size:.85rem;color:var(--muted)
+    .cardInner{padding:18px}
+    .chip{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:.40rem .65rem;border-radius:999px;border:1px solid var(--line);
+      background:var(--soft2);color:var(--muted);font-weight:700;font-size:.85rem
     }
-    .accent-am{background:linear-gradient(135deg, rgba(244,210,122,.65), rgba(255,246,223,.85))}
-    .accent-day{background:linear-gradient(135deg, rgba(93,224,210,.45), rgba(232,255,251,.9))}
-    .accent-pm{background:linear-gradient(135deg, rgba(31,42,87,.18), rgba(201,183,255,.55))}
-    .phase-body{padding:16px 18px 18px}
-    .bullets{margin:12px 0 0;padding:0;list-style:none;display:grid;gap:10px}
-    .bullets li{display:flex;gap:10px;align-items:flex-start;color:var(--muted);line-height:1.45}
-    .check{
-      flex:0 0 auto;width:20px;height:20px;border-radius:999px;
-      border:1px solid var(--line);background:rgba(255,255,255,.7);
-      display:inline-flex;align-items:center;justify-content:center;font-size:12px;color:rgba(15,23,42,.7)
+    .chip .dot{width:8px;height:8px;border-radius:999px}
+    .dot.am{background:var(--am)} .dot.day{background:var(--day)} .dot.pm{background:var(--pm)}
+    .titleRow{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-top:10px}
+    .cardTitle{font-weight:800;font-size:1.2rem;letter-spacing:-0.02em;margin:0}
+    .time{color:var(--muted);font-weight:700;font-size:.95rem}
+    .cardSub{color:var(--muted);margin:6px 0 0;line-height:1.6}
+    ul.bul{
+      margin:14px 0 0;padding:0;list-style:none;display:grid;gap:10px;color:var(--muted);line-height:1.5
     }
-    .mini{margin-top:12px;font-size:.9rem;color:rgba(71,85,105,.95)}
+    ul.bul li{display:flex;gap:10px;align-items:flex-start}
+    .tick{
+      width:18px;height:18px;border-radius:6px;border:1px solid var(--line);background:var(--soft2);
+      display:inline-flex;align-items:center;justify-content:center;font-size:12px;color:rgba(11,18,32,.75)
+    }
+    .miniNote{margin-top:14px;color:var(--muted);font-size:.93rem}
 
-    /* Diagram */
-    .diagram-card{overflow:hidden}
-    .diagram-wrap{display:grid;grid-template-columns: 1fr;gap:0}
-    .diagram-top{padding:22px 22px 0}
-    .diagram-img{padding:18px 22px 22px}
-    .diagram-img img{
+    /* Quality strip */
+    .strip{background:var(--soft)}
+    .stripGrid{grid-template-columns:repeat(4, 1fr)}
+    @media (max-width: 980px){ .stripGrid{grid-template-columns:1fr 1fr} }
+    @media (max-width: 560px){ .stripGrid{grid-template-columns:1fr} }
+    .stripItem{border:1px solid var(--line);border-radius:16px;background:#fff;padding:14px}
+    .stripItem b{display:block;margin-bottom:4px}
 
-    {border-radius:18px;border:1px solid var(--line);background:#fff}
-
-    /* Section styles */
-    .two-col{grid-template-columns: 1fr 1fr;align-items:start}
-    @media (max-width: 920px){ .two-col{grid-template-columns:1fr} }
-
-    .list{margin:10px 0 0;color:var(--muted);line-height:1.7}
-    .list li{margin:4px 0}
+    /* Diagram block */
+    .diagramWrap{display:grid;grid-template-columns: 1fr 1fr;gap:14px;align-items:start}
+    @media (max-width: 980px){ .diagramWrap{grid-template-columns:1fr} }
+    .imgFrame{
+      border:1px solid var(--line);border-radius:var(--radius);background:#fff;box-shadow:var(--shadow);
+      padding:14px
+    }
+    .imgFrame img{border-radius:14px;border:1px solid var(--line)}
     .callout{
-      padding:18px;border-radius:18px;border:1px solid var(--line);
-      background:rgba(255,255,255,.7)
+      border:1px solid var(--line);border-radius:var(--radius);background:#fff;box-shadow:var(--shadow);
     }
+    .callout .cardInner{padding:20px}
+    .quote{
+      margin:12px 0 0;padding:14px;border-radius:14px;background:var(--soft2);
+      border:1px solid var(--line);color:var(--ink);font-weight:700;line-height:1.45
+    }
+
+    /* Reviews */
+    .reviewGrid{grid-template-columns:repeat(3,1fr)}
+    @media (max-width: 980px){ .reviewGrid{grid-template-columns:1fr} }
+    .stars{color:#f5b400;font-weight:900;letter-spacing:.12em}
+    .fine{color:var(--muted);font-size:.92rem;line-height:1.6}
 
     /* Footer CTA */
-    .cta-band{
-      padding:26px;border-radius:var(--radius);border:1px solid var(--line);
-      background:
-        radial-gradient(700px 220px at 20% 0%, rgba(244,210,122,.35), transparent 60%),
-        radial-gradient(700px 220px at 50% 0%, rgba(93,224,210,.22), transparent 60%),
-        radial-gradient(700px 250px at 80% 0%, rgba(201,183,255,.22), transparent 60%),
-        rgba(255,255,255,.75);
-      box-shadow: var(--shadow);
+    .cta{
+      padding:0 0 72px;
     }
-    .cta-band .row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:14px}
-    .foot{padding:26px 0 52px;color:var(--muted);font-size:.9rem}
+    .ctaBand{
+      border:1px solid var(--line);border-radius:22px;background:#fff;box-shadow:var(--shadow);
+      padding:24px;
+      display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap
+    }
+    .ctaBand p{margin:6px 0 0;color:var(--muted);line-height:1.6;max-width:70ch}
+    footer{padding:26px 0 50px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
   </style>
 </head>
 
 <body>
 
+<header>
+  <div class="container">
+    <div class="nav">
+      <a class="brand" href="#">
+        <span class="logoMark" aria-hidden="true"></span>
+        <span>ClearPath Labs™</span>
+      </a>
+
+      <nav class="navlinks" aria-label="Primary">
+        <a href="#system">System</a>
+        <a href="#science">Science</a>
+        <a href="#quality">Quality</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#shop">Shop</a>
+      </nav>
+
+      <div class="navcta">
+        <a class="btn ghost" href="#shop">Shop</a>
+        <a class="btn primary" href="#shop">Start Here</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
   <!-- HERO -->
-  <header class="hero">
+  <section class="hero">
     <div class="container">
-      <div class="hero-wrap">
+      <div class="heroGrid">
         <div>
-          <div class="pill">ClearPath Labs™ • Phase-Based Recovery System</div>
-          <h1 class="h1">Restore balance at the cellular level.</h1>
-          <p class="p" style="font-size:1.05rem">
-            A three-phase supplement system designed to support circulation, energy, and recovery—
+          <div class="eyebrow">Phase-Based Recovery</div>
+          <h1>Three formulas. One coherent recovery system.</h1>
+          <p class="sub">
+            ClearPath Labs™ supports circulation, cellular energy, and restorative recovery—
             aligned with your body’s natural rhythms.*
           </p>
 
-          <div class="hero-cta">
-            <a class="btn" href="#shop">Start the System</a>
-            <a class="btn secondary" href="#how">How It Works</a>
+          <div class="heroActions">
+            <a class="btn primary" href="#shop">Shop Rebuild Day</a>
+            <a class="btn ghost" href="#system">See the System</a>
           </div>
 
-          <div class="trust-row">
-            <span class="trust">GMP Manufactured</span>
-            <span class="trust">No Stimulants</span>
-            <span class="trust">Clean Label</span>
-            <span class="trust">Designed as a System</span>
+          <div class="microtrust">
+            <span>GMP Manufactured</span>
+            <span>No Stimulants</span>
+            <span>Clean Label</span>
+            <span>Designed as a System</span>
           </div>
-
-          <p class="hero-note">
-            *These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.
-          </p>
         </div>
 
-        <div class="hero-media">
-          <div class="topbar">
-            <div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
-            <div class="kicker">System Overview</div>
+        <div class="heroCard">
+          <div class="heroCardTop">
+            <span>System Overview</span>
+            <span style="color:var(--muted)">Clear → Rebuild → Reset</span>
           </div>
-          <div class="content">
-            <!-- Optional: your trio bottle image -->
-            <!-- <img src="images/clean_stack.png" alt="ClearPath Labs product system" /> -->
-
-            <div class="callout">
-              <div class="kicker">In one sentence</div>
-              <div class="h2" style="margin-top:8px">Clear in the morning → Rebuild in the day → Reset at night.</div>
-              <p class="p">Same ingredients taken at the wrong time can fail. Aligned with biology, they compound.</p>
+          <div class="heroCardBody">
+            <!-- Replace with your trio hero image -->
+            <div class="productMock">Add your 3-bottle hero image here</div>
+            <div class="divider"></div>
+            <div class="fine">
+              <b>Start simple:</b> Begin with <b>Rebuild Day</b>. Add <b>Deep Reset PM</b> for sleep support.
+              Introduce <b>ClearFlow AM</b> as the advanced morning phase.
             </div>
           </div>
         </div>
 
       </div>
+      <p class="fine" style="margin-top:18px">
+        *These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.
+      </p>
     </div>
-  </header>
+  </section>
 
-  <!-- HOW IT WORKS -->
-  <section class="section" id="how">
+  <!-- SYSTEM -->
+  <section id="system">
     <div class="container">
-      <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:18px;flex-wrap:wrap">
+      <div class="sectionHead">
         <div>
-          <div class="kicker">How it works</div>
-          <h2 class="h2">The ClearPath™ Three-Phase System</h2>
-          <p class="p">Three formulas. Three biological windows. One coherent protocol.</p>
+          <h2>The ClearPath™ Three-Phase System</h2>
+          <p class="lead">
+            Built around circadian windows—clearance in the morning, rebuilding during activity, and nervous-system downshifting at night.*
+          </p>
         </div>
-        <a class="btn secondary" href="#diagram">View the Diagram</a>
+        <a class="btn ghost" href="#science">Why timing matters</a>
       </div>
 
       <div class="divider"></div>
 
-      <div class="grid phase-grid" style="margin-top:18px">
+      <div class="grid phaseGrid">
         <!-- AM -->
-        <div class="card">
-          <div class="phase-head accent-am">
-            <span class="phase-badge">☀️ Phase 1 • Morning</span>
-            <div class="h2" style="margin:10px 0 0">ClearFlow AM</div>
-            <p class="p">Circulation & Clearance*</p>
-          </div>
-          <div class="phase-body">
-            <ul class="bullets">
-              <li><span class="check">✓</span><span>Supports healthy blood flow & oxygen delivery*</span></li>
-              <li><span class="check">✓</span><span>Helps maintain fibrin balance & microcirculation*</span></li>
-              <li><span class="check">✓</span><span>Promotes morning clarity without stimulants*</span></li>
+        <article class="card">
+          <div class="cardInner">
+            <span class="chip"><span class="dot am"></span> Phase 1 • Morning</span>
+            <div class="titleRow">
+              <h3 class="cardTitle">ClearFlow AM</h3>
+              <div class="time">Empty stomach</div>
+            </div>
+            <p class="cardSub">Supports circulation & clearance pathways.*</p>
+            <ul class="bul">
+              <li><span class="tick">✓</span><span>Supports healthy blood flow & oxygen delivery*</span></li>
+              <li><span class="tick">✓</span><span>Helps maintain fibrin balance & microcirculation*</span></li>
+              <li><span class="tick">✓</span><span>Promotes morning clarity without stimulants*</span></li>
             </ul>
-            <div class="mini"><strong>Timing:</strong> Empty stomach • 20–30 minutes before food</div>
+            <div class="miniNote"><b>How to take:</b> 20–30 minutes before food or other supplements.</div>
           </div>
-        </div>
+        </article>
 
         <!-- DAY -->
-        <div class="card">
-          <div class="phase-head accent-day">
-            <span class="phase-badge">🌤️ Phase 2 • Day</span>
-            <div class="h2" style="margin:10px 0 0">Rebuild Day</div>
-            <p class="p">Mitochondrial Energy & Defense*</p>
-          </div>
-          <div class="phase-body">
-            <ul class="bullets">
-              <li><span class="check">✓</span><span>Supports cellular energy (ATP) & mitochondrial function*</span></li>
-              <li><span class="check">✓</span><span>Helps recycle antioxidants & restore redox balance*</span></li>
-              <li><span class="check">✓</span><span>Promotes nervous system resilience under daily load*</span></li>
+        <article class="card">
+          <div class="cardInner">
+            <span class="chip"><span class="dot day"></span> Phase 2 • Day</span>
+            <div class="titleRow">
+              <h3 class="cardTitle">Rebuild Day</h3>
+              <div class="time">With food</div>
+            </div>
+            <p class="cardSub">Supports cellular energy & antioxidant defense.*</p>
+            <ul class="bul">
+              <li><span class="tick">✓</span><span>Supports cellular energy (ATP) & mitochondrial function*</span></li>
+              <li><span class="tick">✓</span><span>Helps recycle antioxidants & support redox balance*</span></li>
+              <li><span class="tick">✓</span><span>Promotes nervous system resilience under daily load*</span></li>
             </ul>
-            <div class="mini"><strong>Timing:</strong> With food • Lunch or early dinner</div>
+            <div class="miniNote"><b>How to take:</b> Lunch or early dinner for best consistency.</div>
           </div>
-        </div>
+        </article>
 
         <!-- PM -->
-        <div class="card">
-          <div class="phase-head accent-pm">
-            <span class="phase-badge">🌙 Phase 3 • Night</span>
-            <div class="h2" style="margin:10px 0 0">Deep Reset PM</div>
-            <p class="p">Nervous System & Sleep Recovery*</p>
-          </div>
-          <div class="phase-body">
-            <ul class="bullets">
-              <li><span class="check">✓</span><span>Supports calm & parasympathetic recovery (HRV)*</span></li>
-              <li><span class="check">✓</span><span>Helps regulate cortisol rhythm for overnight repair*</span></li>
-              <li><span class="check">✓</span><span>Promotes deep, restorative sleep quality*</span></li>
-            </ul>
-            <div class="mini"><strong>Timing:</strong> 30–60 minutes before bed</div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- DIAGRAM SECTION -->
-  <section class="section" id="diagram" style="padding-top:0">
-    <div class="container">
-      <div class="card diagram-card">
-        <div class="diagram-top">
-          <div class="kicker">System diagram</div>
-          <h2 class="h2" style="margin-top:8px">See the 24-hour rhythm at a glance.</h2>
-          <p class="p">
-            This is the simplest way to understand why the system is split into phases. (Replace the image path below.)
-          </p>
-        </div>
-        <div class="diagram-img">
-          <img src="images/clearpath-system-diagram.png" alt="ClearPath Three-Phase System diagram" />
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHY TIMING MATTERS -->
-  <section class="section" style="padding-top:0">
-    <div class="container">
-      <div class="grid two-col">
-        <div class="card">
-          <div class="card-inner">
-            <div class="kicker">Why timing matters</div>
-            <h2 class="h2">Aligned with biology, ingredients compound.</h2>
-            <p class="p">
-              Most supplements are designed in isolation. The body doesn’t work that way.
-              ClearPath is built around circadian windows: clearance in the morning, rebuilding during activity,
-              and nervous-system downshifting at night.*
-            </p>
-            <div class="divider"></div>
-            <div class="callout">
-              <div class="kicker">Core principle</div>
-              <p class="p" style="font-size:1.05rem;margin-top:8px">
-                Same ingredients taken at the wrong time can fail.
-                <strong>Aligned with biology, they compound.</strong>
-              </p>
+        <article class="card">
+          <div class="cardInner">
+            <span class="chip"><span class="dot pm"></span> Phase 3 • Night</span>
+            <div class="titleRow">
+              <h3 class="cardTitle">Deep Reset PM</h3>
+              <div class="time">Before bed</div>
             </div>
+            <p class="cardSub">Supports calm, HRV, and sleep recovery.*</p>
+            <ul class="bul">
+              <li><span class="tick">✓</span><span>Supports calm & parasympathetic recovery (HRV)*</span></li>
+              <li><span class="tick">✓</span><span>Helps regulate cortisol rhythm for overnight repair*</span></li>
+              <li><span class="tick">✓</span><span>Promotes deep, restorative sleep quality*</span></li>
+            </ul>
+            <div class="miniNote"><b>How to take:</b> 30–60 minutes before bed.</div>
           </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUALITY STRIP -->
+  <section class="strip" id="quality">
+    <div class="container">
+      <div class="grid stripGrid">
+        <div class="stripItem"><b>GMP Manufactured</b><span class="fine">Made in a GMP-certified facility.</span></div>
+        <div class="stripItem"><b>Clean Label</b><span class="fine">No stimulants. No artificial colors.</span></div>
+        <div class="stripItem"><b>Thoughtful Dosing</b><span class="fine">Designed for daily use & sensitivity.</span></div>
+        <div class="stripItem"><b>System Design</b><span class="fine">Formulas built to work together.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCIENCE -->
+  <section id="science">
+    <div class="container">
+      <div class="sectionHead">
+        <div>
+          <h2>Why timing matters</h2>
+          <p class="lead">Same ingredients taken at the wrong time can fail. Aligned with biology, they compound.</p>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="diagramWrap">
+        <div class="imgFrame">
+          <!-- Replace with your diagram file -->
+          <img src="images/clearpath-system-diagram.png" alt="ClearPath Three-Phase System Diagram" />
         </div>
 
-        <div class="card">
-          <div class="card-inner">
-            <div class="kicker">Who it’s for</div>
-            <h2 class="h2">People who feel “off” — even when labs look normal.</h2>
-            <ul class="list">
-              <li>Burnout, chronic stress, or overtraining</li>
-              <li>Post-viral fatigue or sluggish recovery</li>
-              <li>Poor sleep despite “doing everything right”</li>
-              <li>Inflammation and brain fog without a clear cause</li>
-            </ul>
-            <div class="divider"></div>
-            <p class="p">
-              Designed as a system you can run in phases—not a random stack you take forever.
+        <div class="callout">
+          <div class="cardInner">
+            <p class="fine">
+              ClearPath is built around three physiological windows:
+              <b>morning clearance</b>, <b>daytime rebuilding</b>, and <b>nighttime downshifting</b>.
+              This structure keeps the system simple, repeatable, and easier to understand.
+            </p>
+
+            <div class="quote">
+              “Clear in the morning → Rebuild in the day → Reset at night.”
+            </div>
+
+            <p class="fine" style="margin-top:12px">
+              Want the easiest entry point? Start with <b>Rebuild Day</b> and add the other phases over time.
             </p>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="reviews" style="background:var(--soft2)">
+    <div class="container">
+      <div class="sectionHead">
+        <div>
+          <h2>What customers notice</h2>
+          <p class="lead">Short, credible, non-hype feedback—like premium brands do it.</p>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="grid reviewGrid">
+        <div class="card"><div class="cardInner">
+          <div class="stars">★★★★★</div>
+          <p class="fine"><b>“Energy feels steadier.”</b><br/>Not a stimulant push—more like capacity returned.</p>
+          <p class="fine" style="margin-top:10px;color:rgba(82,96,114,.9)">— Verified buyer</p>
+        </div></div>
+
+        <div class="card"><div class="cardInner">
+          <div class="stars">★★★★★</div>
+          <p class="fine"><b>“Sleep quality improved.”</b><br/>Easier to downshift at night and stay asleep.</p>
+          <p class="fine" style="margin-top:10px;color:rgba(82,96,114,.9)">— Verified buyer</p>
+        </div></div>
+
+        <div class="card"><div class="cardInner">
+          <div class="stars">★★★★★</div>
+          <p class="fine"><b>“Feels designed, not random.”</b><br/>The three-phase setup actually makes sense.</p>
+          <p class="fine" style="margin-top:10px;color:rgba(82,96,114,.9)">— Verified buyer</p>
+        </div></div>
       </div>
     </div>
   </section>
 
   <!-- SHOP / CTA -->
-  <section class="section" id="shop" style="padding-top:0">
+  <section id="shop" class="cta">
     <div class="container">
-      <div class="cta-band">
-        <div class="kicker">Start here</div>
-        <h2 class="h2" style="margin-top:8px">Begin with Rebuild Day—or run the full system.</h2>
-        <p class="p">
-          For most people, Rebuild Day is the easiest entry point (energy + resilience).
-          Add Deep Reset PM for sleep recovery, then ClearFlow AM as the advanced phase.*
-        </p>
-        <div class="row">
-          <a class="btn" href="#">Shop Rebuild Day</a>
-          <a class="btn secondary" href="#">Shop Deep Reset PM</a>
-          <a class="btn secondary" href="#">View Full System Bundle</a>
+      <div class="ctaBand">
+        <div>
+          <h2 style="margin:0;letter-spacing:-0.03em">Start with Rebuild Day.</h2>
+          <p>Then add Deep Reset PM. Introduce ClearFlow AM as the advanced morning phase.*</p>
         </div>
-      </div>
-
-      <div class="foot">
-        <div class="divider"></div>
-        <p class="p">
-          *These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.
-        </p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <a class="btn primary" href="#">Shop Rebuild Day</a>
+          <a class="btn ghost" href="#">Shop Deep Reset PM</a>
+          <a class="btn ghost" href="#">View Bundle</a>
+        </div>
       </div>
     </div>
   </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    *These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.
+  </div>
+</footer>
 
 </body>
 </html>
